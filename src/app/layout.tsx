@@ -26,12 +26,12 @@ export const metadata: Metadata = {
     "PB Ocuaman Construction",
     "building services",
   ],
-  metadataBase: new URL("https://pb-ocuaman.com"),
+  metadataBase: new URL("https://pbocuamanconstruction.com/"),
   openGraph: {
     title: "PB + Ocuaman Construction",
     description:
       "Your trusted partner for construction services in the Philippines.",
-    url: "https://pb-ocuaman.com",
+    url: "https://pbocuamanconstruction.com/",
     siteName: "PB + Ocuaman Construction",
     images: ["/pb-ocuaman-logo.png"],
     locale: "en_PH",
