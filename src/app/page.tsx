@@ -107,50 +107,50 @@ export default function Home() {
         className="flex flex-col gap-10 p-10 justify-center items-center w-full min-h-[200px] text-[#6A6F4C] bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat text-center"
         style={{ backgroundSize: "200px 200px" }}
       >
-        <h3>A FEW MORE FACTS ABOUT US IN NUMBERS</h3>
+        <h3 className="text-[24px]">A FEW MORE FACTS ABOUT US IN NUMBERS</h3>
         <div className="flex justify-center items-center gap-25 flex-wrap">
           <div className="flex flex-col gap-2">
-            <div className="flex gap-1 justify-center items-center">
-              <FontAwesomeIcon icon={fa1} className="w-4.5" />
-              <FontAwesomeIcon icon={fa0} className="w-5.5" />
-              <Plus className="h-5 w-5 " />
+            <div className="flex justify-center items-center">
+              <FontAwesomeIcon icon={fa1} className="text-3xl" />
+              <FontAwesomeIcon icon={fa0} className="text-3xl" />
+              <Plus className="h-8 w-8 " />
             </div>
             <p>Years of Experience</p>
           </div>
 
           <div className="flex flex-col gap-2">
-            <div className="flex gap-1 justify-center items-center">
-              <FontAwesomeIcon icon={fa1} className="w-4.5" />
-              <FontAwesomeIcon icon={fa5} className="w-5.5" />
-              <FontAwesomeIcon icon={fa0} className="w-5.5" />
-              <Plus className="h-5 w-5 " />
+            <div className="flex justify-center items-center">
+              <FontAwesomeIcon icon={fa1} className="text-3xl" />
+              <FontAwesomeIcon icon={fa5} className="text-3xl" />
+              <FontAwesomeIcon icon={fa0} className="text-3xl" />
+              <Plus className="h-8 w-8 " />
             </div>
             <p>Completed Projects</p>
           </div>
 
           <div className="flex flex-col gap-2">
-            <div className="flex gap-1 justify-center items-center">
-              <FontAwesomeIcon icon={fa9} className="w-6.5" />
-              <FontAwesomeIcon icon={fa8} className="w-5.5" />
-              <Percent className="h-6 w-6 " />
+            <div className="flex justify-center items-center">
+              <FontAwesomeIcon icon={fa9} className="text-3xl" />
+              <FontAwesomeIcon icon={fa8} className="text-3xl" />
+              <Percent className="h-8 w-8 " />
             </div>
             <p>Client Satisfaction</p>
           </div>
 
           <div className="flex flex-col gap-2">
-            <div className="flex gap-1 justify-center items-center">
-              <FontAwesomeIcon icon={fa3} className="w-5.5" />
-              <FontAwesomeIcon icon={fa0} className="w-5.5" />
-              <Plus className="h-5 w-5 " />
+            <div className="flex justify-center items-center">
+              <FontAwesomeIcon icon={fa3} className="text-3xl" />
+              <FontAwesomeIcon icon={fa0} className="text-3xl" />
+              <Plus className="h-8 w-8 " />
             </div>
             <p>Workforce</p>
           </div>
 
           <div className="flex flex-col gap-2">
-            <div className="flex gap-1 justify-center items-center">
-              <FontAwesomeIcon icon={fa9} className="w-6.5" />
-              <FontAwesomeIcon icon={fa5} className="w-5" />
-              <Percent className="h-6 w-6 " />
+            <div className="flex justify-center items-center">
+              <FontAwesomeIcon icon={fa9} className="text-3xl" />
+              <FontAwesomeIcon icon={fa5} className="text-3xl" />
+              <Percent className="h-8 w-8 " />
             </div>
             <p>Project Delivery</p>
           </div>
