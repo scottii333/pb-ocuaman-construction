@@ -46,12 +46,13 @@ export const Header = () => {
         </Link>
       </nav>
 
-      <button
+      <Link
+        href="/contact"
         className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white hidden md:block cursor-pointer hover:bg-[#6e6e52] transition"
         style={{ backgroundSize: "200px 200px" }}
       >
         Contact Us
-      </button>
+      </Link>
 
       <Sheet>
         <SheetTrigger asChild>
@@ -90,9 +91,12 @@ export const Header = () => {
             </Link>
           </nav>
           <SheetFooter className="mt-10">
-            <Button className="bg-[#8B8B6F] p-2 px-10 text-white w-full cursor-pointer hover:bg-[#6e6e52] transition">
+            <Link
+              href="/contact"
+              className="bg-[#8B8B6F] p-2 px-10 text-white w-full cursor-pointer hover:bg-[#6e6e52] transition"
+            >
               Contact Us
-            </Button>
+            </Link>
           </SheetFooter>
         </SheetContent>
       </Sheet>
