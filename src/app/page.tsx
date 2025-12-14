@@ -44,10 +44,10 @@ export default function Home() {
             height={300}
             className="w-full h-auto"
           />
-          <h2 className="flex items-center gap-2 p-1 text-[#D29E34] text-[18px] font-semibold">
+          <h2 className="flex items-center gap-2 p-1 text-[#D29E34] text-[24px] font-semibold">
             <FontAwesomeIcon
               icon={faHeartCircleCheck}
-              className="w-8 h-8 text-[#D29E34]"
+              className="text-3xl text-[#D29E34]"
             />{" "}
             Why Choose Us
           </h2>
@@ -60,10 +60,10 @@ export default function Home() {
         </div>
 
         <div className=" h-auto w-full flex flex-col p-5 gap-5">
-          <h2 className="flex  items-center gap-2 p-1 text-[#D29E34] text-[18px] font-semibold">
+          <h2 className="flex  items-center gap-2 p-1 text-[#D29E34] text-[24px] font-semibold">
             <FontAwesomeIcon
               icon={faUsers}
-              className="w-8 h-8 text-[#D29E34]"
+              className="text-3xl text-[#D29E34]"
             />{" "}
             Who We Are
           </h2>
@@ -81,8 +81,7 @@ export default function Home() {
             style={{ backgroundSize: "200px 200px" }}
           >
             More About Us
-            {/* FontAwesomeIcon is fine in server component since it's static markup */}
-            {/* If you prefer, you can render this icon client-side too */}
+            <FontAwesomeIcon icon={faArrowRightLong} className="text-1xl" />
           </Link>
 
           <div className="border-b-3 border-[#8B8B6F] mt-5"></div>
