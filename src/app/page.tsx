@@ -157,25 +157,28 @@ export default function Home() {
       </div>
       {/* Services Carousel  */}
       <ServicesCarousel />
+
       {/* 3 Easy Steps Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div className="flex flex-col gap-5">
-          <h2>
-            LET US DESIGN YOUR HOME IN <span>3 EASY STEPS</span>
+      <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-5 p-10">
+        <div className="flex flex-col justify-start items-baseline gap-5 p-10">
+          <h2 className="text-3xl">
+            LET US DESIGN YOUR <br /> HOME IN{" "}
+            <span className="text-[#c3881c]">3 EASY STEPS</span>
           </h2>
-          <p>We&apos;ll be here every step of the way</p>
+          <p>We&apos;ll be here every step of the way.</p>
           <Link
             href="/about"
             className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-5 text-[18px] font-semibold"
             style={{ backgroundSize: "200px 200px" }}
           >
-            EXPLORE OUR HOME DESIGNS
+            EXPLORE OUR DESIGNS
             <FontAwesomeIcon icon={faArrowRightLong} className="w-5 h-5" />
           </Link>
         </div>
-        <div className="flex flex-col gap-5">
-          <div className="flex  bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat ">
-            <div className="relative w-30 h-30">
+
+        <div className="flex flex-col gap-5 md:p-5">
+          <div className="flex items-center  bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat   ">
+            <div className="relative w-35 h-35 md:w-50 md:h-50 shrink-0">
               <Image
                 src="/sample/sample.jpg"
                 alt="Teamwork Image"
@@ -184,13 +187,29 @@ export default function Home() {
                 priority
               />
             </div>
-            <div className="p-5">
-              <h3>01 LAYOUT </h3>
-              <p>Plan the structure and flow of your home</p>
+            <div className="p-5 flex flex-col gap-5">
+              <div className="flex items-end">
+                <FontAwesomeIcon
+                  icon={fa0}
+                  className="text-2xl p-1  text-[#232b5f]"
+                />
+                <FontAwesomeIcon
+                  icon={fa1}
+                  className="text-2xl p-1  text-[#232b5f] -ml-4 "
+                />
+                <h3 className="text-1xl md:text-2xl text-[#232b5f] font-semibold ">
+                  LAYOUT
+                </h3>
+              </div>
+              <p className="text-[#232b5f] text-[14px] pl-3">
+                Plan the structure and flow of your home
+              </p>
             </div>
           </div>
-          <div className="flex  bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat ">
-            <div className="relative w-30 h-30">
+
+          <div className="flex  items-center  bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat ">
+            <div className="relative w-35 h-35 md:w-50 md:h-50 shrink-0">
+              {" "}
               <Image
                 src="/sample/sample.jpg"
                 alt="Teamwork Image"
@@ -199,13 +218,29 @@ export default function Home() {
                 priority
               />
             </div>
-            <div className="p-5">
-              <h3>02 DESIGN </h3>
-              <p>Plan the structure and flow of your home</p>
+            <div className="p-5 flex flex-col gap-5">
+              <div className="flex items-end">
+                <FontAwesomeIcon
+                  icon={fa0}
+                  className="text-2xl p-1  text-[#232b5f]"
+                />
+                <FontAwesomeIcon
+                  icon={fa2}
+                  className="text-2xl p-1  text-[#232b5f] -ml-4 "
+                />
+                <h3 className="text-1xl md:text-2xl text-[#232b5f] font-semibold ">
+                  DESIGN
+                </h3>
+              </div>
+              <p className="text-[#232b5f] text-[14px] pl-3">
+                Customize the look and feel with our 3D exterior and interior
+                designs.
+              </p>
             </div>
           </div>
-          <div className="flex  bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat ">
-            <div className="relative w-30 h-30">
+
+          <div className="flex items-center  bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat ">
+            <div className="relative w-35 h-35 md:w-50 md:h-50 shrink-0">
               <Image
                 src="/sample/sample.jpg"
                 alt="Teamwork Image"
@@ -214,13 +249,28 @@ export default function Home() {
                 priority
               />
             </div>
-            <div className="p-5">
-              <h3>03 DOCUMENTATION </h3>
-              <p>Plan the structure and flow of your home</p>
+            <div className="p-5 flex flex-col gap-5">
+              <div className="flex items-end">
+                <FontAwesomeIcon
+                  icon={fa0}
+                  className="text-2xl p-1  text-[#232b5f]"
+                />
+                <FontAwesomeIcon
+                  icon={fa3}
+                  className="text-2xl p-1  text-[#232b5f] -ml-4 "
+                />
+                <h3 className="text-1xl md:text-2xl text-[#232b5f] font-semibold ">
+                  DOCUMENTATION
+                </h3>
+              </div>
+              <p className="text-[#232b5f] text-[14px] pl-3">
+                Plan the structure and flow of your home
+              </p>
             </div>
           </div>
         </div>
       </div>
+
       {/* Projects Sections */}
       <div className="w-full flex justify-center">
         <div className="flex flex-col md:flex-row md:w-[1000px]  bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat ">
