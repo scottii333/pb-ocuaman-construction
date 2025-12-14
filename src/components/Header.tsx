@@ -17,14 +17,14 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export const Header = () => {
   return (
-    <div className=" shadow-lg p-3 flex justify-around items-center gap-10 sticky top-0 bg-white z-50">
+    <div className=" shadow-lg p-3 flex justify-between px-10 md:px-0 md:justify-around items-center gap-10 sticky top-0 bg-white z-50">
       <Link href="/" className="">
         {" "}
         <Image
-          src="/pb-ocuaman-logo.svg" // path to your image
+          src="/pb-ocuaman-main-logo.png" // path to your image
           alt="PB Ocuaman Construction Logo"
-          width={50}
-          height={50}
+          width={150}
+          height={150}
         />
       </Link>
 
@@ -55,10 +55,13 @@ export const Header = () => {
 
       <Sheet>
         <SheetTrigger asChild>
-          <FontAwesomeIcon
-            icon={faBars}
-            className="md:hidden ml-4 cursor-pointer h-6 text-[#8B8B6F] "
-          />
+          <button
+            type="button"
+            aria-label="Open menu"
+            className="ml-4 block md:hidden cursor-pointer "
+          >
+            <FontAwesomeIcon icon={faBars} className="h-6 w-6" />
+          </button>
         </SheetTrigger>
         <SheetContent className="w-2/5">
           <SheetHeader>
