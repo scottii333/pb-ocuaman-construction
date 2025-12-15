@@ -21,6 +21,7 @@ import ServicesCarousel from "@/components/ServicesCarousel";
 import { BusinessMapPin } from "@/components/BusinessMapPin";
 import { GetInTouch } from "@/components/GetInTouch";
 import { JoinOurTeam } from "@/components/JoinOurTeam";
+import { GoogleReviews } from "@/components/GoogleReviews";
 
 export default function Home() {
   return (
@@ -301,6 +302,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Google Reviews Section */}
+      <GoogleReviews />
 
       {/* Join Our Team Section */}
       <JoinOurTeam />
