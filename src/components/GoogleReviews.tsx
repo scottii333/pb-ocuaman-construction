@@ -7,8 +7,8 @@ import { Marquee } from "./ui/marquee";
 
 export const GoogleReviews = () => {
   return (
-    <section className="text-[#232b5f] flex flex-col items-center p-10">
-      WHAT OUR <span className="text-yellow-500">CLIENTS</span> SAY
+    <section className="text-[#232b5f] flex flex-col items-center p-10 bg-white!">
+      <p className="text-3xl mb-10">WHAT OUR <span className="text-yellow-500">CLIENTS</span> SAY</p>
       <Marquee
         speed={30}
         direction="horizontal"
@@ -18,7 +18,7 @@ export const GoogleReviews = () => {
         className="p-10 flex gap-2 w-full"
       >
         {/* CARD 1 */}
-        <div className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat min-h-auto w-100 ">
+        <div className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat h-80 w-100 ">
           <FontAwesomeIcon
             icon={faQuoteLeft}
             className="text-6xl text-[#232b5f] relative bottom-8 left-10 "
@@ -45,12 +45,12 @@ export const GoogleReviews = () => {
               className="text-2xl text-yellow-500 "
             />
           </div>
-          <p className="p-10">
+          <p className="p-10 pt-0">
             Their planning team guided us from start to finish. They explained
             everything clearly and made the design fit our budget. Very
             professional and easy to work with.
           </p>
-          <div className="w-60 h-20 bg-white rounded-tr-3xl flex items-center p-5 gap-2 ">
+          <div className="w-60 h-19 bg-white rounded-tr-3xl flex items-center p-5 gap-2 ">
             <Image
               src="/sample/sample.jpg"
               alt="Client Photo"
@@ -66,7 +66,7 @@ export const GoogleReviews = () => {
         </div>
 
         {/* CARD 2 */}
-        <div className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat min-h-auto w-100 ">
+        <div className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat h-80 w-100 ">
           <FontAwesomeIcon
             icon={faQuoteLeft}
             className="text-6xl text-[#232b5f] relative bottom-8 left-10 "
@@ -93,12 +93,12 @@ export const GoogleReviews = () => {
               className="text-2xl text-yellow-500 "
             />
           </div>
-          <p className="p-10">
+          <p className="p-10 pt-0">
             Their planning team guided us from start to finish. They explained
             everything clearly and made the design fit our budget. Very
             professional and easy to work with.
           </p>
-          <div className="w-60 h-20 bg-white rounded-tr-3xl flex items-center p-5 gap-2 ">
+          <div className="w-60 h-19 bg-white rounded-tr-3xl flex items-center p-5 gap-2 ">
             <Image
               src="/sample/sample.jpg"
               alt="Client Photo"
@@ -112,9 +112,8 @@ export const GoogleReviews = () => {
             </div>
           </div>
         </div>
-
         {/* CARD 3 */}
-        <div className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat min-h-auto w-100 ">
+        <div className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat h-80 w-100 ">
           <FontAwesomeIcon
             icon={faQuoteLeft}
             className="text-6xl text-[#232b5f] relative bottom-8 left-10 "
@@ -141,12 +140,12 @@ export const GoogleReviews = () => {
               className="text-2xl text-yellow-500 "
             />
           </div>
-          <p className="p-10">
+          <p className="p-10 pt-0">
             Their planning team guided us from start to finish. They explained
             everything clearly and made the design fit our budget. Very
             professional and easy to work with.
           </p>
-          <div className="w-60 h-20 bg-white rounded-tr-3xl flex items-center p-5 gap-2 ">
+          <div className="w-60 h-19 bg-white rounded-tr-3xl flex items-center p-5 gap-2 ">
             <Image
               src="/sample/sample.jpg"
               alt="Client Photo"

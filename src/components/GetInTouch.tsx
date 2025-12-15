@@ -14,8 +14,8 @@ export const GetInTouch = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2">
       <div className="md:p-10">
-        <h2>GET IN TOUCH</h2>
-        <div className="border-b-3 border-[#8B8B6F]"></div>
+        <h2 className="text-3xl">GET IN TOUCH</h2>
+        <div className="border-b-2 border-[#8B8B6F]"></div>
         <p>EMAIL US</p>
         <p>pb.ocuaman.construction@gmail.com</p>
         <p>CALL US</p>
