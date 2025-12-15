@@ -8,28 +8,357 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
+import Image from "next/image";
 
-export default function about() {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowLeftLong,
+  faArrowRightLong,
+} from "@fortawesome/free-solid-svg-icons";
+
+export default function About() {
+  const certifications = Array.from({ length: 7 });
+  const teamMembers = Array.from({ length: 5 });
   return (
     <main>
-      {" "}
-      {/* ✅ Breadcrumbs */}
-      <Breadcrumb className="p-8">
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="/">Home</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage className="text-[#D29E34] font-semibold">
-              About
-            </BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-      <section>about</section>
+      <div className="relative w-full h-[90vh]">
+        {/* Background Image */}
+        <Image
+          src="/sample/sample.jpg"
+          alt="About Banner"
+          fill
+          className="object-cover"
+          priority
+        />
+
+        {/* Black Overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+
+        {/* Breadcrumbs */}
+        <Breadcrumb className="p-8 absolute top-0 left-0 text-white">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/" className="text-white">
+                  Home
+                </Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator className="text-white" />
+            <BreadcrumbItem>
+              <BreadcrumbPage className="text-[#D29E34]">About</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <div className="p-8 absolute bottom-0 left-0 text-white">
+          <div className="text-3xl">
+            Get to <span className="text-[#D29E34]">Know</span> Us
+          </div>
+          <div className="text-base">
+            Learn more about our mission, values, and the people behind our
+            work.
+          </div>
+        </div>
+      </div>
+      <section>
+        <div className="grid grid-cols-[1fr_2fr] gap-20 my-20 w-[95%] mr-auto">
+          <div>
+            <Image
+              src="/office.png"
+              alt="About Banner"
+              width={300}
+              height={300}
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="flex flex-col gap-5 justify-center">
+            <div className="text-3xl">
+              At <span className="text-[#D29E34]">PB+OCUAMAN</span> Construction
+            </div>
+            <div className="text-base">
+              We bring together experience, creativity, and professionalism to
+              deliver exceptional construction projects that meet your needs.
+              Whether you are building your first home, upgrading to a bigger
+              space, renovating, or investing in property, we provide complete
+              solutions from planning and design to construction and handover.
+            </div>
+            <div className="w-full h-[0.5px] bg-[#c0c0c6]"></div>
+            <div className="text-2xl">Certifications & Licenses</div>
+            <div className="flex gap-10 overflow-x-auto no-scrollbar">
+              {certifications.map((_, index) => (
+                <Image
+                  key={index}
+                  src="/sample/sample.jpg"
+                  alt="Certification"
+                  width={300}
+                  height={300}
+                  className="w-15 h-auto rounded-full aspect-square shrink-0"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="mb-20 flex flex-col gap-10">
+          <div className="bg-[url('/texture/wall-texture.png')] w-full h-50 grid grid-cols-[5fr_1fr]">
+            <div className="p-10 flex flex-col gap-5">
+              <div className="text-3xl">
+                Our <span className="text-[#D29E34]">Mission</span>
+              </div>
+              <div className="text-base">
+                To grow by continually ensuring customer satisfaction with our
+                reliable execution, cost effectiveness, quality and efficient
+                services. We do so while promoting growth of our people and our
+                relationship with our partners in business, and care for the
+                environment we work in.
+              </div>
+            </div>
+            <Image
+              src="/sample/sample.jpg"
+              alt="About Banner"
+              width={300}
+              height={300}
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="bg-[url('/texture/wall-texture.png')] w-full h-50 grid grid-cols-[1fr_4fr_1fr]">
+            <Image
+              src="/sample/sample.jpg"
+              alt="About Banner"
+              width={300}
+              height={300}
+              className="w-full h-auto"
+            />
+            <div className="p-10 flex flex-col gap-5">
+              <div className="text-3xl">
+                Our <span className="text-[#D29E34]">Vision</span>
+              </div>
+              <div className="text-base">
+                To be the preferred contractor of choice through established
+                quality business relationships, provided for by a team of
+                dynamic and committed professionals.
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+        <div className="grid grid-cols-[auto_1fr] w-[70%] mx-auto mb-20 items-center justify-between">
+          <div>
+            <div className="text-3xl mb-3">
+              Meet the <span className="text-[#D29E34]">Team</span>
+            </div>
+            <div className="text-base">
+              Our team works closely with you at every stage, ensuring your
+              vision is brought to life with quality craftsmanship, attention to
+              detail, and safety as a top priority.
+              <br /> <br />
+              We are committed to completing every project on time and on budget
+              while maintaining honesty, integrity, and open communication.
+            </div>
+          </div>
+          <div className="w-145 h-110 relative">
+            <Image
+              src="/sample/sample.jpg"
+              alt="About Banner"
+              width={300}
+              height={300}
+              className="w-60 h-auto absolute top-0 left-20"
+            />
+            <Image
+              src="/sample/sample.jpg"
+              alt="About Banner"
+              width={300}
+              height={300}
+              className="w-60 h-auto absolute top-10 right-0"
+            />
+            <Image
+              src="/sample/sample.jpg"
+              alt="About Banner"
+              width={300}
+              height={300}
+              className="w-90 h-auto absolute bottom-0 left-5 border-20 border-[#f9f9ff]"
+            />
+            <div className="text-3xl mb-3 absolute bottom-30 left-95">
+              <span className="text-[#D29E34]">EXPERTS</span> AT
+              <br />
+              WORK
+            </div>
+          </div>
+        </div>
+        <div className="w-[90%] mx-auto flex flex-col gap-10">
+          <div className="flex justify-between">
+            <div className="text-3xl">
+              Working Together to Bring <br /> Your Dream{" "}
+              <span className="text-[#D29E34]">Home to Life</span>.
+            </div>
+            <div className="flex gap-5 items-end">
+              <button
+                className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white hidden md:block cursor-pointer hover:bg-[#6e6e52] transition"
+                style={{ backgroundSize: "200px 200px" }}
+              >
+                <FontAwesomeIcon
+                  icon={faArrowLeftLong}
+                  className="w-8 h-8 text-white"
+                />
+              </button>
+              <button
+                className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white hidden md:block cursor-pointer hover:bg-[#6e6e52] transition"
+                style={{ backgroundSize: "200px 200px" }}
+              >
+                <FontAwesomeIcon
+                  icon={faArrowRightLong}
+                  className="w-8 h-8 text-white"
+                />
+              </button>
+            </div>
+          </div>
+          <div className="flex gap-10 overflow-x-auto no-scrollbar">
+            {teamMembers.map((_, index) => (
+              <div key={index} className="relative inline-block w-80 shrink-0">
+                <Image
+                  src="/team-member.png"
+                  alt="team member"
+                  width={300}
+                  height={300}
+                  className="w-80 h-auto"
+                />
+                <div className="absolute bottom-0 left-0 h-20 w-full bg-black/60 text-lg text-white flex items-center justify-center">
+                  Engr. Ocuaman
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="bg-white p-15 flex gap-25 overflow-x-auto no-scrollbar">
+          {Array.from({ length: 10 }).map((_, index) => (
+            <div key={index} className="flex gap-2 items-center shrink-0">
+              <Image
+                src="/sample/sample.jpg"
+                alt="Partner"
+                width={300}
+                height={300}
+                className="w-15 h-auto rounded-full aspect-square"
+              />
+              <div className="text-base">Partner</div>
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-3 w-[90%] mx-auto gap-15 items-center">
+          <div className="flex flex-col gap-5">
+            <div className="text-3xl">
+              Company
+              <span className="text-[#D29E34]"> Milestones</span>
+            </div>
+            <div className="w-full h-1 bg-[#c0c0c6]"></div>
+            <div className="text-base">
+              Your satisfaction is our ultimate goal, and we take pride in
+              making your dream home or property a reality.
+            </div>
+          </div>
+          <div>
+            <Image
+              src="/office.png"
+              alt="About Banner"
+              width={300}
+              height={300}
+              className="w-full h-auto"
+            />
+          </div>
+          <div>
+            <div className="flex flex-col gap-10 relative items-center">
+              <div className="bg-[#e2e4e6] w-3 h-[80%] absolute top-10 left-6 z-0"></div>
+              <div className="flex gap-5 items-center z-10">
+                <div className="w-15 h-15 shrink-0 rounded-full border-6 border-[#232b5f] bg-[#f9f9ff] flex items-center justify-center text-xs">
+                  2020
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="text-xl">Company Milestone</div>
+                  <div className="text-sm">
+                    Your satisfaction is our ultimate goal, and we take pride in
+                    making your dream home or property a reality.
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-5 items-center z-10">
+                <div className="w-15 h-15 shrink-0 rounded-full border-6 border-[#232b5f] bg-[#f9f9ff] flex items-center justify-center text-xs">
+                  2020
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="text-xl">Company Milestone</div>
+                  <div className="text-sm">
+                    Your satisfaction is our ultimate goal, and we take pride in
+                    making your dream home or property a reality.
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-5 items-center z-10">
+                <div className="w-15 h-15 shrink-0 rounded-full border-6 border-[#232b5f] bg-[#f9f9ff] flex items-center justify-center text-xs">
+                  2020
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="text-xl">Company Milestone</div>
+                  <div className="text-sm">
+                    Your satisfaction is our ultimate goal, and we take pride in
+                    making your dream home or property a reality.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-[1fr_2fr] w-[90%] mx-auto gap-15 items-center my-20">
+  <div>
+    <div className="flex flex-col gap-10 relative items-center">
+      <div className="bg-[#e2e4e6] w-3 h-[80%] absolute top-10 left-6 z-0"></div>
+
+      {[1, 2, 3].map((_, i) => (
+        <div key={i} className="flex gap-5 items-center z-10 w-full">
+          <div className="w-15 h-15 shrink-0 rounded-full border-6 border-[#232b5f] bg-[#f9f9ff] flex items-center justify-center text-xs">
+            2020
+          </div>
+          <div className="flex flex-col gap-2">
+            <div className="text-xl">Company Milestone</div>
+            <div className="text-sm">
+              Your satisfaction is our ultimate goal, and we take pride in
+              making your dream home or property a reality.
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div className="grid grid-cols-2 gap-5 w-full h-[500px]">
+    <div className="relative w-full h-full">
+      <Image
+        src="/sample/sample.jpg"
+        alt="Left"
+        fill
+        className="object-cover"
+      />
+    </div>
+
+    <div className="grid grid-rows-2 gap-5 h-full">
+      <div className="relative w-full h-full">
+        <Image
+          src="/sample/sample.jpg"
+          alt="Top right"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="relative w-full h-full">
+        <Image
+          src="/sample/sample.jpg"
+          alt="Bottom right"
+          fill
+          className="object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+      </section>
     </main>
   );
 }
