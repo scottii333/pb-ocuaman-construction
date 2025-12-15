@@ -48,7 +48,7 @@ export const JoinOurTeam = () => {
               </h3>
               <p>P1200/Day</p>
             </div>
-            <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-7 h-10 rounded-lg text-white hover:bg-[#7a7a5f] cursor-pointer">
+            <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-7 h-10 text-white hover:bg-[#7a7a5f] cursor-pointer">
               Apply Now
             </button>
           </div>
