@@ -18,10 +18,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Percent, Plus } from "lucide-react";
 import ServicesCarousel from "@/components/ServicesCarousel";
+import { BusinessMapPin } from "@/components/BusinessMapPin";
+import { GetInTouch } from "@/components/GetInTouch";
 
 export default function Home() {
   return (
-    <main className="flex flex-col mb-100 gap-10">
+    <main className="flex flex-col mb-50 gap-10">
       {/* Welcome video Section (Server Component, SEO-friendly) */}
       <div className="shadow-lg  max-h-[85vh] overflow-hidden">
         <video
@@ -157,7 +159,6 @@ export default function Home() {
       </div>
       {/* Services Carousel  */}
       <ServicesCarousel />
-
       {/* 3 Easy Steps Section */}
       <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-5 p-10">
         <div className="flex flex-col justify-start items-baseline gap-5 p-10">
@@ -270,7 +271,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* Projects Sections */}
       <div className="w-full flex justify-center">
         <div className="flex flex-col md:flex-row md:w-[1000px]  bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat ">
@@ -300,6 +300,12 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Get In Touch Section */}
+      <GetInTouch />
+
+      {/* Business Map Pin Section */}
+      <BusinessMapPin />
     </main>
   );
 }
