@@ -23,8 +23,8 @@ export const Header = () => {
         <Image
           src="/pb-ocuaman-main-logo.png" // path to your image
           alt="PB Ocuaman Construction Logo"
-          width={150}
-          height={150}
+          width={120}
+          height={120}
         />
       </Link>
 
@@ -32,15 +32,15 @@ export const Header = () => {
         <Link href="/about" className="">
           About
         </Link>
-        <div className="border-l border-black h-5 "></div>
+        <div className="border-l border-[#c0c0c6] h-5 "></div>
         <Link href="/services" className="">
           Services
         </Link>
-        <div className="border-l border-black h-5 "></div>
+        <div className="border-l border-[#c0c0c6] h-5 "></div>
         <Link href="/projects" className="">
           Projects
         </Link>
-        <div className="border-l border-black h-5 "></div>
+        <div className="border-l border-[#c0c0c6] h-5 "></div>
         <Link href="/careers" className="">
           Careers
         </Link>
@@ -48,7 +48,7 @@ export const Header = () => {
 
       <Link
         href="/contact"
-        className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white hidden md:block cursor-pointer hover:bg-[#6e6e52] transition"
+        className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-8 text-white hidden md:block cursor-pointer hover:bg-[#6e6e52] transition"
         style={{ backgroundSize: "200px 200px" }}
       >
         Contact Us
