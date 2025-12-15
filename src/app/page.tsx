@@ -20,6 +20,7 @@ import { Percent, Plus } from "lucide-react";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import { BusinessMapPin } from "@/components/BusinessMapPin";
 import { GetInTouch } from "@/components/GetInTouch";
+import { JoinOurTeam } from "@/components/JoinOurTeam";
 
 export default function Home() {
   return (
@@ -300,6 +301,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Join Our Team Section */}
+      <JoinOurTeam />
 
       {/* Get In Touch Section */}
       <GetInTouch />
