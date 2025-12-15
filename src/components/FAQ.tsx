@@ -60,7 +60,6 @@ export const FAQ = () => {
                 {item.question}
               </span>
               <div className="bg-[#8B8B6F] ml-5 p-2 rounded-full flex items-center justify-center">
-                {" "}
                 <FontAwesomeIcon
                   icon={faChevronDown}
                   className={`text-white  text-lg transition-transform duration-200 ${
@@ -69,9 +68,16 @@ export const FAQ = () => {
                 />
               </div>
             </div>
-            {openIndex === idx && (
-              <div className="mt-3 text-sm text-gray-800">{item.answer}</div>
-            )}
+            {/* Animated answer */}
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                openIndex === idx
+                  ? "max-h-[200px] opacity-100 mt-3"
+                  : "max-h-0 opacity-0 mt-0"
+              } text-sm text-gray-800`}
+            >
+              <div className="py-2 px-1">{item.answer}</div>
+            </div>
           </div>
         ))}
       </div>
