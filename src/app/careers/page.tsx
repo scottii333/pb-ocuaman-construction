@@ -9,27 +9,27 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRightLong,
+  faArrowLeftLong,
+} from "@fortawesome/free-solid-svg-icons";
+import { GetInTouch } from "@/components/GetInTouch";
+import { BusinessMapPin } from "@/components/BusinessMapPin";
+import { FAQ } from "@/components/FAQ";
+
 export default function careers() {
   return (
-    <main>
-      {" "}
-      {/* ✅ Breadcrumbs */}
-      <Breadcrumb className="p-8">
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="/">Home</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage className="text-[#D29E34] font-semibold">
-              Careers
-            </BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-      <section>careers</section>
-    </main>
+    <section className="flex flex-col gap-5 mb-10">
+      <div className="mt-10">
+        {" "}
+        <GetInTouch />
+      </div>
+
+      <BusinessMapPin />
+
+      <FAQ />
+    </section>
   );
 }
