@@ -19,7 +19,7 @@ export const JoinOurTeam = () => {
       </p>
       <div className="grid grid-cols-1 gap-25 md:gap-0 md:grid-cols-2 p-10 place-items-center ">
         <div className="flex justify-center items-center p-10 w-100">
-          <div className=" w-70 h-70 relative bottom-15 left-30 shrink-0 shadow-lg ">
+          <div className=" w-70 h-70 relative bottom-15 left-30 shrink-0 shadow-sm">
             <Image
               src="/sample/sample.jpg"
               alt="Join Our Team"
@@ -27,7 +27,7 @@ export const JoinOurTeam = () => {
               className="object-cover"
             />
           </div>
-          <div className=" w-70 h-70 relative top-20 right-20    shrink-0 shadow-lg ">
+          <div className=" w-70 h-70 relative top-20 right-20 shrink-0 shadow-sm">
             <Image
               src="/sample/sample.jpg"
               alt="Join Our Team"
