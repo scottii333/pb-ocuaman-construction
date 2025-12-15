@@ -61,7 +61,7 @@ export default function About() {
         </div>
       </div>
       <section>
-        <div className="grid grid-cols-[1fr_2fr] gap-20 my-20 w-[95%] mr-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-20 my-20 w-full lg:w-[95%] lg:mr-auto">
           <div>
             <Image
               src="/office.png"
@@ -71,7 +71,7 @@ export default function About() {
               className="w-full h-auto"
             />
           </div>
-          <div className="flex flex-col gap-5 justify-center">
+          <div className="flex flex-col gap-5 justify-center w-[90%] mx-auto">
             <div className="text-3xl">
               At <span className="text-[#D29E34]">PB+OCUAMAN</span> Construction
             </div>
@@ -99,12 +99,12 @@ export default function About() {
           </div>
         </div>
         <div className="mb-20 flex flex-col gap-10">
-          <div className="bg-[url('/texture/wall-texture.png')] w-full h-50 grid grid-cols-[5fr_1fr]">
-            <div className="p-10 flex flex-col gap-5">
+          <div className="bg-[url('/texture/wall-texture.png')] w-full h-auto grid grid-cols-1 md:grid-cols-[5fr_1fr]">
+            <div className="p-10 flex flex-col gap-5 order-2 md:order-1">
               <div className="text-3xl">
                 Our <span className="text-[#D29E34]">Mission</span>
               </div>
-              <div className="text-base">
+              <div className="md:text-base">
                 To grow by continually ensuring customer satisfaction with our
                 reliable execution, cost effectiveness, quality and efficient
                 services. We do so while promoting growth of our people and our
@@ -112,22 +112,26 @@ export default function About() {
                 environment we work in.
               </div>
             </div>
-            <Image
+            <div className="w-full h-full order-1 md:order-2">
+              <Image
               src="/sample/sample.jpg"
               alt="About Banner"
               width={300}
               height={300}
-              className="w-full h-auto"
+              className="w-full h-full order-1 md:order-2 shrink-0 object-cover"
             />
+            </div>
           </div>
-          <div className="bg-[url('/texture/wall-texture.png')] w-full h-50 grid grid-cols-[1fr_4fr_1fr]">
-            <Image
+          <div className="bg-[url('/texture/wall-texture.png')] w-full h-full shrink-0 grid grid-cols-1 md:grid-cols-[1fr_5fr]">
+            <div className="w-full h-full">
+              <Image
               src="/sample/sample.jpg"
               alt="About Banner"
               width={300}
               height={300}
-              className="w-full h-auto"
+              className="w-full h-full shrink-0 object-cover"
             />
+            </div>
             <div className="p-10 flex flex-col gap-5">
               <div className="text-3xl">
                 Our <span className="text-[#D29E34]">Vision</span>
@@ -138,10 +142,9 @@ export default function About() {
                 dynamic and committed professionals.
               </div>
             </div>
-            <div></div>
           </div>
         </div>
-        <div className="grid grid-cols-[auto_1fr] w-[70%] mx-auto mb-20 items-center justify-between">
+        <div className="grid grid-cols-1 gap-20 md:gap-0 lg:grid-cols-[auto_1fr] w-[70%] mx-auto mb-20 items-center justify-between">
           <div>
             <div className="text-3xl mb-3">
               Meet the <span className="text-[#D29E34]">Team</span>
@@ -242,7 +245,7 @@ export default function About() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-3 w-[90%] mx-auto gap-15 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 w-[90%] mx-auto gap-15 items-center">
           <div className="flex flex-col gap-5">
             <div className="text-3xl">
               Company
@@ -305,8 +308,8 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-[1fr_2fr] w-[90%] mx-auto gap-15 items-center my-20">
-  <div>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] w-[90%] mx-auto gap-15 items-center my-20">
+  <div className="order-2 lg:order-1">
     <div className="flex flex-col gap-10 relative items-center">
       <div className="bg-[#e2e4e6] w-3 h-[80%] absolute top-10 left-6 z-0"></div>
 
@@ -327,7 +330,7 @@ export default function About() {
     </div>
   </div>
 
-  <div className="grid grid-cols-2 gap-5 w-full h-[500px]">
+  <div className="grid grid-cols-1 lg:grid-cols-2 order-1 lg:order-2 gap-5 w-full h-[500px]">
     <div className="relative w-full h-full">
       <Image
         src="/sample/sample.jpg"
