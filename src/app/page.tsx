@@ -127,7 +127,7 @@ export default function Home() {
       {/* Services Carousel  */}
       <ServicesCarousel />
       {/* 3 Easy Steps Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-[35%_65%] gap-5 p-10">
+      <div className="grid grid-cols-1 lg:grid-cols-[35%_65%] gap-5 p-10 bg-white">
         <div className="flex flex-col justify-start items-baseline gap-5 p-0 md:p-10">
           <h2 className="text-xl md:text-3xl">
             LET US DESIGN YOUR <br /> HOME IN{" "}
@@ -136,11 +136,11 @@ export default function Home() {
           <p className="text-xs md:text-base">We&apos;ll be here every step of the way.</p>
           <Link
             href="/about"
-            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-5 text-white w-full md:w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-4 md:gap-5 text-  md:text-base"
+            className="hidden md:flex bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-5 text-white w-full md:w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition items-center gap-4 md:gap-5"
             style={{ backgroundSize: "200px 200px" }}
           >
             Explore Our Designs
-            <FontAwesomeIcon icon={faArrowRightLong} className="w-5 h-5" />
+            <FontAwesomeIcon icon={faArrowRightLong} className="w-5 h-5 ml-3" />
           </Link>
         </div>
 
@@ -157,7 +157,7 @@ export default function Home() {
             </div>
             <div className="p-5 flex flex-col gap-2">
               <h3 className="text-xl md:text-3xl">01 LAYOUT</h3>
-              <p>Plan the structure and flow of your home</p>
+              <p>Plan the structure and flow of your home.</p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-[1fr_4fr] bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat">
@@ -193,10 +193,18 @@ export default function Home() {
                   03 DOCUMENTATION
                 </h3>
               <p>
-                Plan the structure and flow of your home
+                We prepare contracts, permits, and all necessary paperwork prior to construction.
               </p>
             </div>
           </div>
+          <Link
+            href="/about"
+            className="md:hidden bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-5 text-white w-full md:w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition items-center gap-4 md:gap-5"
+            style={{ backgroundSize: "200px 200px" }}
+          >
+            Explore Our Designs
+            <FontAwesomeIcon icon={faArrowRightLong} className="w-5 h-5 ml-3" />
+          </Link>
         </div>
       </div>
       {/* Projects Sections */}
