@@ -3,7 +3,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[32%_17%_25%_26%] bg-[#8B8B6F] p-10 text-white min-h-100 bg-[url('/texture/green-cup.png')]  bg-repeat">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[32%_17%_25%_26%] bg-[#8B8B6F] p-1  text-white min-h-100 bg-[url('/texture/green-cup.png')]  bg-repeat">
       <div className="flex flex-col gap-3 p-10">
         <h1 className="text-3xl font-bold">
           PB + OCUAMAN <br /> CONSTRUCTION

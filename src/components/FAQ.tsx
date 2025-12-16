@@ -36,15 +36,15 @@ export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="p-10 grid grid-cols-1 md:grid-cols-2 gap-5">
-      <div className="p-5">
-        <h2 className="text-2xl">
+    <section className="p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25 grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="">
+        <h2 className="text-xl md:text-2xl font-semibold mb-3">
           FREQUENTLY <br /> <span className="text-yellow-500">ASKED</span>{" "}
           QUESTIONS
         </h2>
-        <p>
-          Got questions? We’ve listed our most frequently asked questions to
-          help you get answers fast.
+        <p className="text-md md:text-xl mt-5 mb-5">
+          Got questions? We’ve listed our most frequently <br /> asked questions
+          to help you get answers fast.
         </p>
       </div>
       {/* FAQ Accordion starts here */}
@@ -56,13 +56,13 @@ export const FAQ = () => {
             onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
           >
             <div className="flex justify-between items-center">
-              <span className="text-gray-900 text-base font-medium">
+              <span className="text-gray-900 text-sm md:text-md lg:text-lg font-medium ">
                 {item.question}
               </span>
               <div className="bg-[#8B8B6F] ml-5 p-2 rounded-full flex items-center justify-center">
                 <FontAwesomeIcon
                   icon={faChevronDown}
-                  className={`text-white  text-lg transition-transform duration-200 ${
+                  className={`text-white  text-sm md:text-lg transition-transform duration-200 ${
                     openIndex === idx ? "rotate-180" : ""
                   }`}
                 />
@@ -74,7 +74,7 @@ export const FAQ = () => {
                 openIndex === idx
                   ? "max-h-[200px] opacity-100 mt-3"
                   : "max-h-0 opacity-0 mt-0"
-              } text-sm text-gray-800`}
+              } text-sm md:text-md lg:text-lg text-gray-800`}
             >
               <div className="py-2 px-1">{item.answer}</div>
             </div>
