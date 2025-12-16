@@ -23,6 +23,7 @@ import { BusinessMapPin } from "@/components/BusinessMapPin";
 import { GetInTouch } from "@/components/GetInTouch";
 import { JoinOurTeam } from "@/components/JoinOurTeam";
 import { GoogleReviews } from "@/components/GoogleReviews";
+import { FactsAboutUs } from "@/components/FactsAboutUs";
 
 export default function Home() {
   return (
@@ -128,48 +129,7 @@ export default function Home() {
         </div>
       </div>
       {/* Facts Section  */}
-      <div
-        className="flex flex-col gap-10 p-10 justify-center items-center w-full min-h-[200px] text-[#6A6F4C] bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat text-center"
-        style={{ backgroundSize: "200px 200px" }}
-      >
-        <h3 className="text-lg">A FEW MORE FACTS ABOUT US IN NUMBERS</h3>
-        <div className="flex justify-center items-center gap-25 w-full overflow-x-auto scrollbar-hide">
-          <div className="flex flex-col gap-2">
-            <div className="flex justify-center items-center text-5xl">
-              10+
-            </div>
-            <p>Years of Experience</p>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <div className="flex justify-center items-center text-5xl">
-              150+
-            </div>
-            <p>Completed Projects</p>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <div className="flex justify-center items-center text-5xl">
-              98%
-            </div>
-            <p>Client Satisfaction</p>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <div className="flex justify-center items-center text-5xl">
-              30+
-            </div>
-            <p>Workforce</p>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <div className="flex justify-center items-center text-5xl">
-              95%
-            </div>
-            <p>Project Delivery</p>
-          </div>
-        </div>
-      </div>
+      <FactsAboutUs />
       {/* Services Carousel  */}
       <ServicesCarousel />
       {/* 3 Easy Steps Section */}
@@ -202,11 +162,25 @@ export default function Home() {
               />
             </div>
             <div className="p-5 flex flex-col gap-2">
-                <h3 className="text-xl md:text-3xl">
-                  01 LAYOUT
-                </h3>
+              <h3 className="text-xl md:text-3xl">01 LAYOUT</h3>
+              <p>Plan the structure and flow of your home</p>
+            </div>
+          </div>
+          <div className="flex items-center bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat">
+            <div className="relative w-35 h-35 shrink-0">
+              <Image
+                src="/sample/sample.jpg"
+                alt="Teamwork Image"
+                fill
+                className="object-cover "
+                priority
+              />
+            </div>
+            <div className="p-5 flex flex-col gap-2">
+              <h3 className="text-xl md:text-3xl">02 DESIGN</h3>
               <p>
-                Plan the structure and flow of your home
+                Customize the look and feel with our 3D exterior and interior
+                designs.
               </p>
             </div>
           </div>
@@ -221,31 +195,8 @@ export default function Home() {
               />
             </div>
             <div className="p-5 flex flex-col gap-2">
-                <h3 className="text-xl md:text-3xl">
-                  02 DESIGN
-                </h3>
-              <p>
-                Customize the look and feel with our 3D exterior and interior designs.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat">
-            <div className="relative w-35 h-35 shrink-0">
-              <Image
-                src="/sample/sample.jpg"
-                alt="Teamwork Image"
-                fill
-                className="object-cover "
-                priority
-              />
-            </div>
-            <div className="p-5 flex flex-col gap-2">
-                <h3 className="text-xl md:text-3xl">
-                  03 DOCUMENTATION
-                </h3>
-              <p>
-                Plan the structure and flow of your home
-              </p>
+              <h3 className="text-xl md:text-3xl">03 DOCUMENTATION</h3>
+              <p>Plan the structure and flow of your home</p>
             </div>
           </div>
         </div>
