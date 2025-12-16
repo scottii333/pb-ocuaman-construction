@@ -132,3 +132,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+html,
+body {
+  background-color: #f9f9ff; /* example */
+  color: #232b5f;
+  font-family: var(--font-montserrat);
+}
