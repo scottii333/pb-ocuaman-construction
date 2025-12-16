@@ -7,6 +7,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
 export const ServiceDetails = () => {
   return (
@@ -20,6 +22,47 @@ export const ServiceDetails = () => {
             fill
             className="object-cover"
           />
+
+          {/* Main Image */}
+          <div className="relative w-full h-64 md:h-110 order-1 md:order-1">
+            <Image
+              src="/sample/sample.jpg"
+              alt="Main"
+              fill
+              className="object-cover"
+            />
+            {/* Left soft shadow overlay button */}
+            <button
+              type="button"
+              aria-label="Previous image"
+              className="absolute inset-y-0 left-0 w-[60px] z-20 flex items-center justify-center
+             bg-linear-to-r from-black/30 to-transparent
+             hover:from-black/50 hover:to-transparent
+             text-white  transition-colors cursor-pointer select-none
+             outline-none focus:outline-none active:outline-none ring-0 focus:ring-0"
+            >
+              <FontAwesomeIcon
+                icon={faAngleLeft}
+                className="text-3xl drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)]"
+              />
+            </button>
+
+            {/* Right soft shadow overlay button */}
+            <button
+              type="button"
+              aria-label="Next image"
+              className="absolute inset-y-0 right-0 w-[60px] z-20 flex items-center justify-center
+             bg-linear-to-l from-black/30 to-transparent
+             hover:from-black/50 hover:to-transparent
+             text-white  transition-colors cursor-pointer select-none
+             outline-none focus:outline-none active:outline-none ring-0 focus:ring-0"
+            >
+              <FontAwesomeIcon
+                icon={faAngleRight}
+                className="text-3xl drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)]"
+              />
+            </button>
+          </div>
         </div>
 
         {/* Thumbnails */}
