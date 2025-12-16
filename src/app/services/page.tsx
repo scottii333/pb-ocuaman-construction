@@ -10,6 +10,9 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { ServiceBenefits } from "@/components/ServiceBenefits";
+import { FAQ } from "@/components/FAQ";
+import ServicesCarousel from "@/components/ServicesCarousel";
+import { ProjectDetails } from "@/components/ProjectDetails";
 
 export default function services() {
   return (
@@ -104,6 +107,11 @@ export default function services() {
       </div>
 
       <ServiceBenefits />
+      <ProjectDetails />
+
+      <ServicesCarousel />
+
+      <FAQ />
     </section>
   );
 }
