@@ -28,11 +28,11 @@ export default function Home() {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/60">
-          <div className="absolute bottom-20 lg:bottom-10 md:left-10 flex gap-2 md:gap-5">
+          <div className="absolute bottom-20 lg:bottom-10 left-1/2 -translate-x-1/2 md:left-10 md:translate-x-0 flex gap-2 md:gap-5">
             <div className="text-4xl md:text-6xl text-[#D29E34]">BUILDING</div>
             <div className="flex flex-col justify-center text-white">
               <p className="md:text-2xl">SIMPLICITY</p>
-              <p className="text-xs md:text-sm">IN EVERY SPACE</p>
+              <p className="text-xs md:text-sm w-26">IN EVERY SPACE</p>
             </div>
           </div>
           <div className="hidden lg:flex absolute bottom-10 right-10 text-[#D29E34] gap-3">
@@ -47,7 +47,7 @@ export default function Home() {
               />
             </div>
           </div><div
-        className="absolute bottom-0 left-0 w-full bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-4 px-8 text-white lg:hidden cursor-pointer hover:bg-[#6e6e52] transition gap-5 flex justify-center items-center"
+        className="absolute bottom-0 left-0 w-full bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-4 px-8 text-white lg:hidden cursor-pointer hover:bg-[#6e6e52] transition gap-5 flex justify-center items-center text-sm md:text-base"
         style={{ backgroundSize: "200px 200px" }}
       >
         START PLANNING WITH US <FontAwesomeIcon icon={faArrowRightLong} className="text-1xl" />
