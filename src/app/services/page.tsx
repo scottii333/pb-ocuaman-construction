@@ -13,7 +13,7 @@ import Image from "next/image";
 export default function services() {
   return (
     <section className="flex flex-col mb-10">
-      <div className="grid grid-cols-2 gap-1 h-160 md:grid-cols-[35%_21%_21%_21%]">
+      <div className="grid grid-cols-2 gap-2 h-160 md:grid-cols-[35%_21%_21%_21%]">
         {/* First row full width */}
         <div className="border h-full w-full col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-1">
           <div className="relative full ">
@@ -44,7 +44,19 @@ export default function services() {
             fill
             className="object-cover"
           />
+          {/* Overlay */}
           <div className="absolute inset-0 bg-black/60 z-10"></div>
+          {/* Bottom-centered text */}
+          <p
+            className="
+    absolute bottom-0
+    left-1/2 -translate-x-1/2 text-center
+    md:left-4 md:translate-x-0 md:text-left
+    mb-2 text-white z-20 text-xs md:text-lg md:p-3
+  "
+          >
+            PLANNING AND DESIGNING
+          </p>
         </div>
         <div className="border h-full w-full relative">
           <Image
@@ -54,6 +66,17 @@ export default function services() {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
+          {/* Bottom-centered text */}
+          <p
+            className="
+    absolute bottom-0
+    left-1/2 -translate-x-1/2 text-center
+    md:left-4 md:translate-x-0 md:text-left
+    mb-2 text-white z-20 text-xs md:text-lg md:p-3
+  "
+          >
+            CONSTRUCTION PROJECT MANAGEMENT
+          </p>
         </div>
 
         {/* Third row full width */}
@@ -65,6 +88,17 @@ export default function services() {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
+          {/* Bottom-centered text */}
+          <p
+            className="
+    absolute bottom-0
+    left-1/2 -translate-x-1/2 text-center
+    md:left-4 md:translate-x-0 md:text-left
+    mb-2 text-white z-20 text-xs md:text-lg md:p-3
+  "
+          >
+            RENOVATION AND FIT-OUT SERVICES
+          </p>
         </div>
       </div>
     </section>
