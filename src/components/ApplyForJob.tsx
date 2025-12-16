@@ -28,7 +28,7 @@ export const ApplyForJob = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2  ">
       <div className="flex flex-col p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-30 lg:pr-30 pt-10">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-3 mt-10">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-medium mb-3 mt-10">
           GET IN TOUCH
         </h2>
         <div className="border-b border-[#8B8B6F]"></div>
@@ -37,10 +37,10 @@ export const ApplyForJob = () => {
           <div className="flex  gap-3 p-2">
             <FontAwesomeIcon
               icon={faEnvelope}
-              className="text-white bg-[#8B8B6F] p-2 rounded-full text-md"
+              className="text-white bg-[#8B8B6F] p-2 rounded-full text-base"
             />
-            <div className="font-semibold">
-              <p className="text-md md:text-lg lg:text-xl text-[#8B8B6F]">
+            <div className="font-medium">
+              <p className="text-base md:text-lg lg:text-xl text-[#8B8B6F]">
                 EMAIL US
               </p>
               <p className="text-sm">pb.ocuaman.construction@gmail.com</p>
@@ -50,10 +50,10 @@ export const ApplyForJob = () => {
           <div className="flex  gap-3 p-2">
             <FontAwesomeIcon
               icon={faPhone}
-              className="text-white bg-[#8B8B6F] p-2 rounded-full text-md"
+              className="text-white bg-[#8B8B6F] p-2 rounded-full text-base"
             />
-            <div className="font-semibold">
-              <p className="text-md md:text-lg lg:text-xl text-[#8B8B6F]">
+            <div className="font-medium">
+              <p className="text-base md:text-lg lg:text-xl text-[#8B8B6F]">
                 CALL US
               </p>
               <p className="text-sm">+63 927 654 3210 /+63 912 345 6789</p>
@@ -63,10 +63,10 @@ export const ApplyForJob = () => {
           <div className="flex  gap-3 p-2">
             <FontAwesomeIcon
               icon={faLocationDot}
-              className="text-white bg-[#8B8B6F] p-2 rounded-full text-md"
+              className="text-white bg-[#8B8B6F] p-2 rounded-full text-base"
             />
-            <div className="font-semibold">
-              <p className="text-md md:text-lg lg:text-xl text-[#8B8B6F]">
+            <div className="font-medium">
+              <p className="text-base md:text-lg lg:text-xl text-[#8B8B6F]">
                 VISIT US
               </p>
               <p className="text-sm">
@@ -95,7 +95,7 @@ export const ApplyForJob = () => {
         </div>
       </div>
       <div className=" bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat   min-h-100 flex flex-col gap-3 p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25 pt-20">
-        <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl ">
+        <h3 className="text-xl font-medium md:text-2xl lg:text-3xl ">
           <span className="text-yellow-500">APPLY</span> FOR A JOB
         </h3>
 

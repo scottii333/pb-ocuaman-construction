@@ -7,12 +7,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-export const ProjectDetails = () => {
+
+export const ServiceDetails = () => {
   return (
     <section className="flex flex-col p-5">
       <div className="grid gap-4 md:grid-rows-[auto auto] md:grid-cols-2 md:grid-flow-row md:gap-6">
         {/* Main Image */}
-        <div className="relative w-full h-64 md:h-115 order-1 md:order-1">
+        <div className="relative w-full h-64 md:h-110 order-1 md:order-1">
           <Image
             src="/sample/sample.jpg"
             alt="Main"
@@ -73,28 +74,26 @@ export const ProjectDetails = () => {
         {/* Project Description */}
         <div className="order-3 md:order-2 md:col-span-1">
           <h2 className="text-xl md:text-2xl font-medium mb-5">
-            DECENA RESIDENCE <br />
-            <span className="text-yellow-500">RESIDENTIAL</span>
+            BUILD MY FIRST HOME
           </h2>
 
           <ScrollArea className="md:h-80 h-auto w-full p-1">
             <p className="pr-5">
-              A modern and elegant private home, Decena Residence features clean
-              lines, open layouts, and a sophisticated use of monochromatic
-              tones. Designed for both functionality and style, it offers smart
-              spatial planning, quality finishes, and personalized interior
-              details, creating a comfortable and contemporary living space with
-              lasting elegance.
+              We help first-time homeowners turn their dream home into reality
+              with a guided, stress-free process. From planning your ideal
+              layout to selecting materials that fit your budget, we make sure
+              your first home is built with quality, comfort, and long-term
+              value in mind.
             </p>
 
             <Accordion
               type="single"
               collapsible
               className="w-full pr-5 mt-4"
-              defaultValue="estimated-project-costs"
+              defaultValue="how-it-works"
             >
-              <AccordionItem value="estimated-project-costs">
-                <AccordionTrigger>Estimated project costs</AccordionTrigger>
+              <AccordionItem value="how-it-works">
+                <AccordionTrigger>How it works</AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4 text-balance">
                   <p>A guided, step-by-step path from idea to handover:</p>
                   <ol className="list-decimal ml-5 space-y-2">
@@ -141,6 +140,37 @@ export const ProjectDetails = () => {
                     Note: Timelines vary by scope, jurisdiction, and site
                     conditions. We’ll confirm a detailed schedule after the
                     design phase.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="starting-price">
+                <AccordionTrigger>
+                  Starting price & price guide
+                </AccordionTrigger>
+                <AccordionContent className="flex flex-col gap-4 text-balance">
+                  <p>
+                    Pricing depends on home size, site conditions, finishes, and
+                    your region. We provide a transparent, line‑item estimate
+                    after our free consultation.
+                  </p>
+                  <ul className="list-disc ml-5 space-y-2">
+                    <li>
+                      Essentials — best value package with quality core finishes
+                      and energy‑efficient standards.
+                    </li>
+                    <li>
+                      Signature — most popular mix of upgraded materials,
+                      fixtures, and curb appeal enhancements.
+                    </li>
+                    <li>
+                      Premium — high‑end materials, expanded customization, and
+                      luxury finishes.
+                    </li>
+                  </ul>
+                  <p className="text-sm text-muted-foreground">
+                    Looking for a ballpark? We’ll share a tailored range after
+                    we review your plans, site, and priorities.
                   </p>
                 </AccordionContent>
               </AccordionItem>

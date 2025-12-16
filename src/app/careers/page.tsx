@@ -7,7 +7,7 @@ import {
   faArrowRightLong,
   faArrowLeftLong,
 } from "@fortawesome/free-solid-svg-icons";
-import { ProjectDetails } from "@/components/ProjectDetails";
+import { ServiceDetails } from "@/components/ServiceDetails";
 import { ExploreProject } from "@/components/ExploreProject";
 import { FAQ } from "@/components/FAQ";
 import { JoinOurTeam } from "@/components/JoinOurTeam";

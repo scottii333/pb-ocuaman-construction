@@ -114,23 +114,23 @@ export default function About() {
             </div>
             <div className="w-full h-full order-1 md:order-2">
               <Image
-              src="/sample/sample.jpg"
-              alt="About Banner"
-              width={300}
-              height={300}
-              className="w-full h-full order-1 md:order-2 shrink-0 object-cover"
-            />
+                src="/sample/sample.jpg"
+                alt="About Banner"
+                width={300}
+                height={300}
+                className="w-full h-full order-1 md:order-2 shrink-0 object-cover"
+              />
             </div>
           </div>
           <div className="bg-[url('/texture/wall-texture.png')] w-full h-full shrink-0 grid grid-cols-1 md:grid-cols-[1fr_5fr]">
             <div className="w-full h-full">
               <Image
-              src="/sample/sample.jpg"
-              alt="About Banner"
-              width={300}
-              height={300}
-              className="w-full h-full shrink-0 object-cover"
-            />
+                src="/sample/sample.jpg"
+                alt="About Banner"
+                width={300}
+                height={300}
+                className="w-full h-full shrink-0 object-cover"
+              />
             </div>
             <div className="p-10 flex flex-col gap-5">
               <div className="text-3xl">
@@ -309,58 +309,57 @@ export default function About() {
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] w-[90%] mx-auto gap-15 items-center my-20">
-  <div className="order-2 lg:order-1">
-    <div className="flex flex-col gap-10 relative items-center">
-      <div className="bg-[#e2e4e6] w-3 h-[80%] absolute top-10 left-6 z-0"></div>
+          <div className="order-2 lg:order-1">
+            <div className="flex flex-col gap-10 relative items-center">
+              <div className="bg-[#e2e4e6] w-3 h-[80%] absolute top-10 left-6 z-0"></div>
 
-      {[1, 2, 3].map((_, i) => (
-        <div key={i} className="flex gap-5 items-center z-10 w-full">
-          <div className="w-15 h-15 shrink-0 rounded-full border-6 border-[#232b5f] bg-[#f9f9ff] flex items-center justify-center text-xs">
-            2020
+              {[1, 2, 3].map((_, i) => (
+                <div key={i} className="flex gap-5 items-center z-10 w-full">
+                  <div className="w-15 h-15 shrink-0 rounded-full border-6 border-[#232b5f] bg-[#f9f9ff] flex items-center justify-center text-xs">
+                    2020
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <div className="text-xl">Company Milestone</div>
+                    <div className="text-sm">
+                      Your satisfaction is our ultimate goal, and we take pride
+                      in making your dream home or property a reality.
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <div className="text-xl">Company Milestone</div>
-            <div className="text-sm">
-              Your satisfaction is our ultimate goal, and we take pride in
-              making your dream home or property a reality.
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 order-1 lg:order-2 gap-5 w-full h-[500px]">
+            <div className="relative w-full h-full">
+              <Image
+                src="/sample/sample.jpg"
+                alt="Left"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            <div className="grid grid-rows-2 gap-5 h-full">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/sample/sample.jpg"
+                  alt="Top right"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative w-full h-full">
+                <Image
+                  src="/sample/sample.jpg"
+                  alt="Bottom right"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-
-  <div className="grid grid-cols-1 lg:grid-cols-2 order-1 lg:order-2 gap-5 w-full h-[500px]">
-    <div className="relative w-full h-full">
-      <Image
-        src="/sample/sample.jpg"
-        alt="Left"
-        fill
-        className="object-cover"
-      />
-    </div>
-
-    <div className="grid grid-rows-2 gap-5 h-full">
-      <div className="relative w-full h-full">
-        <Image
-          src="/sample/sample.jpg"
-          alt="Top right"
-          fill
-          className="object-cover"
-        />
-      </div>
-      <div className="relative w-full h-full">
-        <Image
-          src="/sample/sample.jpg"
-          alt="Bottom right"
-          fill
-          className="object-cover"
-        />
-      </div>
-    </div>
-  </div>
-</div>
-
       </section>
     </main>
   );
