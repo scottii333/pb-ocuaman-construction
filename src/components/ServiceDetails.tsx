@@ -129,12 +129,7 @@ export const ServiceDetails = () => {
               value in mind.
             </p>
 
-            <Accordion
-              type="single"
-              collapsible
-              className="w-full pr-5 mt-4"
-              defaultValue="how-it-works"
-            >
+            <Accordion type="single" collapsible className="w-full pr-5 mt-4">
               <AccordionItem value="how-it-works">
                 <AccordionTrigger>How it works</AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4 text-balance">

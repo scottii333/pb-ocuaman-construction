@@ -87,12 +87,7 @@ export const ProjectDetails = () => {
               lasting elegance.
             </p>
 
-            <Accordion
-              type="single"
-              collapsible
-              className="w-full pr-5 mt-4"
-              defaultValue="estimated-project-costs"
-            >
+            <Accordion type="single" collapsible className="w-full pr-5 mt-4">
               <AccordionItem value="estimated-project-costs">
                 <AccordionTrigger>Estimated project costs</AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4 text-balance">
