@@ -23,7 +23,7 @@ export const ProjectDetails = () => {
         </div>
 
         {/* Thumbnails */}
-        <div className="flex gap-2 overflow-x-auto order-2 md:order-3 md:col-span-2 pb-5">
+        <div className="flex gap-2 overflow-x-auto order-2 md:order-3 md:col-span-2 pb-5  no-scrollbar">
           <div className="relative w-30 h-30 sm:w-50 sm:h-50 md:w-70 md:h-70 shrink-0">
             <Image
               src="/sample/sample.jpg"
@@ -31,6 +31,7 @@ export const ProjectDetails = () => {
               fill
               className="object-cover"
             />
+            <div className="absolute inset-0 bg-black/60 z-10"></div>
           </div>
           <div className="relative w-30 h-30 sm:w-50 sm:h-50 md:w-70 md:h-70 shrink-0">
             <Image
@@ -39,6 +40,7 @@ export const ProjectDetails = () => {
               fill
               className="object-cover"
             />
+            <div className="absolute inset-0 bg-black/60 z-10"></div>
           </div>
           <div className="relative w-30 h-30 sm:w-50 sm:h-50 md:w-70 md:h-70 shrink-0">
             <Image
@@ -47,6 +49,7 @@ export const ProjectDetails = () => {
               fill
               className="object-cover"
             />
+            <div className="absolute inset-0 bg-black/60 z-10"></div>
           </div>
           <div className="relative w-30 h-30 sm:w-50 sm:h-50 md:w-70 md:h-70 shrink-0">
             <Image
@@ -55,7 +58,8 @@ export const ProjectDetails = () => {
               fill
               className="object-cover"
             />
-          </div>{" "}
+            <div className="absolute inset-0 bg-black/60 z-10"></div>
+          </div>
           <div className="relative w-30 h-30 sm:w-50 sm:h-50 md:w-70 md:h-70 shrink-0">
             <Image
               src="/sample/sample.jpg"
@@ -63,76 +67,117 @@ export const ProjectDetails = () => {
               fill
               className="object-cover"
             />
+            <div className="absolute inset-0 bg-black/60 z-10"></div>
           </div>
         </div>
 
         {/* Project Description */}
-        <div className=" order-3 md:order-2 md:col-span-1">
+        <div className="order-3 md:order-2 md:col-span-1">
           <h2 className="text-xl md:text-2xl font-medium mb-5">
             BUILD MY FIRST HOME
           </h2>
-          <ScrollArea className="md:h-80 h-auto w-full   p-1">
-            <p>
+
+          <ScrollArea className="md:h-80 h-auto w-full p-1">
+            <p className="pr-5">
               We help first-time homeowners turn their dream home into reality
               with a guided, stress-free process. From planning your ideal
               layout to selecting materials that fit your budget, we make sure
               your first home is built with quality, comfort, and long-term
               value in mind.
             </p>
+
             <Accordion
               type="single"
               collapsible
               className="w-full pr-5 mt-4"
-              defaultValue="item-1"
+              defaultValue="how-it-works"
             >
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Product Information</AccordionTrigger>
+              <AccordionItem value="how-it-works">
+                <AccordionTrigger>How it works</AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                  <p>
-                    Our flagship product combines cutting-edge technology with
-                    sleek design. Built with premium materials, it offers
-                    unparalleled performance and reliability.
-                  </p>
-                  <p>
-                    Key features include advanced processing capabilities, and
-                    an intuitive user interface designed for both beginners and
-                    experts.
+                  <p>A guided, step-by-step path from idea to handover:</p>
+                  <ol className="list-decimal ml-5 space-y-2">
+                    <li>
+                      Free discovery call — clarify goals, budget, style, and
+                      timeline.
+                    </li>
+                    <li>
+                      Design & budget alignment — floor plan options, materials,
+                      and a transparent cost breakdown.
+                    </li>
+                    <li>
+                      Permits & approvals — we coordinate with local authorities
+                      and HOA (where applicable).
+                    </li>
+                    <li>
+                      Build phase — foundations, framing, MEP, finishes,
+                      inspections.
+                    </li>
+                    <li>
+                      Handover — final walkthrough, punch list, warranties, and
+                      move-in.
+                    </li>
+                  </ol>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="estimated-timeline">
+                <AccordionTrigger>Estimated timeline</AccordionTrigger>
+                <AccordionContent className="flex flex-col gap-4 text-balance">
+                  <ul className="list-disc ml-5 space-y-1">
+                    <li>Discovery & planning: 1–2 weeks</li>
+                    <li>Design & budget: 2–4 weeks</li>
+                    <li>
+                      Permits & approvals: 2–8+ weeks (varies by city/state)
+                    </li>
+                    <li>
+                      Construction: 4–7 months (size, site, and weather
+                      dependent)
+                    </li>
+                    <li>Handover & move‑in: ~1 week</li>
+                  </ul>
+                  <p className="text-sm text-muted-foreground">
+                    Note: Timelines vary by scope, jurisdiction, and site
+                    conditions. We’ll confirm a detailed schedule after the
+                    design phase.
                   </p>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Shipping Details</AccordionTrigger>
+
+              <AccordionItem value="starting-price">
+                <AccordionTrigger>
+                  Starting price & price guide
+                </AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4 text-balance">
                   <p>
-                    We offer worldwide shipping through trusted courier
-                    partners. Standard delivery takes 3-5 business days, while
-                    express shipping ensures delivery within 1-2 business days.
+                    Pricing depends on home size, site conditions, finishes, and
+                    your region. We provide a transparent, line‑item estimate
+                    after our free consultation.
                   </p>
-                  <p>
-                    All orders are carefully packaged and fully insured. Track
-                    your shipment in real-time through our dedicated tracking
-                    portal.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>Return Policy</AccordionTrigger>
-                <AccordionContent className="flex flex-col gap-4 text-balance">
-                  <p>
-                    We stand behind our products with a comprehensive 30-day
-                    return policy. If you&apos;re not completely satisfied,
-                    simply return the item in its original condition.
-                  </p>
-                  <p>
-                    Our hassle-free return process includes free return shipping
-                    and full refunds processed within 48 hours of receiving the
-                    returned item.
+                  <ul className="list-disc ml-5 space-y-2">
+                    <li>
+                      Essentials — best value package with quality core finishes
+                      and energy‑efficient standards.
+                    </li>
+                    <li>
+                      Signature — most popular mix of upgraded materials,
+                      fixtures, and curb appeal enhancements.
+                    </li>
+                    <li>
+                      Premium — high‑end materials, expanded customization, and
+                      luxury finishes.
+                    </li>
+                  </ul>
+                  <p className="text-sm text-muted-foreground">
+                    Looking for a ballpark? We’ll share a tailored range after
+                    we review your plans, site, and priorities.
                   </p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-          </ScrollArea>{" "}
-          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-4 py-3 rounded text-white mt-4 hover:bg-[#6e6e52] transition cursor-pointer w-full ">
+          </ScrollArea>
+
+          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-4 py-3 rounded text-white mt-4 hover:bg-[#6e6e52] transition cursor-pointer w-full">
             REQUEST A FREE QUOTE
           </button>
         </div>
