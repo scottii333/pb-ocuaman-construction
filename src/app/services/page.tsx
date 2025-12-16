@@ -12,7 +12,7 @@ import Image from "next/image";
 import { ServiceBenefits } from "@/components/ServiceBenefits";
 import { FAQ } from "@/components/FAQ";
 import ServicesCarousel from "@/components/ServicesCarousel";
-import { ProjectDetails } from "@/components/ProjectDetails";
+import { ServiceDetails } from "@/components/ServiceDetails";
 
 export default function services() {
   return (
@@ -107,7 +107,7 @@ export default function services() {
       </div>
 
       <ServiceBenefits />
-      <ProjectDetails />
+      <ServiceDetails />
 
       <ServicesCarousel />
 
