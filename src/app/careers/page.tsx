@@ -22,7 +22,7 @@ import { FAQ } from "@/components/FAQ";
 export default function careers() {
   return (
     <section className="flex flex-col gap-5 mb-10">
-      <div className="mt-10">
+      <div className="">
         {" "}
         <GetInTouch />
       </div>

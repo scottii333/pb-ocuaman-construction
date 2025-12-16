@@ -28,8 +28,8 @@ import {
 export const GetInTouch = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2  ">
-      <div className="flex flex-col p-5 ">
-        <h2 className="text-xl font-semibold mb-3">GET IN TOUCH</h2>
+      <div className="flex flex-col p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-30 lg:pr-30">
+        <h2 className="text-xl font-semibold mb-3 mt-10">GET IN TOUCH</h2>
         <div className="border-b border-[#8B8B6F]"></div>
         <div className="mt-5 flex flex-col gap-5">
           {/* Email Us */}
@@ -87,7 +87,7 @@ export const GetInTouch = () => {
           />
         </div>
       </div>
-      <div className=" bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat   min-h-100 p-10 flex flex-col gap-3">
+      <div className=" bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat   min-h-100 flex flex-col gap-3 p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25">
         <Label htmlFor="inquiryType" className="mt-5 text-md">
           TYPE OF INQUIRY
         </Label>
@@ -156,8 +156,8 @@ export const GetInTouch = () => {
           className=" bg-white w-full min-h-40"
         />
 
-        <div className="flex justify-end">
-          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-15 py-3 rounded-lg text-white mt-5 hover:bg-[#7a7a5f] cursor-pointer">
+        <div className="flex justify-end  mb-10">
+          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-10 py-3 rounded-lg text-white mt-5 hover:bg-[#7a7a5f] cursor-pointer text-md">
             Submit
           </button>
         </div>
