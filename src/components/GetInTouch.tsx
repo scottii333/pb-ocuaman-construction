@@ -40,7 +40,7 @@ export const GetInTouch = () => {
             />
             <div className="">
               <p className="text-2xl text-[#6a6f4c]">EMAIL US</p>
-              <p className="text-sm">pb.ocuaman.construction@gmail.com</p>
+              <p className="text-xs md:text-sm">pb.ocuaman.construction@gmail.com</p>
             </div>
           </div>
 
@@ -66,7 +66,7 @@ export const GetInTouch = () => {
                 Unit 3F, 135 Kamias Road, Diliman, <br /> Quezon City, Metro
                 Manila, 1101
               </p>
-              <p className="text-sm">Mon–Sat, 8:00 AM – 5:00 PM</p>
+              <p className="text-sm mt-3">Mon–Sat, 8:00 AM – 5:00 PM</p>
             </div>
           </div>
         </div>
