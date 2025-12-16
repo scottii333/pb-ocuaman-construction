@@ -27,9 +27,9 @@ import {
 
 export const GetInTouch = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2  ">
+    <section className="grid grid-cols-1 md:grid-cols-2 bg-white!">
       <div className="flex flex-col p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-30 lg:pr-30">
-        <h2 className="text-xl font-semibold mb-3 mt-10">GET IN TOUCH</h2>
+        <h2 className="text-3xl mb-3 mt-10">GET IN TOUCH</h2>
         <div className="border-b border-[#8B8B6F]"></div>
         <div className="mt-5 flex flex-col gap-5">
           {/* Email Us */}
@@ -38,9 +38,9 @@ export const GetInTouch = () => {
               icon={faEnvelope}
               className="text-white bg-[#8B8B6F] p-2 rounded-full text-md"
             />
-            <div className="font-semibold">
-              <p className="text-md text-[#8B8B6F]">EMAIL US</p>
-              <p className="text-sm">pb.ocuaman.construction@gmail.com</p>
+            <div className="">
+              <p className="text-2xl text-[#6a6f4c]">EMAIL US</p>
+              <p className="text-xs md:text-sm">pb.ocuaman.construction@gmail.com</p>
             </div>
           </div>
 
@@ -49,9 +49,9 @@ export const GetInTouch = () => {
               icon={faPhone}
               className="text-white bg-[#8B8B6F] p-2 rounded-full text-md"
             />
-            <div className="font-semibold">
-              <p className="text-md text-[#8B8B6F]">CALL US</p>
-              <p className="text-sm">+63 927 654 3210 /+63 912 345 6789</p>
+            <div className="">
+              <p className="text-2xl text-[#6a6f4c]">CALL US</p>
+              <p className="text-sm">+63 927 654 3210 / +63 912 345 6789</p>
             </div>
           </div>
 
@@ -60,13 +60,13 @@ export const GetInTouch = () => {
               icon={faLocationDot}
               className="text-white bg-[#8B8B6F] p-2 rounded-full text-md"
             />
-            <div className="font-semibold">
-              <p className="text-md text-[#8B8B6F]">VISIT US</p>
+            <div className="">
+              <p className="text-2xl text-[#6a6f4c]">VISIT US</p>
               <p className="text-sm">
                 Unit 3F, 135 Kamias Road, Diliman, <br /> Quezon City, Metro
                 Manila, 1101
               </p>
-              <p className="text-sm">Mon–Sat, 8:00 AM – 5:00 PM</p>
+              <p className="text-sm mt-3">Mon–Sat, 8:00 AM – 5:00 PM</p>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ export const GetInTouch = () => {
           />
         </div>
       </div>
-      <div className=" bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat   min-h-100 flex flex-col gap-3 p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25">
+      <div className=" bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat   min-h-100 flex flex-col gap-3 p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25">
         <Label htmlFor="inquiryType" className="mt-5 text-md">
           TYPE OF INQUIRY
         </Label>
