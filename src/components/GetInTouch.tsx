@@ -10,24 +10,87 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faPhone,
+  faLocationDot,
+  faArrowRightLong,
+  faArrowLeftLong,
+} from "@fortawesome/free-solid-svg-icons";
+
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+
 export const GetInTouch = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2">
-      <div className="md:p-10">
-        <h2>GET IN TOUCH</h2>
-        <div className="border-b-3 border-[#8B8B6F]"></div>
-        <p>EMAIL US</p>
-        <p>pb.ocuaman.construction@gmail.com</p>
-        <p>CALL US</p>
-        <p>+63 927 654 3210</p>
-        <p>+63 912 345 6789</p>
-        <p>VISIT US</p>
-        <p>123 Construction Ave, City, Country</p>
-        <div className="border-b-3 border-[#8B8B6F]"></div>
-        <p>Follow Us On:</p>
+    <section className="grid grid-cols-1 md:grid-cols-2  ">
+      <div className="flex flex-col p-5 ">
+        <h2 className="text-xl font-semibold mb-3">GET IN TOUCH</h2>
+        <div className="border-b border-[#8B8B6F]"></div>
+        <div className="mt-5 flex flex-col gap-5">
+          {/* Email Us */}
+          <div className="flex  gap-3 p-2">
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="text-white bg-[#8B8B6F] p-2 rounded-full text-md"
+            />
+            <div className="font-semibold">
+              <p className="text-md text-[#8B8B6F]">EMAIL US</p>
+              <p className="text-sm">pb.ocuaman.construction@gmail.com</p>
+            </div>
+          </div>
+
+          <div className="flex  gap-3 p-2">
+            <FontAwesomeIcon
+              icon={faPhone}
+              className="text-white bg-[#8B8B6F] p-2 rounded-full text-md"
+            />
+            <div className="font-semibold">
+              <p className="text-md text-[#8B8B6F]">CALL US</p>
+              <p className="text-sm">+63 927 654 3210 /+63 912 345 6789</p>
+            </div>
+          </div>
+
+          <div className="flex  gap-3 p-2">
+            <FontAwesomeIcon
+              icon={faLocationDot}
+              className="text-white bg-[#8B8B6F] p-2 rounded-full text-md"
+            />
+            <div className="font-semibold">
+              <p className="text-md text-[#8B8B6F]">VISIT US</p>
+              <p className="text-sm">
+                Unit 3F, 135 Kamias Road, Diliman, <br /> Quezon City, Metro
+                Manila, 1101
+              </p>
+              <p className="text-sm">Mon–Sat, 8:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <div className="border-b border-[#8B8B6F] mt-5"></div>
+        <p className="mt-5 text-xl p-3">Follow Us On:</p>
+        <div className="p-3">
+          <FontAwesomeIcon
+            icon={faFacebook}
+            className="bg-[#8B8B6F] p-2 rounded-full text-white text-xl"
+          />
+          <FontAwesomeIcon
+            icon={faInstagram}
+            className="ml-5 bg-[#8B8B6F] p-2 rounded-full text-white text-xl"
+          />
+          <FontAwesomeIcon
+            icon={faLinkedin}
+            className="ml-5 bg-[#8B8B6F] p-2 rounded-full text-white text-xl  "
+          />
+        </div>
       </div>
-      <div className=" bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat min-h-100 p-5">
-        <Label htmlFor="inquiryType">TYPE OF INQUIRY</Label>
+      <div className=" bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat   min-h-100 p-10 flex flex-col gap-3">
+        <Label htmlFor="inquiryType" className="mt-5 text-md">
+          TYPE OF INQUIRY
+        </Label>
 
         <Select>
           <SelectTrigger id="inquiryType" className="w-full bg-white">
@@ -50,7 +113,9 @@ export const GetInTouch = () => {
             <SelectItem value="consultation">Consultation</SelectItem>
           </SelectContent>
         </Select>
-        <Label htmlFor="fullName">FULL NAME</Label>
+        <Label htmlFor="fullName" className="text-md">
+          FULL NAME
+        </Label>
         <Input
           id="fullName"
           type="text"
@@ -58,9 +123,11 @@ export const GetInTouch = () => {
           className=" bg-white w-full"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 ">
-          <div>
-            <Label htmlFor="email">EMAIL ADDRESS</Label>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5  ">
+          <div className="flex flex-col gap-3">
+            <Label htmlFor="email" className="text-md">
+              EMAIL ADDRESS
+            </Label>
             <Input
               id="email"
               type="email"
@@ -68,8 +135,10 @@ export const GetInTouch = () => {
               className=" bg-white w-full"
             />
           </div>
-          <div>
-            <Label htmlFor="phone">PHONE NUMBER</Label>
+          <div className="flex flex-col gap-3">
+            <Label htmlFor="phone" className="text-md">
+              PHONE NUMBER
+            </Label>
             <Input
               id="phone"
               type="tel"
@@ -78,16 +147,20 @@ export const GetInTouch = () => {
             />
           </div>
         </div>
-        <Label htmlFor="message">MESSAGE</Label>
+        <Label htmlFor="message" className="text-md">
+          MESSAGE
+        </Label>
         <Textarea
           id="message"
           placeholder="Your Message"
-          className=" bg-white w-full"
+          className=" bg-white w-full min-h-40"
         />
 
-        <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-15 py-3 rounded-lg text-white mt-5 hover:bg-[#7a7a5f] cursor-pointer">
-          Submit
-        </button>
+        <div className="flex justify-end">
+          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-15 py-3 rounded-lg text-white mt-5 hover:bg-[#7a7a5f] cursor-pointer">
+            Submit
+          </button>
+        </div>
       </div>
     </section>
   );
