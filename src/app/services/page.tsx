@@ -9,10 +9,11 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 import Image from "next/image";
+import { ServiceBenefits } from "@/components/ServiceBenefits";
 
 export default function services() {
   return (
-    <section className="flex flex-col mb-10">
+    <section className="flex flex-col mb-10 gap-10">
       <div className="grid grid-cols-2 gap-2 h-160 md:grid-cols-[35%_21%_21%_21%]">
         {/* First row full width */}
         <div className="border h-full w-full col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-1">
@@ -101,6 +102,8 @@ export default function services() {
           </p>
         </div>
       </div>
+
+      <ServiceBenefits />
     </section>
   );
 }
