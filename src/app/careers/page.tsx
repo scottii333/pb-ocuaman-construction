@@ -12,10 +12,11 @@ import { ExploreProject } from "@/components/ExploreProject";
 import { FAQ } from "@/components/FAQ";
 import { JoinOurTeam } from "@/components/JoinOurTeam";
 import { GetInTouch } from "@/components/GetInTouch";
+import { ApplyForJob } from "@/components/ApplyForJob";
 
 export default function careers() {
   return (
-    <section className="flex flex-col gap-20 mb-10">
+    <section className="flex flex-col gap-20 ">
       {" "}
       {/* Banner Image */}
       <div className=" relative w-full h-160">
@@ -28,7 +29,7 @@ export default function careers() {
         <div className="absolute inset-0 bg-black/60 z-10"></div>
       </div>
       <JoinOurTeam />
-      <GetInTouch />
+      <ApplyForJob />
     </section>
   );
 }
