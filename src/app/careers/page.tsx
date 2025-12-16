@@ -1,35 +1,34 @@
 import React from "react";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import Link from "next/link";
 
+import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRightLong,
   faArrowLeftLong,
 } from "@fortawesome/free-solid-svg-icons";
-import { GetInTouch } from "@/components/GetInTouch";
-import { BusinessMapPin } from "@/components/BusinessMapPin";
+import { ProjectDetails } from "@/components/ProjectDetails";
+import { ExploreProject } from "@/components/ExploreProject";
 import { FAQ } from "@/components/FAQ";
+import { JoinOurTeam } from "@/components/JoinOurTeam";
+import { GetInTouch } from "@/components/GetInTouch";
 
 export default function careers() {
   return (
-    <section className="flex flex-col gap-5 mb-10">
-      <div className="">
-        {" "}
-        <GetInTouch />
+    <section className="flex flex-col gap-20 mb-10">
+      {" "}
+      {/* Banner Image */}
+      <div className=" relative w-full h-160">
+        <Image
+          src="/sample/sample.jpg"
+          alt="Project page banner image"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
       </div>
-
-      <BusinessMapPin />
-
-      <FAQ />
+      <JoinOurTeam />
+      <GetInTouch />
     </section>
   );
 }
