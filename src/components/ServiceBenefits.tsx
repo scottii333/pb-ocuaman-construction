@@ -6,8 +6,6 @@ import {
   faStar,
   faMoneyBillTrendUp,
 } from "@fortawesome/free-solid-svg-icons";
-import ServicesCarousel from "./ServicesCarousel";
-import { FAQ } from "./FAQ";
 
 export const ServiceBenefits = () => {
   return (
@@ -78,10 +76,6 @@ export const ServiceBenefits = () => {
           </div>
         </div>
       </div>
-
-      <ServicesCarousel />
-
-      <FAQ />
     </section>
   );
 };
