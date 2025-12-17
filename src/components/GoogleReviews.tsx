@@ -1,14 +1,21 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+  faQuoteLeft,
+  faArrowRightLong,
+} from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
 import { Marquee } from "./ui/marquee";
 
 export const GoogleReviews = () => {
   return (
-    <section className="text-[#232b5f] flex flex-col items-center p-5 md:p-10 bg-white!">
-      <p className="text-3xl my-10">WHAT OUR <span className="text-yellow-500">CLIENTS</span> SAY</p>
+    <section className="text-[#232b5f] flex flex-col items-start lg:items-center p-5 md:p-10 bg-white! pb-10">
+      <p className="text-3xl my-10">
+        WHAT OUR <br className="md:hidden" />{" "}
+        <span className="text-yellow-500">CLIENTS</span> SAY
+      </p>
       <Marquee
         speed={30}
         direction="horizontal"
@@ -159,6 +166,13 @@ export const GoogleReviews = () => {
           </div>
         </div>
       </Marquee>
+      <div className="w-full flex justify-end"><button
+        className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-7 text-white w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-5"
+        style={{ backgroundSize: "200px 200px" }}
+      >
+        Write a Review
+        <FontAwesomeIcon icon={faArrowRightLong} className="text-xl" />
+      </button></div>
     </section>
   );
 };
