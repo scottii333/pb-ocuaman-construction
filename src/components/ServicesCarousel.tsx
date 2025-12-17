@@ -11,7 +11,9 @@ import {
   faScrewdriverWrench,
   faHandHoldingDollar,
   faBriefcase,
-  faBuilding
+  faBuilding,
+  faAngleLeft,
+  faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function ServicesCarousel() {
@@ -164,7 +166,7 @@ export default function ServicesCarousel() {
           type="button"
           aria-label="Previous"
           title="Previous"
-          className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition flex items-center justify-center px-10 py-2"
+          className="hidden md:flex bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition items-center justify-center px-10 py-2"
           style={{ backgroundSize: "200px 200px" }}
           onClick={() => scrollByAmount("left")}
         >
@@ -175,11 +177,33 @@ export default function ServicesCarousel() {
           type="button"
           aria-label="Next"
           title="Next"
-          className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition flex items-center justify-center px-10 py-2"
+          className="hidden md:flex bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition items-center justify-center px-10 py-2"
           style={{ backgroundSize: "200px 200px" }}
           onClick={() => scrollByAmount("right")}
         >
           <FontAwesomeIcon icon={faArrowRightLong} className="text-3xl" />
+        </button>
+
+        <button
+          type="button"
+          aria-label="Previous"
+          title="Previous"
+          className="flex md:hidden bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition items-center justify-center px-5 py-2"
+          style={{ backgroundSize: "200px 200px" }}
+          onClick={() => scrollByAmount("left")}
+        >
+          <FontAwesomeIcon icon={faAngleLeft} className="text-xl" />
+        </button>
+
+        <button
+          type="button"
+          aria-label="Next"
+          title="Next"
+          className="flex md:hidden bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition items-center justify-center px-5 py-2"
+          style={{ backgroundSize: "200px 200px" }}
+          onClick={() => scrollByAmount("right")}
+        >
+          <FontAwesomeIcon icon={faAngleRight} className="text-xl" />
         </button>
       </div>
     </div>
