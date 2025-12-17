@@ -1,68 +1,84 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[17%_25%_26%_32%] bg-[#8B8B6F] p-1  text-white min-h-100 bg-[url('/texture/green-cup.png')] bg-repeat">
-      <div className="flex flex-col p-10 pb-0 text-lg">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[15%_26%_31%_28%] bg-[#8B8B6F] p-1 text-white min-h-100 bg-[url('/texture/green-cup.png')] bg-repeat text-shadow-[0_2px_6px_rgba(0,0,0,0.15)] relative text-base md:text-sm">
+      <div className="absolute inset-0 bg-black/30 z-0 "></div>
+      <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10">
         <h2 className="text-2xl font-bold mb-5">Quick Links</h2>
-        <Link href="/">Home</Link>
-        <Link href="/about">About </Link>
-        <Link href="/services">Services</Link>
-        <Link href="/projects">Projects</Link>
-        <Link href="/careers">Careers</Link>
-        <Link href="/contact">Contact</Link>
+        <div className="grid grid-cols-2 md:grid-cols-1">
+          <div className="flex flex-col">
+            <Link href="/">Home</Link>
+            <Link href="/about">About </Link>
+            <Link href="/services">Services</Link>
+          </div>
+          <div className="flex flex-col">
+            <Link href="/projects">Projects</Link>
+            <Link href="/careers">Careers</Link>
+            <Link href="/contact">Contact</Link>
+          </div>
+        </div>
       </div>
-      <div className="flex flex-col p-10 pb-0">
-        <h2 className="text-2xl font-bold mb-5">SERVICES</h2>
-        <Link href="/services#build-my-dream-home" className="text-lg">
-          Build my Dream Home
+      <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10">
+        <h2 className="text-2xl font-bold mb-5">Services</h2>
+        <Link href="/services#build-my-dream-home">
+          Build My Dream Home
         </Link>
-        <Link href="/services#upgrade-to-bigger-home" className="text-lg">
-          Upgrade to Bigger Home
+        <Link href="/services#upgrade-to-bigger-home">
+          Upgrade to a Bigger Home
         </Link>
-        <Link href="/services#build-an-investment-property" className="text-lg">
+        <Link href="/services#build-an-investment-property">
           Build an Investment Property
         </Link>
-        <Link href="/services#renovate-my-current-home" className="text-lg">
-          Renovate my Space
+        <Link href="/services#renovate-my-current-home">
+          Renovate My Space
         </Link>
-        <Link href="/services#renovate-my-current-home" className="text-lg">
-          Fit-Out My Condo
+        <Link href="/services#renovate-my-current-home">
+          Fit Out My Condo
         </Link>
-        <Link href="/services#renovate-my-current-home" className="text-lg">
+        <Link href="/services#renovate-my-current-home">
           Create My Business Space
         </Link>
       </div>
-      <div className="flex flex-col p-10 pb-0">
-        <h2 className="text-2xl font-bold mb-5">CONTACT</h2>
-        <p className="text-lg">
+      <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10">
+        <h2 className="text-2xl font-bold mb-5">Contact</h2>
+        <p>
           <span className="font-semibold">Phone:</span>
-          <br /> 0916-2662773 / 0919-337-3289
-        </p>{" "}
-        <br />
-        <p className="text-base">
-          <span className="font-semibold">Email:</span>
+          <br /> 0916-266-2773 / 0919-337-3289
+        </p>
+        <p className="text-xs md:text-sm">
+          <span className="font-semibold text-base">Email:</span>
           <br /> pb.ocuaman.construction@gmail.com
-        </p>{" "}
-        <br />
-        <p className="text-base md:text-lg">
+        </p>
+        <p>
           <span className="font-semibold">Address:</span>
           <br /> Unit 3F, 135 Kamias Road, Diliman, Quezon City, Metro Manila,
           1101
         </p>
-        <p className="text-lg">
+        <p>
           <span className="font-semibold"> Hours:</span> Mon-Fri 8am - 5pm
         </p>
       </div>
-      <div className="flex flex-col gap-3 p-10">
+      <div className="flex flex-col gap-3 p-10 md:p-5 relative z-10">
         <h1 className="text-3xl font-bold">
-          PB + OCUAMAN <br /> CONSTRUCTION
+          PB+OCUAMAN <br /> CONSTRUCTION
         </h1>
-        <p className="text-sm mt-5">
-          © 2025 PB Construction. All Rights Reserved. <br /> Designed &
-          Developed by &nbsp;
-          <span className="font-semibold underline">Leonexia</span>.
+        <p className="text-sm flex items-end">
+          © 2025 PB Construction.
+          <br /> All Rights Reserved.
+        </p>
+        <div className="border-b border-white"></div>{" "}
+        <p className="text-sm">
+          Designed & Developed by &nbsp;
+          <Image
+            src="/leonexia-logo.png"
+            alt="Leonexia Logo"
+            width={120}
+            height={40}
+            className="h-10 w-auto"
+          />
         </p>
       </div>
     </div>
