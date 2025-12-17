@@ -21,7 +21,7 @@ export default function About() {
   const teamMembers = Array.from({ length: 5 });
   return (
     <main>
-      <div className="relative w-full h-[90vh]">
+      <div className="relative w-full h-[80vh]">
         {/* Background Image */}
         <Image
           src="/sample/sample.jpg"
