@@ -271,7 +271,10 @@ export const ApplyForJob = () => {
       </div>
 
       {/* Right Column (Form) */}
-      <div className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat min-h-100 flex flex-col gap-3 p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25 pt-20">
+      <div
+        className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat min-h-100 flex flex-col gap-3 p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25 pt-20 "
+        id="apply-form-section"
+      >
         <h3 className="text-xl font-medium md:text-2xl lg:text-3xl">
           <span className="text-yellow-500">APPLY</span> FOR A JOB
         </h3>
