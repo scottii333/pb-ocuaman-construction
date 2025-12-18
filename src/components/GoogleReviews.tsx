@@ -1,10 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faStar,
-  faQuoteLeft,
-  faArrowRightLong,
-} from "@fortawesome/free-solid-svg-icons";
+import { faStar, faQuoteLeft, faPen } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
 import { Marquee } from "./ui/marquee";
@@ -166,13 +162,23 @@ export const GoogleReviews = () => {
           </div>
         </div>
       </Marquee>
-      <div className="w-full flex justify-end"><button
-        className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-7 text-white w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-5"
-        style={{ backgroundSize: "200px 200px" }}
-      >
-        Write a Review
-        <FontAwesomeIcon icon={faArrowRightLong} className="text-xl" />
-      </button></div>
+      <div className="w-full flex justify-end gap-5">
+        <div className="w-15 h-auto relative -mb-2">
+                  <Image
+                    src="/Google-Review-Logo.png"
+                    alt="Google Review Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+        <button
+          className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-7 text-white w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-2"
+          style={{ backgroundSize: "200px 200px" }}
+        >
+          Write a Review
+          <FontAwesomeIcon icon={faPen} className="sm" />
+        </button>
+      </div>
     </section>
   );
 };

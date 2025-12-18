@@ -17,7 +17,7 @@ import { FactsAboutUs } from "@/components/FactsAboutUs";
 export default function Home() {
   return (
     <main className="flex flex-col mb-50">
-      <div className="shadow-lg h-[80vh] overflow-hidden relative">
+      <div className="shadow-lg h-[80vh] lg:h-[90vh] overflow-hidden relative">
         <video
           src="/sample/sample.mp4"
           loop
@@ -32,7 +32,7 @@ export default function Home() {
             <div className="text-4xl md:text-6xl text-[#D29E34]">BUILDING</div>
             <div className="flex flex-col justify-center text-white">
               <p className="md:text-2xl">SIMPLICITY</p>
-              <p className="text-xs md:text-sm w-26">IN EVERY SPACE</p>
+              <p className="text-xs md:text-sm w-26 md:w-40">IN EVERY SPACE</p>
             </div>
           </div>
           <div className="hidden lg:flex absolute bottom-10 right-10 text-[#D29E34] gap-3">
@@ -67,12 +67,12 @@ export default function Home() {
             height={300}
             className="w-full h-auto"
           />
-          <h2 className="flex items-center gap-2 p-1 text-[#D29E34] text-[24px] ">
+          <h2 className="flex items-center gap-2 p-1 text-[24px] ">
             <FontAwesomeIcon
               icon={faHeartCircleCheck}
-              className="text-xl text-[#D29E34]"
+              className="text-xl"
             />{" "}
-            Why Choose Us
+            Why <span className="text-[#D29E34]">Choose</span> Us
           </h2>
           <div className="border-b-3 border-[#a0a08a]"></div>
           <p className="text-sm md:text-base">
@@ -83,12 +83,12 @@ export default function Home() {
         </div>
 
         <div className="order-1 lg:order-2 h-auto w-full flex flex-col p-5 gap-5">
-          <h2 className="flex  items-center gap-2 p-1 text-[#D29E34] text-[24px] ">
+          <h2 className="flex  items-center gap-2 p-1 text-[24px]">
             <FontAwesomeIcon
               icon={faUsers}
-              className="text-xl text-[#D29E34]"
+              className="text-xl"
             />{" "}
-            Who We Are
+            Who <span className="text-[#D29E34]">We</span> Are
           </h2>
           <p className="text-sm md:text-base">
             At PB+Ocuaman Construction, we specialize in design-and-build
@@ -100,7 +100,7 @@ export default function Home() {
 
           <Link
             href="/about"
-            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-5 text-[18px] "
+            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-5 text-sm md:text-base"
             style={{ backgroundSize: "200px 200px" }}
           >
             More About Us
@@ -115,12 +115,12 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="order-3 -black h-[500px] lg:h-auto w-full relative">
+        <div className="order-3 -black h-[500px] lg:h-auto w-full relative ">
           <Image
             src="/sample/sample.jpg"
             alt="Teamwork Image"
             fill
-            className="object-cover"
+            className="object-cover px-5 lg:px-0"
           />
         </div>
       </div>
