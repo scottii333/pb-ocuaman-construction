@@ -34,19 +34,23 @@ export const Header = () => {
       </Link>
 
       <nav className=" items-center gap-5 hidden md:flex">
-        <Link href="/about" className="">
+        <Link href="/about" className="flex gap-1 items-center">
+        <FontAwesomeIcon icon={faPeopleRoof} className="h-6 w-6" />
           About
         </Link>
         <div className="border-l border-[#c0c0c6] h-5 "></div>
-        <Link href="/services" className="">
+        <Link href="/services" className="flex gap-1 items-center">
+        <FontAwesomeIcon icon={faScrewdriverWrench} className="h-6 w-6" />
           Services
         </Link>
         <div className="border-l border-[#c0c0c6] h-5 "></div>
-        <Link href="/projects" className="">
+        <Link href="/projects" className="flex gap-1 items-center">
+        <FontAwesomeIcon icon={faBuilding} className="h-6 w-6" />
           Projects
         </Link>
         <div className="border-l border-[#c0c0c6] h-5 "></div>
-        <Link href="/careers" className="">
+        <Link href="/careers" className="flex gap-1 items-center">
+        <FontAwesomeIcon icon={faPhone} className="h-6 w-6" />
           Careers
         </Link>
       </nav>
