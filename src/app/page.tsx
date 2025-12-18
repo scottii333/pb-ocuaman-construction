@@ -13,6 +13,7 @@ import { GetInTouch } from "@/components/GetInTouch";
 import { JoinOurTeam } from "@/components/JoinOurTeam";
 import { GoogleReviews } from "@/components/GoogleReviews";
 import { FactsAboutUs } from "@/components/FactsAboutUs";
+import { ExploreProject } from "@/components/ExploreProject";
 
 export default function Home() {
   return (
@@ -68,10 +69,7 @@ export default function Home() {
             className="w-full h-auto"
           />
           <h2 className="flex items-center gap-2 p-1 text-[24px] ">
-            <FontAwesomeIcon
-              icon={faHeartCircleCheck}
-              className="text-xl"
-            />{" "}
+            <FontAwesomeIcon icon={faHeartCircleCheck} className="text-xl" />{" "}
             Why <span className="text-[#D29E34]">Choose</span> Us
           </h2>
           <div className="border-b-3 border-[#a0a08a]"></div>
@@ -84,11 +82,8 @@ export default function Home() {
 
         <div className="order-1 lg:order-2 h-auto w-full flex flex-col p-5 gap-5">
           <h2 className="flex  items-center gap-2 p-1 text-[24px]">
-            <FontAwesomeIcon
-              icon={faUsers}
-              className="text-xl"
-            />{" "}
-            Who <span className="text-[#D29E34]">We</span> Are
+            <FontAwesomeIcon icon={faUsers} className="text-xl" /> Who{" "}
+            <span className="text-[#D29E34]">We</span> Are
           </h2>
           <p className="text-sm md:text-base">
             At PB+Ocuaman Construction, we specialize in design-and-build
@@ -209,35 +204,8 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      {/* Projects Sections */}
-      <div className="w-full flex justify-center">
-        <div className="flex flex-col md:flex-row md:w-[1000px]  bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat ">
-          <div className="w-full h-100 relative">
-            <Image
-              src="/sample/sample.jpg"
-              alt="Teamwork Image"
-              fill
-              className="object-cover "
-            />
-          </div>
-          <div className="p-5 flex flex-col justify-center gap-5">
-            <h2>DECENA RESIDENCE</h2>
-            <p>
-              Modern Family Home in Quezon CityModern Family Home in Quezon
-              CityModern Family Home in Quezon CityModern Family Home in Quezon
-              City Modern Family Home in Quezon City
-            </p>
-            <Link
-              href="/about"
-              className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-5 text-[18px] "
-              style={{ backgroundSize: "200px 200px" }}
-            >
-              LOVE THIS DESIGN? DISCOVER MORE
-              <FontAwesomeIcon icon={faArrowRightLong} className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </div>
+
+      <ExploreProject />
 
       {/* Google Reviews Section */}
       <GoogleReviews />
