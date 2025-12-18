@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[15%_26%_31%_28%] bg-[#8B8B6F] p-1 text-white min-h-100 bg-[url('/texture/green-cup.png')] bg-repeat text-shadow-[0_2px_6px_rgba(0,0,0,0.15)] relative text-base md:text-sm">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[31%_18%_23%_28%] bg-[#8B8B6F] p-1 lg:p-10 text-white min-h-100 bg-[url('/texture/green-cup.png')] bg-repeat text-shadow-[0_2px_6px_rgba(0,0,0,0.15)] relative text-base md:text-sm">
       <div className="absolute inset-0 bg-black/30 z-0 "></div>
-      <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10">
+      <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10 order-1 lg:order-2">
         <h2 className="text-2xl font-bold mb-5">Quick Links</h2>
         <div className="grid grid-cols-2 md:grid-cols-1">
           <div className="flex flex-col">
@@ -21,7 +21,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10">
+      <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10 order-2 lg:order-3">
         <h2 className="text-2xl font-bold mb-5">Services</h2>
         <Link href="/services#build-my-dream-home">
           Build My Dream Home
@@ -42,7 +42,7 @@ export const Footer = () => {
           Create My Business Space
         </Link>
       </div>
-      <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10">
+      <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10 order-3 lg:order-4">
         <h2 className="text-2xl font-bold mb-5">Contact</h2>
         <p>
           <span className="font-semibold">Phone:</span>
@@ -61,7 +61,7 @@ export const Footer = () => {
           <span className="font-semibold"> Hours:</span> Mon-Fri 8am - 5pm
         </p>
       </div>
-      <div className="flex flex-col gap-3 p-10 md:p-5 relative z-10">
+      <div className="flex flex-col gap-3 p-10 md:p-5 relative z-10 order-4 lg:order-1">
         <h1 className="text-3xl font-bold">
           PB+OCUAMAN <br /> CONSTRUCTION
         </h1>
@@ -73,7 +73,7 @@ export const Footer = () => {
         <p className="text-sm">
           Designed & Developed by &nbsp;
           <Image
-            src="/leonexia-logo.png"
+            src="/leonexiaLogo.png"
             alt="Leonexia Logo"
             width={120}
             height={40}
