@@ -46,15 +46,17 @@ export default function Home() {
                 style={{ rotate: "-120deg" }}
               />
             </div>
-          </div><div
-        className="absolute bottom-0 left-0 w-full bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-4 px-8 text-white lg:hidden cursor-pointer hover:bg-[#6e6e52] transition gap-5 flex justify-center items-center text-sm md:text-base"
-        style={{ backgroundSize: "200px 200px" }}
-      >
-        START PLANNING WITH US <FontAwesomeIcon icon={faArrowRightLong} className="text-1xl" />
-      </div>
+          </div>
+          <div
+            className="absolute bottom-0 left-0 w-full bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-4 px-8 text-white lg:hidden cursor-pointer hover:bg-[#6e6e52] transition gap-5 flex justify-center items-center text-sm md:text-base"
+            style={{ backgroundSize: "200px 200px" }}
+          >
+            START PLANNING WITH US{" "}
+            <FontAwesomeIcon icon={faArrowRightLong} className="text-1xl" />
+          </div>
         </div>
       </div>
-      
+
       {/* Brief About us Section (Server Component, SEO-friendly) */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-2 my-10">
         <div className="order-2 lg:order-1 h-auto w-full flex flex-col p-5 pt-0 gap-5">
@@ -155,9 +157,11 @@ export default function Home() {
                 priority
               />
             </div>
-            <div className="p-5 flex flex-col gap-2">
+            <div className="p-3 sm:p-5 flex flex-col gap-2">
               <h3 className="text-base md:text-3xl">01 LAYOUT</h3>
-              <p className="text-xs md:text-base">Plan the structure and flow of your home.</p>
+              <p className="text-xs md:text-base">
+                Plan the structure and flow of your home.
+              </p>
             </div>
           </div>
           <div className="grid grid-cols-[1fr_4fr] md:items-center bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat h-30 md:h-auto">
@@ -170,7 +174,7 @@ export default function Home() {
                 priority
               />
             </div>
-            <div className="p-5 flex flex-col gap-2">
+            <div className="p-3 sm:p-5flex flex-col gap-2">
               <h3 className="text-base md:text-3xl">02 DESIGN</h3>
               <p className="text-xs md:text-base">
                 Customize the look and feel with our 3D exterior and interior
@@ -188,10 +192,8 @@ export default function Home() {
                 priority
               />
             </div>
-            <div className="p-5 flex flex-col gap-2">
-                <h3 className="text-base md:text-3xl">
-                  03 PAPERWORK
-                </h3>
+            <div className="p-3 sm:p-5 flex flex-col gap-2">
+              <h3 className="text-base md:text-3xl">03 PAPERWORK</h3>
               <p className="text-xs md:text-base">
                 We prepare all necessary documents prior to construction.
               </p>
