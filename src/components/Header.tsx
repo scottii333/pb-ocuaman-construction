@@ -1,19 +1,24 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./ui/button";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
   SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars,
+  faHouse,
+  faPeopleRoof,
+  faScrewdriverWrench,
+  faBuilding,
+  faBriefcase,
+  faPhone,
+  faVideo
+ } from "@fortawesome/free-solid-svg-icons";
 
 export const Header = () => {
   return (
@@ -64,38 +69,42 @@ export const Header = () => {
             <FontAwesomeIcon icon={faBars} className="h-6 w-6" />
           </button>
         </SheetTrigger>
-        <SheetContent className="w-2/5">
+        <SheetContent className="w-1/2">
           <SheetHeader>
             <SheetTitle className="text-lg font-bold mb-4"></SheetTitle>
           </SheetHeader>
-          <nav className="flex flex-col items-center text-center gap-2 mt-4">
+          <nav className="flex flex-col items-start px-5 text-center gap-3 mt-4">
             <Link href="/" className="">
-              Home
+              <FontAwesomeIcon icon={faHouse} className="h-6 w-6" /> Home
             </Link>
 
-            <div className="border-b border-black w-1/2 "></div>
+            <div className="border-b border-grey w-full"></div>
             <Link href="/about" className="">
-              About
+              <FontAwesomeIcon icon={faPeopleRoof} className="h-6 w-6" /> About
             </Link>
-            <div className="border-b border-black w-1/2 "></div>
+            <div className="border-b border-grey w-full"></div>
             <Link href="/services" className="">
-              Services
+              <FontAwesomeIcon icon={faScrewdriverWrench} className="h-6 w-6" /> Services
             </Link>
-            <div className="border-b border-black w-1/2 "></div>
+            <div className="border-b border-grey w-full"></div>
             <Link href="/projects" className="">
-              Projects
+              <FontAwesomeIcon icon={faBuilding} className="h-6 w-6" /> Projects
             </Link>
-            <div className="border-b border-black w-1/2 "></div>
+            <div className="border-b border-grey w-full"></div>
             <Link href="/careers" className="">
-              Careers
+              <FontAwesomeIcon icon={faBriefcase} className="h-6 w-6" /> Careers
+            </Link>
+            <div className="border-b border-grey w-full"></div>
+            <Link href="/contact" className="">
+              <FontAwesomeIcon icon={faPhone} className="h-6 w-6" /> Contact
             </Link>
           </nav>
-          <SheetFooter className="mt-10">
+          <SheetFooter className="mt-5">
             <Link
               href="/contact"
-              className="bg-[#8B8B6F] p-2 px-10 text-white w-full cursor-pointer hover:bg-[#6e6e52] transition"
+              className="bg-[#8B8B6F] text-center rounded-sm p-2 text-white w-full cursor-pointer transition"
             >
-              Contact Us
+              <FontAwesomeIcon icon={faVideo} className="h-6 w-6 text-white" /> Schedule <br /> a Meeting
             </Link>
           </SheetFooter>
         </SheetContent>

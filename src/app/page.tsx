@@ -17,7 +17,7 @@ import { FactsAboutUs } from "@/components/FactsAboutUs";
 export default function Home() {
   return (
     <main className="flex flex-col mb-50">
-      <div className="shadow-lg  h-[90vh] overflow-hidden relative">
+      <div className="shadow-lg h-[80vh] overflow-hidden relative">
         <video
           src="/sample/sample.mp4"
           loop
@@ -73,7 +73,7 @@ export default function Home() {
             Why Choose Us
           </h2>
           <div className="border-b-3 border-[#a0a08a]"></div>
-          <p>
+          <p className="text-sm md:text-base">
             Our goal is to provide clients with hassle-free design and
             construction services, delivering high-quality workmanship and
             cost-effective solutions.
@@ -88,7 +88,7 @@ export default function Home() {
             />{" "}
             Who We Are
           </h2>
-          <p>
+          <p className="text-sm md:text-base">
             At PB+Ocuaman Construction, we specialize in design-and-build
             services, including interior design, renovation, and fit-out. <br />{" "}
             <br /> We create modern and contemporary spaces with smart layouts,
@@ -107,7 +107,7 @@ export default function Home() {
 
           <div className="border-b-3 border-[#a0a08a] mt-5"></div>
 
-          <p>
+          <p className="text-sm md:text-base">
             We deliver reliable, cost-effective, and high-quality services while
             ensuring customer satisfaction and building strong partnerships.
           </p>
@@ -127,13 +127,13 @@ export default function Home() {
       {/* Services Carousel  */}
       <ServicesCarousel />
       {/* 3 Easy Steps Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-[35%_65%] gap-5 p-10 bg-white">
+      <div className="grid grid-cols-1 lg:grid-cols-[35%_65%] gap-5 p-5 md:p-10 bg-white">
         <div className="flex flex-col justify-start items-baseline gap-5 p-0 md:p-10">
           <h2 className="text-xl md:text-3xl">
             LET US DESIGN YOUR <br /> HOME IN{" "}
             <span className="text-[#c3881c]">3 EASY STEPS</span>
           </h2>
-          <p className="text-xs md:text-base">We&apos;ll be here every step of the way.</p>
+          <p>We&apos;ll be here every step of the way.</p>
           <Link
             href="/about"
             className="hidden md:flex bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-5 text-white w-full md:w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition items-center gap-4 md:gap-5"
@@ -145,22 +145,22 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-5 md:p-5">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_4fr] bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat">
+          <div className="grid grid-cols-[1fr_4fr] md:items-center bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat h-30 md:h-auto">
             <div className="relative w-full aspect-square shrink-0">
               <Image
                 src="/sample/sample.jpg"
                 alt="Teamwork Image"
                 fill
-                className="object-cover "
+                className="object-cover"
                 priority
               />
             </div>
             <div className="p-5 flex flex-col gap-2">
-              <h3 className="text-xl md:text-3xl">01 LAYOUT</h3>
-              <p>Plan the structure and flow of your home.</p>
+              <h3 className="text-base md:text-3xl">01 LAYOUT</h3>
+              <p className="text-xs md:text-base">Plan the structure and flow of your home.</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_4fr] bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat">
+          <div className="grid grid-cols-[1fr_4fr] md:items-center bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat h-30 md:h-auto">
             <div className="relative w-full aspect-square shrink-0">
               <Image
                 src="/sample/sample.jpg"
@@ -171,14 +171,14 @@ export default function Home() {
               />
             </div>
             <div className="p-5 flex flex-col gap-2">
-              <h3 className="text-xl md:text-3xl">02 DESIGN</h3>
-              <p>
+              <h3 className="text-base md:text-3xl">02 DESIGN</h3>
+              <p className="text-xs md:text-base">
                 Customize the look and feel with our 3D exterior and interior
                 designs.
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_4fr] bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat">
+          <div className="grid grid-cols-[1fr_4fr] md:items-center bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat h-30 md:h-auto">
             <div className="relative w-full aspect-square shrink-0">
               <Image
                 src="/sample/sample.jpg"
@@ -189,17 +189,17 @@ export default function Home() {
               />
             </div>
             <div className="p-5 flex flex-col gap-2">
-                <h3 className="text-lg md:text-3xl">
-                  03 DOCUMENTATION
+                <h3 className="text-base md:text-3xl">
+                  03 PAPERWORK
                 </h3>
-              <p>
-                We prepare contracts, permits, and all necessary paperwork prior to construction.
+              <p className="text-xs md:text-base">
+                We prepare all necessary documents prior to construction.
               </p>
             </div>
           </div>
           <Link
             href="/about"
-            className="md:hidden bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-5 text-white w-full md:w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition items-center gap-4 md:gap-5"
+            className="md:hidden bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-5 text-white w-full md:w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex justify-between items-center gap-4 md:gap-5"
             style={{ backgroundSize: "200px 200px" }}
           >
             Explore Our Designs
