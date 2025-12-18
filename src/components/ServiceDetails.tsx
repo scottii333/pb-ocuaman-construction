@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { ScrollArea } from "./ui/scroll-area";
 import {
@@ -9,10 +11,43 @@ import {
 } from "@/components/ui/accordion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { ServiceData } from "@/data/servicesData";
 
-export const ServiceDetails = () => {
+interface ServiceDetailsProps {
+  data: ServiceData;
+}
+
+export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
+  // Combine coverImage + thumbnails for gallery
+  const allImages = [data.coverImage, ...data.thumbnails];
+
+  // State to track current image index
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Handle next image
+  const handleNext = () => {
+    setCurrentImageIndex((prev) =>
+      prev === allImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  // Handle previous image
+  const handlePrev = () => {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? allImages.length - 1 : prev - 1
+    );
+  };
+
+  // Handle thumbnail click
+  const handleThumbnailClick = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
   return (
-    <section className="flex flex-col p-5">
+    <section
+      id="service-details-section"
+      className="flex flex-col p-5 scroll-mt-20"
+    >
       <div className="grid gap-4 md:grid-rows-[auto auto] md:grid-cols-2 md:grid-flow-row md:gap-6">
         {/* Main Image */}
         <div className="relative w-full h-64 md:h-110 order-1 md:order-1">
@@ -23,17 +58,18 @@ export const ServiceDetails = () => {
             className="object-cover"
           />
 
-          {/* Main Image */}
+          {/* Main Image Display */}
           <div className="relative w-full h-64 md:h-110 order-1 md:order-1">
             <Image
-              src="/sample/sample.jpg"
-              alt="Main"
+              src={allImages[currentImageIndex]}
+              alt={data.heading}
               fill
               className="object-cover"
             />
             {/* Left soft shadow overlay button */}
             <button
               type="button"
+              onClick={handlePrev}
               aria-label="Previous image"
               className="absolute inset-y-0 left-0 w-[60px] z-20 flex items-center justify-center
              bg-linear-to-r from-black/30 to-transparent
@@ -50,6 +86,7 @@ export const ServiceDetails = () => {
             {/* Right soft shadow overlay button */}
             <button
               type="button"
+              onClick={handleNext}
               aria-label="Next image"
               className="absolute inset-y-0 right-0 w-[60px] z-20 flex items-center justify-center
              bg-linear-to-l from-black/30 to-transparent
@@ -66,117 +103,50 @@ export const ServiceDetails = () => {
         </div>
 
         {/* Thumbnails */}
-        <div className="flex gap-2 overflow-x-auto order-2 md:order-3 md:col-span-2 pb-5  no-scrollbar">
-          <div className="relative w-30 h-30 sm:w-50 sm:h-50 md:w-70 md:h-70 shrink-0">
-            <Image
-              src="/sample/sample.jpg"
-              alt="Thumb1"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/60 z-10"></div>
-          </div>
-          <div className="relative w-30 h-30 sm:w-50 sm:h-50 md:w-70 md:h-70 shrink-0">
-            <Image
-              src="/sample/sample.jpg"
-              alt="Thumb1"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/60 z-10"></div>
-          </div>
-          <div className="relative w-30 h-30 sm:w-50 sm:h-50 md:w-70 md:h-70 shrink-0">
-            <Image
-              src="/sample/sample.jpg"
-              alt="Thumb1"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/60 z-10"></div>
-          </div>
-          <div className="relative w-30 h-30 sm:w-50 sm:h-50 md:w-70 md:h-70 shrink-0">
-            <Image
-              src="/sample/sample.jpg"
-              alt="Thumb1"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/60 z-10"></div>
-          </div>
-          <div className="relative w-30 h-30 sm:w-50 sm:h-50 md:w-70 md:h-70 shrink-0">
-            <Image
-              src="/sample/sample.jpg"
-              alt="Thumb1"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/60 z-10"></div>
-          </div>
+        <div className="flex gap-2 overflow-x-auto order-2 md:order-3 md:col-span-2 pb-5 no-scrollbar">
+          {allImages.map((img, index) => (
+            <div
+              key={index}
+              onClick={() => handleThumbnailClick(index)}
+              className={`relative w-30 h-30 sm:w-50 sm:h-50 md:w-70 md:h-70 shrink-0 cursor-pointer transition-all ${
+                currentImageIndex === index ? "ring-2 ring-yellow-500" : ""
+              }`}
+            >
+              <Image
+                src={img}
+                alt={`Thumb${index}`}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/60 z-10"></div>
+            </div>
+          ))}
         </div>
 
         {/* Project Description */}
         <div className="order-3 md:order-2 md:col-span-1">
-          <h2 className="text-xl md:text-2xl font-medium mb-5">
-            BUILD MY FIRST HOME
+          <h2 className="text-xl md:text-2xl font-medium mb-5 text-[#232b5f] uppercase">
+            {data.heading}
           </h2>
 
           <ScrollArea className="md:h-80 h-auto w-full p-1">
-            <p className="pr-5">
-              We help first-time homeowners turn their dream home into reality
-              with a guided, stress-free process. From planning your ideal
-              layout to selecting materials that fit your budget, we make sure
-              your first home is built with quality, comfort, and long-term
-              value in mind.
-            </p>
+            <p className="pr-5 text-gray-700">{data.description}</p>
 
             <Accordion type="single" collapsible className="w-full pr-5 mt-4">
               <AccordionItem value="how-it-works">
                 <AccordionTrigger>How it works</AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                  <p>A guided, step-by-step path from idea to handover:</p>
-                  <ol className="list-decimal ml-5 space-y-2">
-                    <li>
-                      Free discovery call — clarify goals, budget, style, and
-                      timeline.
-                    </li>
-                    <li>
-                      Design & budget alignment — floor plan options, materials,
-                      and a transparent cost breakdown.
-                    </li>
-                    <li>
-                      Permits & approvals — we coordinate with local authorities
-                      and HOA (where applicable).
-                    </li>
-                    <li>
-                      Build phase — foundations, framing, MEP, finishes,
-                      inspections.
-                    </li>
-                    <li>
-                      Handover — final walkthrough, punch list, warranties, and
-                      move-in.
-                    </li>
-                  </ol>
+                  {data.accordion.howItWorks}
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="estimated-timeline">
                 <AccordionTrigger>Estimated timeline</AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                  <ul className="list-disc ml-5 space-y-1">
-                    <li>Discovery & planning: 1–2 weeks</li>
-                    <li>Design & budget: 2–4 weeks</li>
-                    <li>
-                      Permits & approvals: 2–8+ weeks (varies by city/state)
-                    </li>
-                    <li>
-                      Construction: 4–7 months (size, site, and weather
-                      dependent)
-                    </li>
-                    <li>Handover & move‑in: ~1 week</li>
-                  </ul>
+                  {data.accordion.timeline}
                   <p className="text-sm text-muted-foreground">
                     Note: Timelines vary by scope, jurisdiction, and site
-                    conditions. We’ll confirm a detailed schedule after the
+                    conditions. We&apos;ll confirm a detailed schedule after the
                     design phase.
                   </p>
                 </AccordionContent>
@@ -187,28 +157,10 @@ export const ServiceDetails = () => {
                   Starting price & price guide
                 </AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                  <p>
-                    Pricing depends on home size, site conditions, finishes, and
-                    your region. We provide a transparent, line‑item estimate
-                    after our free consultation.
-                  </p>
-                  <ul className="list-disc ml-5 space-y-2">
-                    <li>
-                      Essentials — best value package with quality core finishes
-                      and energy‑efficient standards.
-                    </li>
-                    <li>
-                      Signature — most popular mix of upgraded materials,
-                      fixtures, and curb appeal enhancements.
-                    </li>
-                    <li>
-                      Premium — high‑end materials, expanded customization, and
-                      luxury finishes.
-                    </li>
-                  </ul>
+                  {data.accordion.pricing}
                   <p className="text-sm text-muted-foreground">
-                    Looking for a ballpark? We’ll share a tailored range after
-                    we review your plans, site, and priorities.
+                    Looking for a ballpark? We&apos;ll share a tailored range
+                    after we review your plans, site, and priorities.
                   </p>
                 </AccordionContent>
               </AccordionItem>
