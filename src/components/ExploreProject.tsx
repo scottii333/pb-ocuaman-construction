@@ -12,21 +12,32 @@ import { projectsData } from "@/data/projectsData";
 
 export const ExploreProject = () => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const [fadeDirection, setFadeDirection] = useState<"left" | "right" | null>(
+    null
+  );
 
   const currentProject = projectsData[currentProjectIndex];
 
   // Handle next project
   const handleNext = () => {
-    setCurrentProjectIndex((prev) =>
-      prev === projectsData.length - 1 ? 0 : prev + 1
-    );
+    setFadeDirection("left");
+    setTimeout(() => {
+      setCurrentProjectIndex((prev) =>
+        prev === projectsData.length - 1 ? 0 : prev + 1
+      );
+      setFadeDirection(null);
+    }, 300);
   };
 
   // Handle previous project
   const handlePrev = () => {
-    setCurrentProjectIndex((prev) =>
-      prev === 0 ? projectsData.length - 1 : prev - 1
-    );
+    setFadeDirection("right");
+    setTimeout(() => {
+      setCurrentProjectIndex((prev) =>
+        prev === 0 ? projectsData.length - 1 : prev - 1
+      );
+      setFadeDirection(null);
+    }, 300);
   };
 
   return (
@@ -36,7 +47,16 @@ export const ExploreProject = () => {
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="relative h-120 w-full">
+        {/* Image with fade animation */}
+        <div
+          className={`relative h-120 w-full transition-all duration-300 ${
+            fadeDirection === "left"
+              ? "opacity-0 translate-x-10"
+              : fadeDirection === "right"
+              ? "opacity-0 -translate-x-10"
+              : "opacity-100 translate-x-0"
+          }`}
+        >
           <Image
             src={currentProject.mainImage}
             alt={currentProject.title}
@@ -44,7 +64,17 @@ export const ExploreProject = () => {
             className="object-cover rounded"
           />
         </div>
-        <div className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat h-auto md:h-full flex flex-col p-10 gap-5">
+
+        {/* Text with fade animation */}
+        <div
+          className={`bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat h-auto md:h-full flex flex-col p-10 gap-5 transition-all duration-300 ${
+            fadeDirection === "left"
+              ? "opacity-0 translate-x-10"
+              : fadeDirection === "right"
+              ? "opacity-0 -translate-x-10"
+              : "opacity-100 translate-x-0"
+          }`}
+        >
           <h2 className="text-2xl font-semibold">
             {currentProject.title.split(" ").map((word, idx, arr) => (
               <React.Fragment key={idx}>
@@ -57,7 +87,7 @@ export const ExploreProject = () => {
 
           <Link
             href={`/projects?project=${currentProject.id}`}
-            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-5 text-[18px] font-semibold rounded"
+            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white w-fit mt-2 cursor-pointer hover: bg-[#6e6e52] transition flex items-center gap-5 text-[18px] font-semibold rounded"
             style={{ backgroundSize: "200px 200px" }}
           >
             LOVE THIS DESIGN? DISCOVER MORE
