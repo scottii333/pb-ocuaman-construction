@@ -28,7 +28,7 @@ export default function ServicesCarousel() {
   };
 
   return (
-    <div className="p-10">
+    <div className="p-5">
       <p className="text-[#232b5f] text-sm md:text-xl">
         PICK THE <span className="text-[#c3881c]">SERVICE</span> THAT FITS YOUR
         NEEDS
