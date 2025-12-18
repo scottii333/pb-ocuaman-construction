@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeftLong,
   faArrowRightLong,
+  faBullseye,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function About() {
@@ -21,7 +22,7 @@ export default function About() {
   const teamMembers = Array.from({ length: 5 });
   return (
     <main>
-      <div className="relative w-full h-[80vh]">
+      <div className="relative w-full h-[80vh] lg:h-[90vh]">
         {/* Background Image */}
         <Image
           src="/sample/sample.jpg"
@@ -54,14 +55,14 @@ export default function About() {
           <div className="text-3xl">
             Get to <span className="text-[#D29E34]">Know</span> Us
           </div>
-          <div className="text-base">
+          <div className="text-sm md:text-base">
             Learn more about our mission, values, and the people behind our
             work.
           </div>
         </div>
       </div>
       <section>
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-20 my-20 w-full lg:w-[95%] lg:mr-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 my-20 w-full lg:w-[95%] lg:mr-auto">
           <div>
             <Image
               src="/office.png"
@@ -72,10 +73,10 @@ export default function About() {
             />
           </div>
           <div className="flex flex-col gap-5 justify-center w-[90%] mx-auto">
-            <div className="text-3xl">
+            <div className="text-2xl md:text-3xl">
               At <span className="text-[#D29E34]">PB+OCUAMAN</span> Construction
             </div>
-            <div className="text-base">
+            <div className="text-sm md:text-base">
               We bring together experience, creativity, and professionalism to
               deliver exceptional construction projects that meet your needs.
               Whether you are building your first home, upgrading to a bigger
@@ -83,7 +84,7 @@ export default function About() {
               solutions from planning and design to construction and handover.
             </div>
             <div className="w-full h-[0.5px] bg-[#c0c0c6]"></div>
-            <div className="text-2xl">Certifications & Licenses</div>
+            <div className="text-lg md:text-2xl">Certifications & Licenses</div>
             <div className="flex gap-10 overflow-x-auto no-scrollbar">
               {certifications.map((_, index) => (
                 <Image
@@ -100,11 +101,11 @@ export default function About() {
         </div>
         <div className="mb-20 flex flex-col gap-10">
           <div className="bg-[url('/texture/wall-texture.png')] w-full h-auto grid grid-cols-1 md:grid-cols-[5fr_1fr]">
-            <div className="p-10 flex flex-col gap-5 order-2 md:order-1">
-              <div className="text-3xl">
+            <div className="p-5 md:p-10 flex flex-col gap-5 order-2 md:order-1 -mt-15 md:mt-0">
+              <div className="text-2xl md:text-3xl text-white md:text-[#232b5f]">
                 Our <span className="text-[#D29E34]">Mission</span>
               </div>
-              <div className="md:text-base">
+              <div className="text-sm md:text-base flex items-start gap-2 max-w-200">
                 To grow by continually ensuring customer satisfaction with our
                 reliable execution, cost effectiveness, quality and efficient
                 services. We do so while promoting growth of our people and our
@@ -112,15 +113,16 @@ export default function About() {
                 environment we work in.
               </div>
             </div>
-            <div className="w-full h-full order-1 md:order-2">
+            <div className="w-full h-full order-1 md:order-2 relative z-10">
               <Image
                 src="/sample/sample.jpg"
                 alt="About Banner"
                 width={300}
                 height={300}
                 className="w-full h-full order-1 md:order-2 shrink-0 object-cover"
-              />
+              /><div className="flex md:hidden absolute inset-0 bg-black/60 z-0"></div>
             </div>
+            
           </div>
           <div className="bg-[url('/texture/wall-texture.png')] w-full h-full shrink-0 grid grid-cols-1 md:grid-cols-[1fr_5fr]">
             <div className="w-full h-full">
@@ -136,7 +138,7 @@ export default function About() {
               <div className="text-3xl">
                 Our <span className="text-[#D29E34]">Vision</span>
               </div>
-              <div className="text-base">
+              <div className="text-sm md:text-base max-w-200">
                 To be the preferred contractor of choice through established
                 quality business relationships, provided for by a team of
                 dynamic and committed professionals.
@@ -144,7 +146,8 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-20 md:gap-0 lg:grid-cols-[auto_1fr] w-[70%] mx-auto mb-20 items-center justify-between">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_2.5fr] gap-10 lg:gap-0 w-[70%] lg:w-[55%] mx-auto mb-20 items-end">
+          {/* Left content */}
           <div>
             <div className="text-3xl mb-3">
               Meet the <span className="text-[#D29E34]">Team</span>
@@ -158,35 +161,19 @@ export default function About() {
               while maintaining honesty, integrity, and open communication.
             </div>
           </div>
-          <div className="w-145 h-110 relative">
+
+          {/* Right image */}
+          <div className="lg:flex lg:justify-end">
             <Image
-              src="/sample/sample.jpg"
+              src="/aboutUs-experts.png"
               alt="About Banner"
-              width={300}
-              height={300}
-              className="w-60 h-auto absolute top-0 left-20"
+              width={800} // desktop size
+              height={800}
+              className="w-full h-auto lg:max-w-[400px]"
             />
-            <Image
-              src="/sample/sample.jpg"
-              alt="About Banner"
-              width={300}
-              height={300}
-              className="w-60 h-auto absolute top-10 right-0"
-            />
-            <Image
-              src="/sample/sample.jpg"
-              alt="About Banner"
-              width={300}
-              height={300}
-              className="w-90 h-auto absolute bottom-0 left-5 border-20 border-[#f9f9ff]"
-            />
-            <div className="text-3xl mb-3 absolute bottom-30 left-95">
-              <span className="text-[#D29E34]">EXPERTS</span> AT
-              <br />
-              WORK
-            </div>
           </div>
         </div>
+
         <div className="w-[90%] mx-auto flex flex-col gap-10">
           <div className="flex justify-between">
             <div className="text-3xl">
@@ -231,7 +218,7 @@ export default function About() {
             ))}
           </div>
         </div>
-        <div className="bg-white p-15 flex gap-25 overflow-x-auto no-scrollbar">
+        <div className="bg-white p-15 flex gap-12 overflow-x-auto no-scrollbar">
           {Array.from({ length: 10 }).map((_, index) => (
             <div key={index} className="flex gap-2 items-center shrink-0">
               <Image
