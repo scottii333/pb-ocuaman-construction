@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,10 +16,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeftLong,
   faArrowRightLong,
-  faBullseye,
+  faPeopleGroup,
+  faAngleRight,
+  faAngleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function About() {
+  const servicesRef = useRef<HTMLDivElement | null>(null);
+
+  // Smooth scroll by one card (+ gap) per click
+  const scrollByAmount = (dir: "left" | "right") => {
+    const c = servicesRef.current;
+    if (!c) return;
+    const amount = 320 + 20; // w-80 (320px) + gap-5 (20px)
+    c.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+  };
   const certifications = Array.from({ length: 7 });
   const teamMembers = Array.from({ length: 5 });
   return (
@@ -101,8 +114,8 @@ export default function About() {
         </div>
         <div className="mb-20 flex flex-col gap-10">
           <div className="bg-[url('/texture/wall-texture.png')] w-full h-auto grid grid-cols-1 md:grid-cols-[5fr_1fr]">
-            <div className="p-5 md:p-10 flex flex-col gap-5 order-2 md:order-1 -mt-15 md:mt-0">
-              <div className="text-2xl md:text-3xl text-white md:text-[#232b5f]">
+            <div className="p-5 md:p-10 flex flex-col gap-5 order-2 md:order-1 md:mt-0">
+              <div className="text-3xl hidden md:block">
                 Our <span className="text-[#D29E34]">Mission</span>
               </div>
               <div className="text-sm md:text-base flex items-start gap-2 max-w-200">
@@ -120,12 +133,15 @@ export default function About() {
                 width={300}
                 height={300}
                 className="w-full h-full order-1 md:order-2 shrink-0 object-cover"
-              /><div className="flex md:hidden absolute inset-0 bg-black/60 z-0"></div>
+              />
+              <div className="flex md:hidden absolute inset-0 bg-black/60 z-0"></div>
+              <div className="absolute bottom-5 left-5 text-2xl md:text-3xl text-white md:hidden">
+                Our <span className="text-[#D29E34]">Mission</span>
+              </div>
             </div>
-            
           </div>
           <div className="bg-[url('/texture/wall-texture.png')] w-full h-full shrink-0 grid grid-cols-1 md:grid-cols-[1fr_5fr]">
-            <div className="w-full h-full">
+            <div className="w-full h-full relative">
               <Image
                 src="/sample/sample.jpg"
                 alt="About Banner"
@@ -133,9 +149,14 @@ export default function About() {
                 height={300}
                 className="w-full h-full shrink-0 object-cover"
               />
+              <div className="flex md:hidden absolute inset-0 bg-black/60 z-0"></div>
+              <div className="absolute bottom-5 left-5 text-2xl md:text-3xl text-white md:hidden">
+                Our <span className="text-[#D29E34]">Vision</span>
+              </div>
             </div>
-            <div className="p-10 flex flex-col gap-5">
-              <div className="text-3xl">
+
+            <div className="p-5 md:p-10 flex flex-col gap-5">
+              <div className="text-3xl hidden md:block">
                 Our <span className="text-[#D29E34]">Vision</span>
               </div>
               <div className="text-sm md:text-base max-w-200">
@@ -146,13 +167,17 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_2.5fr] gap-10 lg:gap-0 w-[70%] lg:w-[55%] mx-auto mb-20 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_2.5fr] gap-10 lg:gap-0 w-[85%] lg:w-[55%] mx-auto mb-20 items-end">
           {/* Left content */}
-          <div>
-            <div className="text-3xl mb-3">
+          <div className="text-justify md:text-start">
+            <div className="text-2xl md:text-3xl mb-3 flex gap-2 items-center">
+              <FontAwesomeIcon
+                icon={faPeopleGroup}
+                className="text-lg text-[#232b5f]"
+              />
               Meet the <span className="text-[#D29E34]">Team</span>
             </div>
-            <div className="text-base">
+            <div className="text-sm md:text-base">
               Our team works closely with you at every stage, ensuring your
               vision is brought to life with quality craftsmanship, attention to
               detail, and safety as a top priority.
@@ -174,9 +199,9 @@ export default function About() {
           </div>
         </div>
 
-        <div className="w-[90%] mx-auto flex flex-col gap-10">
+        <div className="w-[90%] mx-auto flex flex-col gap-10 pb-10">
           <div className="flex justify-between">
-            <div className="text-3xl">
+            <div className="text-xl md:text-3xl">
               Working Together to Bring <br /> Your Dream{" "}
               <span className="text-[#D29E34]">Home to Life</span>.
             </div>
@@ -201,15 +226,18 @@ export default function About() {
               </button>
             </div>
           </div>
-          <div className="flex gap-10 overflow-x-auto no-scrollbar">
+          <div className="flex gap-5 md:gap-10 overflow-x-auto no-scrollbar">
             {teamMembers.map((_, index) => (
-              <div key={index} className="relative inline-block w-80 shrink-0">
+              <div
+                key={index}
+                className="relative inline-block w-50 md:w-80 shrink-0"
+              >
                 <Image
                   src="/team-member.png"
                   alt="team member"
                   width={300}
                   height={300}
-                  className="w-80 h-auto"
+                  className="w-50 md:w-80 h-auto"
                 />
                 <div className="absolute bottom-0 left-0 h-20 w-full bg-black/60 text-lg text-white flex items-center justify-center">
                   Engr. Ocuaman
@@ -217,8 +245,34 @@ export default function About() {
               </div>
             ))}
           </div>
+          <div className="flex gap-2 md:gap-5 justify-end -mt-5">
+            <button
+              type="button"
+              aria-label="Previous"
+              title="Previous"
+              className="flex md:hidden bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition items-center justify-center px-5 py-2"
+              style={{ backgroundSize: "200px 200px" }}
+              onClick={() => scrollByAmount("left")}
+            >
+              <FontAwesomeIcon icon={faAngleLeft} className="text-xl" />
+            </button>
+
+            <button
+              type="button"
+              aria-label="Next"
+              title="Next"
+              className="flex md:hidden bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition items-center justify-center px-5 py-2"
+              style={{ backgroundSize: "200px 200px" }}
+              onClick={() => scrollByAmount("right")}
+            >
+              <FontAwesomeIcon icon={faAngleRight} className="text-xl" />
+            </button>
+          </div>
         </div>
-        <div className="bg-white p-15 flex gap-12 overflow-x-auto no-scrollbar">
+        <div className="bg-white pt-7"><div className="text-2xl md:text-3xl flex justify-center gap-2 my-5 md:my-10">
+          Our <span className="text-[#D29E34]"> Partners</span>
+        </div>
+        <div className="px-15 pb-12 flex gap-12 overflow-x-auto no-scrollbar">
           {Array.from({ length: 10 }).map((_, index) => (
             <div key={index} className="flex gap-2 items-center shrink-0">
               <Image
@@ -231,15 +285,15 @@ export default function About() {
               <div className="text-base">Partner</div>
             </div>
           ))}
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 w-[90%] mx-auto gap-15 items-center">
+        </div></div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 w-[90%] mx-auto gap-10 md:gap-15 items-center mt-10">
           <div className="flex flex-col gap-5">
-            <div className="text-3xl">
+            <div className="text-2xl md:text-3xl">
               Company
               <span className="text-[#D29E34]"> Milestones</span>
             </div>
             <div className="w-full h-1 bg-[#c0c0c6]"></div>
-            <div className="text-base">
+            <div className="text-sm md:text-base">
               Your satisfaction is our ultimate goal, and we take pride in
               making your dream home or property a reality.
             </div>
@@ -317,35 +371,39 @@ export default function About() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 order-1 lg:order-2 gap-5 w-full h-[500px]">
-            <div className="relative w-full h-full">
-              <Image
-                src="/sample/sample.jpg"
-                alt="Left"
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full h-auto lg:h-[500px]">
+  {/* First row (full width on mobile) */}
+  <div className="relative w-full h-[250px] lg:h-full">
+    <Image
+      src="/sample/sample.jpg"
+      alt="Left"
+      fill
+      className="object-cover"
+    />
+  </div>
 
-            <div className="grid grid-rows-2 gap-5 h-full">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/sample/sample.jpg"
-                  alt="Top right"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative w-full h-full">
-                <Image
-                  src="/sample/sample.jpg"
-                  alt="Bottom right"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
+  {/* Second row */}
+  <div className="grid grid-cols-2 gap-5 lg:grid-rows-2 lg:grid-cols-1 h-auto">
+    <div className="relative w-full h-[120px] lg:h-full">
+      <Image
+        src="/sample/sample.jpg"
+        alt="Top right"
+        fill
+        className="object-cover"
+      />
+    </div>
+    <div className="relative w-full h-[120px] lg:h-full">
+      <Image
+        src="/sample/sample.jpg"
+        alt="Bottom right"
+        fill
+        className="object-cover"
+      />
+    </div>
+  </div>
+</div>
+
+
         </div>
       </section>
     </main>
