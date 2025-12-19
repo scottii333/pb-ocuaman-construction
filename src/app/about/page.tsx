@@ -269,23 +269,25 @@ export default function About() {
             </button>
           </div>
         </div>
-        <div className="bg-white pt-7"><div className="text-2xl md:text-3xl flex justify-center gap-2 my-5 md:my-10">
-          Our <span className="text-[#D29E34]"> Partners</span>
+        <div className="bg-white pt-7">
+          <div className="text-2xl md:text-3xl flex justify-center gap-2 my-5 md:my-10">
+            Our <span className="text-[#D29E34]"> Partners</span>
+          </div>
+          <div className="px-15 pb-12 flex gap-12 overflow-x-auto no-scrollbar">
+            {Array.from({ length: 10 }).map((_, index) => (
+              <div key={index} className="flex gap-2 items-center shrink-0">
+                <Image
+                  src="/sample/sample.jpg"
+                  alt="Partner"
+                  width={300}
+                  height={300}
+                  className="w-15 h-auto rounded-full aspect-square"
+                />
+                <div className="text-base">Partner</div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="px-15 pb-12 flex gap-12 overflow-x-auto no-scrollbar">
-          {Array.from({ length: 10 }).map((_, index) => (
-            <div key={index} className="flex gap-2 items-center shrink-0">
-              <Image
-                src="/sample/sample.jpg"
-                alt="Partner"
-                width={300}
-                height={300}
-                className="w-15 h-auto rounded-full aspect-square"
-              />
-              <div className="text-base">Partner</div>
-            </div>
-          ))}
-        </div></div>
         <div className="grid grid-cols-1 lg:grid-cols-3 w-[90%] mx-auto gap-10 md:gap-15 items-center mt-10">
           <div className="flex flex-col gap-5">
             <div className="text-2xl md:text-3xl">
@@ -371,39 +373,37 @@ export default function About() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full h-auto lg:h-[500px]">
-  {/* First row (full width on mobile) */}
-  <div className="relative w-full h-[250px] lg:h-full">
-    <Image
-      src="/sample/sample.jpg"
-      alt="Left"
-      fill
-      className="object-cover"
-    />
-  </div>
+          <div className="grid grid-cols-1  gap-5 w-full h-auto lg:h-[400px]">
+            {/* First row (full width on mobile) */}
+            <div className="relative w-full h-[250px] lg:h-full">
+              <Image
+                src="/sample/sample.jpg"
+                alt="Left"
+                fill
+                className="object-cover"
+              />
+            </div>
 
-  {/* Second row */}
-  <div className="grid grid-cols-2 gap-5 lg:grid-rows-2 lg:grid-cols-1 h-auto">
-    <div className="relative w-full h-[120px] lg:h-full">
-      <Image
-        src="/sample/sample.jpg"
-        alt="Top right"
-        fill
-        className="object-cover"
-      />
-    </div>
-    <div className="relative w-full h-[120px] lg:h-full">
-      <Image
-        src="/sample/sample.jpg"
-        alt="Bottom right"
-        fill
-        className="object-cover"
-      />
-    </div>
-  </div>
-</div>
-
-
+            {/* Second row */}
+            <div className="grid grid-cols-2 gap-5 h-auto">
+              <div className="relative w-full h-[120px] lg:h-auto">
+                <Image
+                  src="/sample/sample.jpg"
+                  alt="Top right"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative w-full h-[120px] lg:h-auto">
+                <Image
+                  src="/sample/sample.jpg"
+                  alt="Bottom right"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

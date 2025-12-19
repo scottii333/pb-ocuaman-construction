@@ -55,7 +55,7 @@ export default async function ProjectsPage({
       <ScrollToProjectDetails />
 
       {/* Banner Image */}
-      <div className="relative w-full h-160">
+      <div className="relative w-full h-[80vh] lg:h-[90vh]">
         <Image
           src="/sample/sample.jpg"
           alt="Project page banner image"
@@ -63,6 +63,15 @@ export default async function ProjectsPage({
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/60 z-10"></div>
+        <div className="p-8 absolute bottom-0 left-0 text-white z-10">
+          <div className="text-2xl md:text-3xl">
+            PROJECTS WE&apos;RE <span className="text-[#D29E34]">PROUD</span> OF
+          </div>
+          <div className="text-sm md:text-base">
+            Learn more about our mission, values, and the people behind our
+            work.
+          </div>
+        </div>
       </div>
 
       <RecentProjectCarousel />

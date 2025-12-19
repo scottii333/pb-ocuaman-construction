@@ -21,9 +21,9 @@ export const RecentProjectCarousel = () => {
   return (
     <>
       {/* Project Image Carousel */}
-      <div className="flex  flex-col  p-10">
-        <h3 className="text-center">
-          OUR MOST <span className="text-[#D29E34] font-semibold">RECENT</span>{" "}
+      <div className="flex  flex-col  p-10 px-20">
+        <h3 className="text-center text-xl md:text-2xl font-medium">
+          OUR MOST <span className="text-[#D29E34] ">RECENT</span>{" "}
           PROJECTS
         </h3>
         <p className="text-center"> Crafted with quality and care. </p>
@@ -39,7 +39,7 @@ export const RecentProjectCarousel = () => {
                   src="/sample/sample.jpg"
                   alt="Project"
                   fill
-                  className="object-cover rounded"
+                  className="object-cover"
                 />
               </div>
               <div className="relative w-full h-full">
@@ -47,7 +47,7 @@ export const RecentProjectCarousel = () => {
                   src="/sample/sample.jpg"
                   alt="Project"
                   fill
-                  className="object-cover rounded"
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -57,7 +57,7 @@ export const RecentProjectCarousel = () => {
                 src="/sample/sample.jpg"
                 alt="Project"
                 fill
-                className="object-cover rounded"
+                className="object-cover"
               />
             </div>
           </div>
@@ -68,7 +68,7 @@ export const RecentProjectCarousel = () => {
                 src="/sample/sample.jpg"
                 alt="Project"
                 fill
-                className="object-cover rounded"
+                className="object-cover"
               />
             </div>
 
@@ -78,7 +78,7 @@ export const RecentProjectCarousel = () => {
                 src="/sample/sample.jpg"
                 alt="Project"
                 fill
-                className="object-cover rounded"
+                className="object-cover"
               />
             </div>
             <div className="relative  h-full min-h-0">
@@ -86,12 +86,12 @@ export const RecentProjectCarousel = () => {
                 src="/sample/sample.jpg"
                 alt="Project"
                 fill
-                className="object-cover rounded"
+                className="object-cover"
               />
             </div>
           </div>
         </div>
-        <div className="flex gap-5 justify-end mt-5">
+        <div className="flex gap-5 justify-end">
           <button
             type="button"
             aria-label="Previous"

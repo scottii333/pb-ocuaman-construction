@@ -37,7 +37,7 @@ export default async function ServicesPage({
       <ScrollToServiceDetails />
 
       {/* Banner Section */}
-      <div className="grid grid-cols-2 gap-2 h-160 md:grid-cols-[35%_21%_21%_21%]">
+      <div className="grid grid-cols-2 gap-2 h-[80vh] md:h-[90vh] md:grid-cols-[35%_21%_21%_21%]">
         <div className="border h-full w-full col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-1">
           <div className="relative full ">
             <Image
@@ -49,10 +49,10 @@ export default async function ServicesPage({
             <div className="absolute inset-0 bg-black/60 z-10"></div>
           </div>
           <div className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat flex flex-col justify-center md:items-center p-5">
-            <h1 className="text-2xl md:text-4xl mb-4 md:text-center">
+            <h1 className="text-2xl md:text-3xl mb-4 text-center">
               What We <span className="text-yellow-500">Offer</span>
             </h1>
-            <p className="text-sm md:text-xl max-w-80 md:text-center">
+            <p className="text-sm md:text-base max-w-80 text-center">
               Whether you&apos;re building, upgrading, or renovating, we&apos;re
               here to guide you.
             </p>
@@ -70,9 +70,9 @@ export default async function ServicesPage({
           <p
             className="
     absolute bottom-0
-    left-1/2 -translate-x-1/2 text-center
-    md:left-4 md:translate-x-0 md:text-left
-    mb-2 text-white z-20 text-xs md:text-lg md:p-3
+    text-center
+     md:text-left
+     text-white mb-3 md:mb-0 z-20 text-xs md:text-base w-full md:p-5
   "
           >
             PLANNING AND DESIGNING
@@ -89,9 +89,9 @@ export default async function ServicesPage({
           <p
             className="
     absolute bottom-0
-    left-1/2 -translate-x-1/2 text-center
-    md:left-4 md:translate-x-0 md:text-left
-    mb-2 text-white z-20 text-xs md:text-lg md:p-3
+    text-center
+    md:text-left
+    mb-2 text-white z-20 text-xs md:text-base w-full md:p-3
   "
           >
             CONSTRUCTION PROJECT MANAGEMENT
@@ -109,9 +109,9 @@ export default async function ServicesPage({
           <p
             className="
     absolute bottom-0
-    left-1/2 -translate-x-1/2 text-center
-    md:left-4 md:translate-x-0 md:text-left
-    mb-2 text-white z-20 text-xs md:text-lg md:p-3
+    text-center
+    md:text-left
+    mb-2 text-white z-20 text-xs md:text-base w-full md:p-3
   "
           >
             RENOVATION AND FIT-OUT SERVICES

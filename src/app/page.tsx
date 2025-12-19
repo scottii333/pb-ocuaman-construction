@@ -153,7 +153,7 @@ export default function Home() {
               />
             </div>
             <div className="p-3 sm:p-5 flex flex-col gap-2">
-              <h3 className="text-base md:text-3xl">01 LAYOUT</h3>
+              <h3 className="text-base md:text-2xl">01 LAYOUT</h3>
               <p className="text-xs md:text-base">
                 Plan the structure and flow of your home.
               </p>
@@ -170,7 +170,7 @@ export default function Home() {
               />
             </div>
             <div className="p-3 sm:p-5flex flex-col gap-2">
-              <h3 className="text-base md:text-3xl">02 DESIGN</h3>
+              <h3 className="text-base md:text-2xl">02 DESIGN</h3>
               <p className="text-xs md:text-base">
                 Customize the look and feel with our 3D exterior and interior
                 designs.
@@ -188,7 +188,7 @@ export default function Home() {
               />
             </div>
             <div className="p-3 sm:p-5 flex flex-col gap-2">
-              <h3 className="text-base md:text-3xl">03 PAPERWORK</h3>
+              <h3 className="text-base md:text-2xl">03 PAPERWORK</h3>
               <p className="text-xs md:text-base">
                 We prepare all necessary documents prior to construction.
               </p>

@@ -103,13 +103,13 @@ export const ProjectDetails = ({ data }: ProjectDetailsProps) => {
         </div>
 
         {/* Project Description */}
-        <div className="order-3 md:order-2 md:col-span-1">
+        <div className="order-3 md:order-2 md:col-span-1 my-5">
           <h2 className="text-xl md:text-2xl font-medium mb-5">
             {data.title} <br />
             <span className="text-yellow-500">{data.category}</span>
           </h2>
 
-          <ScrollArea className="md:h-80 h-auto w-full p-1">
+          <ScrollArea className="md:h-70 h-auto w-full p-1">
             <p className="pr-5 text-gray-700">{data.description}</p>
 
             <Accordion type="single" collapsible className="w-full pr-5 mt-4">
@@ -134,7 +134,7 @@ export const ProjectDetails = ({ data }: ProjectDetailsProps) => {
             </Accordion>
           </ScrollArea>
 
-          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-4 py-3 rounded text-white mt-4 hover:bg-[#6e6e52] transition cursor-pointer w-full">
+          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-4 py-3 rounded text-white hover:bg-[#6e6e52] transition cursor-pointer w-full">
             REQUEST A FREE QUOTE
           </button>
         </div>
