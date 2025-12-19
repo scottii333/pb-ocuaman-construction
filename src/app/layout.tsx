@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
+import { ScheduleButton } from "@/components/ScheduleButton"; // Importing the ScheduleButton component
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -53,7 +54,12 @@ export default function RootLayout({
         className={`${montserrat.variable} antialiased min-h-[200vh] flex flex-col`}
       >
         <Header />
-        <main className="grow">{children}</main>
+        <main className="grow">
+          {children}
+          <div className="fixed bottom-6 right-6 z-100">
+            <ScheduleButton /> {/* Add the ScheduleButton component here */}
+          </div>
+        </main>
         <Toaster richColors position="top-center" />
 
         <Footer />
