@@ -41,15 +41,15 @@ export const ExploreProject = () => {
   };
 
   return (
-    <section className="p-10 flex flex-col gap-5 w-[85%] mx-auto">
+    <section className="p-5 md:p-10 flex flex-col gap-5 w-full md:w-[85%] mx-auto">
       <h3 className="text-2xl">
-        EXPLORE <span className="text-yellow-500">MORE</span> OF OUR PROJECTS
+        WHAT  WE&apos;VE<span className="text-yellow-500"> BUILT</span>
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-100">
         {/* Image with fade animation */}
         <div
-          className={`relative h-auto md:h-100 w-full transition-all duration-300 ${
+          className={`relative h-100 w-full transition-all duration-300 ${
             fadeDirection === "left"
               ? "opacity-0 translate-x-10"
               : fadeDirection === "right"
@@ -67,7 +67,7 @@ export const ExploreProject = () => {
 
         {/* Text with fade animation */}
         <div
-          className={`bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat h-auto md:h-100 flex flex-col justify-between p-10 gap-5 transition-all duration-300 ${
+          className={`bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat h-auto md:h-100 flex flex-col justify-between p-5 md:p-10 py-10 md:py-20 gap-5 transition-all duration-300 ${
             fadeDirection === "left"
               ? "opacity-0 translate-x-10"
               : fadeDirection === "right"
@@ -77,24 +77,25 @@ export const ExploreProject = () => {
         >
           <div className="flex flex-col gap-5">
             <h2 className="text-2xl font-medium">
-            {currentProject.title.split(" ").map((word, idx, arr) => (
+            {/* {currentProject.title.split(" ").map((word, idx, arr) => (
               <React.Fragment key={idx}>
                 {word}
                 {idx < arr.length - 1 && <br />}
               </React.Fragment>
-            ))}
+            ))} */}
+            {currentProject.title}
           </h2>
           <p>{currentProject.description}</p>
           </div>
-
+            <div className="flex flex-col md:flex-row gap-2 items-start md:justify-end md:items-center text-sm"><div className="text-[#6A6F4C]">LOVE THIS DESIGN?</div>
           <Link
             href={`/projects?project=${currentProject.id}`}
-            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-5 text-sm"
+            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-7 text-white w-fit cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-5 text-sm"
             style={{ backgroundSize: "200px 200px" }}
           >
-            LOVE THIS DESIGN? DISCOVER MORE
+            DISCOVER MORE
             <FontAwesomeIcon icon={faArrowRightLong} className="w-5 h-5" />
-          </Link>
+          </Link></div>
         </div>
       </div>
 

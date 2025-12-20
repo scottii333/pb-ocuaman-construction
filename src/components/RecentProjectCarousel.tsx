@@ -21,7 +21,7 @@ export const RecentProjectCarousel = () => {
   return (
     <>
       {/* Project Image Carousel */}
-      <div className="flex  flex-col  p-10 px-20">
+      <div className="flex flex-col p-10 md:px-20">
         <h3 className="text-center text-xl md:text-2xl font-medium">
           OUR MOST <span className="text-[#D29E34] ">RECENT</span>{" "}
           PROJECTS

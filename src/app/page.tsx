@@ -17,7 +17,7 @@ import { ExploreProject } from "@/components/ExploreProject";
 
 export default function Home() {
   return (
-    <main className="flex flex-col mb-50">
+    <main className="flex flex-col mb-20">
       <div className="shadow-lg h-[80vh] lg:h-[90vh] overflow-hidden relative">
         <video
           src="/sample/sample.mp4"

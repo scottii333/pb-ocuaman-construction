@@ -30,8 +30,8 @@ export const JoinOurTeam = () => {
   };
 
   return (
-    <section className="flex flex-col items-center mt-10 py-10">
-      <div className="grid grid-cols-1 gap-5 md:gap-0 lg:grid-cols-[2fr_3fr] mt-5 place-items-center ">
+    <section className="flex flex-col items-center py-10 ">
+      <div className="grid grid-cols-1 gap-5 md:gap-0 lg:grid-cols-[2fr_3fr] mt-5 place-items-center">
         <div className="relative w-full max-w-[300px] md:max-w-[400px] h-[300px] md:h-[400px] mx-auto">
           {/* First image: top-left */}
           <div className="absolute top-0 left-0 w-50 h-50 md:w-70 md:h-70">
@@ -103,12 +103,12 @@ export const JoinOurTeam = () => {
               <p>Olongapo City, Zambales</p>
             </div>
           </div>
-          <p className="text-gray-600 pl-0 md:pl-5 pb-0 md:pb-5">
+          <p className="text-gray-600 pl-5 pb-0 md:pb-5">
             (WILLING TO BE RELOCATED)
           </p>
           <button
             onClick={handleApplyClick}
-            className="bg-[#8B8B6F] gap-3 bg-[url('/texture/green-cup.png')] bg-repeat w-50 h-10 text-white hover:bg-[#7a7a5f] cursor-pointer md:ml-5 flex items-center justify-center"
+            className="bg-[#8B8B6F] gap-3 bg-[url('/texture/green-cup.png')] bg-repeat w-50 h-10 text-white hover:bg-[#7a7a5f] cursor-pointer ml-5 flex items-center justify-center"
           >
             Apply Now{" "}
             <FontAwesomeIcon

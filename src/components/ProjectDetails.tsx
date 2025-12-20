@@ -42,11 +42,11 @@ export const ProjectDetails = ({ data }: ProjectDetailsProps) => {
   return (
     <section
       id="project-details-section"
-      className="flex flex-col p-5 scroll-mt-20"
+      className="flex flex-col p-5 scroll-mt-20 w-[95%] md:w-[90%] mx-auto"
     >
       <div className="grid gap-4 md:grid-rows-[auto auto] md:grid-cols-2 md:grid-flow-row md:gap-6">
         {/* Main Image */}
-        <div className="relative w-full h-64 md:h-115 order-1 md:order-1">
+        <div className="relative w-full h-64 md:h-103 order-1 md:order-1">
           <Image
             src={allImages[currentImageIndex]}
             alt={data.title}
@@ -109,7 +109,7 @@ export const ProjectDetails = ({ data }: ProjectDetailsProps) => {
             <span className="text-yellow-500">{data.category}</span>
           </h2>
 
-          <ScrollArea className="md:h-70 h-auto w-full p-1">
+          <ScrollArea className="md:h-60 h-auto w-full p-1">
             <p className="pr-5 text-gray-700">{data.description}</p>
 
             <Accordion type="single" collapsible className="w-full pr-5 mt-4">

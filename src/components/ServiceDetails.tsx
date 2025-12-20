@@ -46,7 +46,7 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
   return (
     <section
       id="service-details-section"
-      className="flex flex-col p-5 scroll-mt-20 bg-white py-10"
+      className="flex flex-col p-5 scroll-mt-20 bg-white py-10 w-[95%] md:w-[90%] mx-auto"
     >
       <div className="grid gap-4 md:grid-rows-[auto auto] md:grid-cols-2 md:grid-flow-row md:gap-6">
         {/* Main Image */}
@@ -129,7 +129,7 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
             {data.heading}
           </h2>
 
-          <ScrollArea className="md:h-70 h-auto w-full p-1">
+          <ScrollArea className="md:h-75 h-auto w-full p-1">
             <p className="pr-5 text-gray-700">{data.description}</p>
 
             <Accordion type="single" collapsible className="w-full pr-5 mt-4">
@@ -167,7 +167,7 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
             </Accordion>
           </ScrollArea>
 
-          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-4 py-3 rounded text-white mt-4 hover:bg-[#6e6e52] transition cursor-pointer w-full">
+          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-4 py-3 rounded text-white hover:bg-[#6e6e52] transition cursor-pointer w-full">
             REQUEST A FREE QUOTE
           </button>
         </div>
