@@ -23,21 +23,15 @@ export const Footer = () => {
       </div>
       <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10 order-2 lg:order-3">
         <h2 className="text-2xl font-bold mb-5">Services</h2>
-        <Link href="/services#build-my-dream-home">
-          Build My Dream Home
-        </Link>
+        <Link href="/services#build-my-dream-home">Build My Dream Home</Link>
         <Link href="/services#upgrade-to-bigger-home">
           Upgrade to a Bigger Home
         </Link>
         <Link href="/services#build-an-investment-property">
           Build an Investment Property
         </Link>
-        <Link href="/services#renovate-my-current-home">
-          Renovate My Space
-        </Link>
-        <Link href="/services#renovate-my-current-home">
-          Fit Out My Condo
-        </Link>
+        <Link href="/services#renovate-my-current-home">Renovate My Space</Link>
+        <Link href="/services#renovate-my-current-home">Fit Out My Condo</Link>
         <Link href="/services#renovate-my-current-home">
           Create My Business Space
         </Link>
@@ -70,15 +64,21 @@ export const Footer = () => {
           <br /> All Rights Reserved.
         </p>
         <div className="border-b border-white"></div>{" "}
-        <p className="text-sm">
+        <p className="text-sm flex justify-between items-center sm:flex-col sm:items-start ">
           Designed & Developed by &nbsp;
-          <Image
-            src="/leonexiaLogo.png"
-            alt="Leonexia Logo"
-            width={120}
-            height={40}
-            className="h-10 w-auto"
-          />
+          <Link
+            href="https://leonexia.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/leonexiaLogo.png"
+              alt="Leonexia Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+            />
+          </Link>
         </p>
       </div>
     </div>
