@@ -46,7 +46,7 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
   return (
     <section
       id="service-details-section"
-      className="flex flex-col p-5 scroll-mt-20"
+      className="flex flex-col p-5 scroll-mt-20 bg-white py-10 w-[95%] md:w-[90%] mx-auto"
     >
       <div className="grid gap-4 md:grid-rows-[auto auto] md:grid-cols-2 md:grid-flow-row md:gap-6">
         {/* Main Image */}
@@ -72,8 +72,8 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
               onClick={handlePrev}
               aria-label="Previous image"
               className="absolute inset-y-0 left-0 w-[60px] z-20 flex items-center justify-center
-             bg-linear-to-r from-black/30 to-transparent
-             hover:from-black/50 hover:to-transparent
+             bg-linear-to-r from-black/20 to-transparent
+             hover:from-black/30 hover:to-transparent
              text-white  transition-colors cursor-pointer select-none
              outline-none focus:outline-none active:outline-none ring-0 focus:ring-0"
             >
@@ -89,8 +89,8 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
               onClick={handleNext}
               aria-label="Next image"
               className="absolute inset-y-0 right-0 w-[60px] z-20 flex items-center justify-center
-             bg-linear-to-l from-black/30 to-transparent
-             hover:from-black/50 hover:to-transparent
+             bg-linear-to-l from-black/20 to-transparent
+             hover:from-black/30 hover:to-transparent
              text-white  transition-colors cursor-pointer select-none
              outline-none focus:outline-none active:outline-none ring-0 focus:ring-0"
             >
@@ -124,12 +124,12 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
         </div>
 
         {/* Project Description */}
-        <div className="order-3 md:order-2 md:col-span-1">
+        <div className="order-3 md:order-2 md:col-span-1 mt-5">
           <h2 className="text-xl md:text-2xl font-medium mb-5 text-[#232b5f] uppercase">
             {data.heading}
           </h2>
 
-          <ScrollArea className="md:h-80 h-auto w-full p-1">
+          <ScrollArea className="md:h-75 h-auto w-full p-1">
             <p className="pr-5 text-gray-700">{data.description}</p>
 
             <Accordion type="single" collapsible className="w-full pr-5 mt-4">
@@ -167,7 +167,7 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
             </Accordion>
           </ScrollArea>
 
-          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-4 py-3 rounded text-white mt-4 hover:bg-[#6e6e52] transition cursor-pointer w-full">
+          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-4 py-3 rounded text-white hover:bg-[#6e6e52] transition cursor-pointer w-full">
             REQUEST A FREE QUOTE
           </button>
         </div>

@@ -23,7 +23,7 @@ import { faBars,
 export const Header = () => {
   return (
     <div className=" shadow-lg p-3 flex justify-between px-10 md:px-0 md:justify-around items-center gap-10 sticky top-0 bg-white z-50">
-      <Link href="/" className="">
+      <Link href="/" className="px-7">
         {" "}
         <Image
           src="/pb-ocuaman-main-logo.png" // path to your image
@@ -35,22 +35,22 @@ export const Header = () => {
 
       <nav className=" items-center gap-5 hidden md:flex">
         <Link href="/about" className="flex gap-1 items-center">
-        <FontAwesomeIcon icon={faPeopleRoof} className="h-6 w-6" />
-          About
+        {/* <FontAwesomeIcon icon={faPeopleRoof} className="h-6 w-6" /> */}
+          About Us
         </Link>
         <div className="border-l border-[#c0c0c6] h-5 "></div>
         <Link href="/services" className="flex gap-1 items-center">
-        <FontAwesomeIcon icon={faScrewdriverWrench} className="h-6 w-6" />
+        {/* <FontAwesomeIcon icon={faScrewdriverWrench} className="h-6 w-6" /> */}
           Services
         </Link>
         <div className="border-l border-[#c0c0c6] h-5 "></div>
         <Link href="/projects" className="flex gap-1 items-center">
-        <FontAwesomeIcon icon={faBuilding} className="h-6 w-6" />
+        {/* <FontAwesomeIcon icon={faBuilding} className="h-6 w-6" /> */}
           Projects
         </Link>
         <div className="border-l border-[#c0c0c6] h-5 "></div>
         <Link href="/careers" className="flex gap-1 items-center">
-        <FontAwesomeIcon icon={faPhone} className="h-6 w-6" />
+        {/* <FontAwesomeIcon icon={faPhone} className="h-6 w-6" /> */}
           Careers
         </Link>
       </nav>
@@ -84,7 +84,7 @@ export const Header = () => {
 
             <div className="border-b border-grey w-full"></div>
             <Link href="/about" className="">
-              <FontAwesomeIcon icon={faPeopleRoof} className="h-6 w-6" /> About
+              <FontAwesomeIcon icon={faPeopleRoof} className="h-6 w-6" /> About Us
             </Link>
             <div className="border-b border-grey w-full"></div>
             <Link href="/services" className="">

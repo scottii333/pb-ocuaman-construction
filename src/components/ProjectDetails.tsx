@@ -42,11 +42,11 @@ export const ProjectDetails = ({ data }: ProjectDetailsProps) => {
   return (
     <section
       id="project-details-section"
-      className="flex flex-col p-5 scroll-mt-20"
+      className="flex flex-col p-5 scroll-mt-20 w-[95%] md:w-[90%] mx-auto"
     >
       <div className="grid gap-4 md:grid-rows-[auto auto] md:grid-cols-2 md:grid-flow-row md:gap-6">
         {/* Main Image */}
-        <div className="relative w-full h-64 md:h-115 order-1 md:order-1">
+        <div className="relative w-full h-64 md:h-103 order-1 md:order-1">
           <Image
             src={allImages[currentImageIndex]}
             alt={data.title}
@@ -103,13 +103,13 @@ export const ProjectDetails = ({ data }: ProjectDetailsProps) => {
         </div>
 
         {/* Project Description */}
-        <div className="order-3 md:order-2 md:col-span-1">
+        <div className="order-3 md:order-2 md:col-span-1 my-5">
           <h2 className="text-xl md:text-2xl font-medium mb-5">
             {data.title} <br />
             <span className="text-yellow-500">{data.category}</span>
           </h2>
 
-          <ScrollArea className="md:h-80 h-auto w-full p-1">
+          <ScrollArea className="md:h-60 h-auto w-full p-1">
             <p className="pr-5 text-gray-700">{data.description}</p>
 
             <Accordion type="single" collapsible className="w-full pr-5 mt-4">
@@ -134,7 +134,7 @@ export const ProjectDetails = ({ data }: ProjectDetailsProps) => {
             </Accordion>
           </ScrollArea>
 
-          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-4 py-3 rounded text-white mt-4 hover:bg-[#6e6e52] transition cursor-pointer w-full">
+          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-4 py-3 rounded text-white hover:bg-[#6e6e52] transition cursor-pointer w-full">
             REQUEST A FREE QUOTE
           </button>
         </div>

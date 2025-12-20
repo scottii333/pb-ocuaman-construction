@@ -43,7 +43,7 @@ export default function ServicesCarousel() {
           <Link
             key={service.id}
             href={`/services?service=${service.id}`}
-            className="shadow-lg w-50 md:w-80 h-50 md:h-80 relative overflow-hidden flex-none snap-start cursor-pointer transition-transform hover:scale-105 block"
+            className="shadow-lg w-50 md:w-80 h-50 md:h-80 relative overflow-hidden flex-none snap-start cursor-pointer transition-transform hover:scale-102 block"
           >
             <Image
               src={service.coverImage}
@@ -75,7 +75,7 @@ export default function ServicesCarousel() {
           style={{ backgroundSize: "200px 200px" }}
           onClick={() => scrollByAmount("left")}
         >
-          <FontAwesomeIcon icon={faArrowLeftLong} className="text-3xl" />
+          <FontAwesomeIcon icon={faArrowLeftLong} className="text-xl" />
         </button>
 
         <button
@@ -86,7 +86,7 @@ export default function ServicesCarousel() {
           style={{ backgroundSize: "200px 200px" }}
           onClick={() => scrollByAmount("right")}
         >
-          <FontAwesomeIcon icon={faArrowRightLong} className="text-3xl" />
+          <FontAwesomeIcon icon={faArrowRightLong} className="text-xl" />
         </button>
 
         <button

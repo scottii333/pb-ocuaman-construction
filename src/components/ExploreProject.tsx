@@ -41,15 +41,15 @@ export const ExploreProject = () => {
   };
 
   return (
-    <section className="p-10 flex flex-col gap-10">
-      <h3>
-        EXPLORE <span>MORE</span> OF OUR PROJECTS
+    <section className="p-5 md:p-10 flex flex-col gap-5 w-full md:w-[85%] mx-auto">
+      <h3 className="text-2xl">
+        WHAT  WE&apos;VE<span className="text-yellow-500"> BUILT</span>
       </h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-100">
         {/* Image with fade animation */}
         <div
-          className={`relative h-120 w-full transition-all duration-300 ${
+          className={`relative h-100 w-full transition-all duration-300 ${
             fadeDirection === "left"
               ? "opacity-0 translate-x-10"
               : fadeDirection === "right"
@@ -61,13 +61,13 @@ export const ExploreProject = () => {
             src={currentProject.mainImage}
             alt={currentProject.title}
             fill
-            className="object-cover rounded"
+            className="object-cover"
           />
         </div>
 
         {/* Text with fade animation */}
         <div
-          className={`bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat h-auto md:h-full flex flex-col p-10 gap-5 transition-all duration-300 ${
+          className={`bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat h-auto md:h-100 flex flex-col justify-between p-5 md:p-10 py-10 md:py-20 gap-5 transition-all duration-300 ${
             fadeDirection === "left"
               ? "opacity-0 translate-x-10"
               : fadeDirection === "right"
@@ -75,48 +75,51 @@ export const ExploreProject = () => {
               : "opacity-100 translate-x-0"
           }`}
         >
-          <h2 className="text-2xl font-semibold">
-            {currentProject.title.split(" ").map((word, idx, arr) => (
+          <div className="flex flex-col gap-5">
+            <h2 className="text-2xl font-medium">
+            {/* {currentProject.title.split(" ").map((word, idx, arr) => (
               <React.Fragment key={idx}>
                 {word}
                 {idx < arr.length - 1 && <br />}
               </React.Fragment>
-            ))}
+            ))} */}
+            {currentProject.title}
           </h2>
           <p>{currentProject.description}</p>
-
+          </div>
+            <div className="flex flex-col md:flex-row gap-2 items-start md:justify-end md:items-center text-sm"><div className="text-[#6A6F4C]">LOVE THIS DESIGN?</div>
           <Link
             href={`/projects?project=${currentProject.id}`}
-            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white w-fit mt-2 cursor-pointer hover: bg-[#6e6e52] transition flex items-center gap-5 text-[18px] font-semibold rounded"
+            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-7 text-white w-fit cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-5 text-sm"
             style={{ backgroundSize: "200px 200px" }}
           >
-            LOVE THIS DESIGN? DISCOVER MORE
+            DISCOVER MORE
             <FontAwesomeIcon icon={faArrowRightLong} className="w-5 h-5" />
-          </Link>
+          </Link></div>
         </div>
       </div>
 
-      <div className="flex gap-5 justify-end mt-5">
+      <div className="flex gap-5 justify-end">
         <button
           type="button"
           aria-label="Previous"
           title="Previous"
-          className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition flex items-center justify-center px-10 py-2 rounded"
+          className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition flex items-center justify-center px-10 py-2"
           style={{ backgroundSize: "200px 200px" }}
           onClick={handlePrev}
         >
-          <FontAwesomeIcon icon={faArrowLeftLong} className="text-3xl" />
+          <FontAwesomeIcon icon={faArrowLeftLong} className="text-xl" />
         </button>
 
         <button
           type="button"
           aria-label="Next"
           title="Next"
-          className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover: bg-[#6e6e52] transition flex items-center justify-center px-10 py-2 rounded"
+          className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition flex items-center justify-center px-10 py-2"
           style={{ backgroundSize: "200px 200px" }}
           onClick={handleNext}
         >
-          <FontAwesomeIcon icon={faArrowRightLong} className="text-3xl" />
+          <FontAwesomeIcon icon={faArrowRightLong} className="text-xl" />
         </button>
       </div>
     </section>
