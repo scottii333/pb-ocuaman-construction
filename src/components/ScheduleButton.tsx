@@ -18,7 +18,7 @@ export const ScheduleButton = () => {
       data-cal-namespace="30min"
       data-cal-link="pb-ocuaman/30min"
       data-cal-config='{"layout":"month_view"}'
-      className="bg-[#232b5f] text-white cursor-pointer flex items-center justify-center px-6 py-2 md:py-3 gap-2"
+      className="bg-[#232b5f] animate-bounce text-white cursor-pointer flex items-center justify-center px-6 py-2 md:py-3 gap-2"
     >
       <FontAwesomeIcon icon={faVideo} className="h-6 w-6 text-white" />
       Schedule a Meeting
