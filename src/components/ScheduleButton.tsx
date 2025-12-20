@@ -3,9 +3,7 @@
 import { getCalApi } from "@calcom/embed-react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faVideo
- } from "@fortawesome/free-solid-svg-icons";
+import { faVideo } from "@fortawesome/free-solid-svg-icons";
 
 export const ScheduleButton = () => {
   const handleButtonClick = async () => {
@@ -21,9 +19,9 @@ export const ScheduleButton = () => {
       data-cal-link="pb-ocuaman/30min"
       data-cal-config='{"layout":"month_view"}'
       className="bg-[#232b5f] text-white cursor-pointer flex items-center justify-center px-6 py-2 md:py-3 gap-2"
-    ><FontAwesomeIcon icon={faVideo} className="h-6 w-6 text-white" />
+    >
+      <FontAwesomeIcon icon={faVideo} className="h-6 w-6 text-white" />
       Schedule a Meeting
     </button>
-    
   );
 };
