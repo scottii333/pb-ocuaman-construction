@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-
 import Image from "next/image";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeftLong,
@@ -12,6 +10,7 @@ import {
   faAngleRight,
   faAngleLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import { teamMembersData } from "@/data/teamMembersData";
 
 export const OurTeam = () => {
   const servicesRef = useRef<HTMLDivElement | null>(null);
@@ -20,11 +19,16 @@ export const OurTeam = () => {
   const scrollByAmount = (dir: "left" | "right") => {
     const c = servicesRef.current;
     if (!c) return;
-    const amount = 320 + 20; // w-80 (320px) + gap-5 (20px)
+
+    // Get first card width dynamically
+    const cardWidth = c.firstChild
+      ? (c.firstChild as HTMLElement).clientWidth
+      : 320;
+    const gap = 20; // same as your md:gap-10 / gap-5
+    const amount = cardWidth + gap;
+
     c.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
   };
- 
-  const teamMembers = Array.from({ length: 5 });
 
   return (
     <div>
@@ -53,7 +57,7 @@ export const OurTeam = () => {
           <Image
             src="/aboutUs-experts.png"
             alt="About Banner"
-            width={800} // desktop size
+            width={800}
             height={800}
             className="w-full h-auto lg:max-w-[400px]"
           />
@@ -69,6 +73,7 @@ export const OurTeam = () => {
             <button
               className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white hidden md:block cursor-pointer hover:bg-[#6e6e52] transition"
               style={{ backgroundSize: "200px 200px" }}
+              onClick={() => scrollByAmount("left")}
             >
               <FontAwesomeIcon
                 icon={faArrowLeftLong}
@@ -78,6 +83,7 @@ export const OurTeam = () => {
             <button
               className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white hidden md:block cursor-pointer hover:bg-[#6e6e52] transition"
               style={{ backgroundSize: "200px 200px" }}
+              onClick={() => scrollByAmount("right")}
             >
               <FontAwesomeIcon
                 icon={faArrowRightLong}
@@ -86,21 +92,24 @@ export const OurTeam = () => {
             </button>
           </div>
         </div>
-        <div className="flex gap-5 md:gap-10 overflow-x-auto no-scrollbar">
-          {teamMembers.map((_, index) => (
+        <div
+          ref={servicesRef}
+          className="flex gap-5 md:gap-10 overflow-x-auto no-scrollbar"
+        >
+          {teamMembersData.map((member) => (
             <div
-              key={index}
+              key={member.id}
               className="relative inline-block w-50 md:w-80 shrink-0"
             >
               <Image
-                src="/team-member.png"
-                alt="team member"
+                src={member.image}
+                alt={member.name}
                 width={300}
                 height={300}
                 className="w-50 md:w-80 h-auto"
               />
               <div className="absolute bottom-0 left-0 h-20 w-full bg-black/60 text-lg text-white flex items-center justify-center">
-                Engr. Ocuaman
+                {member.name}
               </div>
             </div>
           ))}
