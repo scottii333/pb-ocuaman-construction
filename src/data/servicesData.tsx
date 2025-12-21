@@ -30,13 +30,14 @@ export const servicesData: ServiceData[] = [
     title: "BUILD MY DREAM HOME",
     heading: "BUILD MY DREAM HOME",
     icon: faHouseChimneyWindow,
-    coverImage: "/sample/sample.jpg",
+    coverImage:
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347068/service-1_udcqus.jpg",
     thumbnails: [
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347066/service-2_o9orms.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347072/service-3_ncvnkr.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-4_vvg3zo.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-5_us2rra.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347057/service-6_tncl6l.jpg",
     ],
     description:
       "We help homeowners turn their dream home into reality with a guided, stress-free process. From planning your ideal layout to selecting materials that fit your budget, we make sure your home is built with quality, comfort, and long-term value in mind.",
@@ -86,13 +87,14 @@ export const servicesData: ServiceData[] = [
     title: "UPGRADE TO A BIGGER HOME",
     heading: "UPGRADE & EXPANSION",
     icon: faHouseChimneyMedical,
-    coverImage: "/sample/sample.jpg",
+    coverImage:
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347066/service-2_o9orms.jpg",
     thumbnails: [
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347068/service-1_udcqus.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347072/service-3_ncvnkr.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-4_vvg3zo.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-5_us2rra.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347057/service-6_tncl6l.jpg",
     ],
     description:
       "Outgrowing your current space? We specialize in seamless additions and major expansions. Whether it's a second story, a master suite extension, or a larger kitchen, we ensure the new structure blends perfectly with your existing home.",
@@ -117,13 +119,14 @@ export const servicesData: ServiceData[] = [
     title: "BUILD AN INVESTMENT PROPERTY",
     heading: "INVESTMENT PROPERTY CONSTRUCTION",
     icon: faHandHoldingDollar,
-    coverImage: "/sample/sample.jpg",
+    coverImage:
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347072/service-3_ncvnkr.jpg",
     thumbnails: [
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347068/service-1_udcqus.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347066/service-2_o9orms.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-4_vvg3zo.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-5_us2rra.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347057/service-6_tncl6l.jpg",
     ],
     description:
       "Maximize your ROI with durable, cost-effective construction designed for the rental market. We build multi-family units, duplexes, and rental-ready homes that balance upfront cost with long-term durability.",
@@ -142,13 +145,14 @@ export const servicesData: ServiceData[] = [
     title: "RENOVATE MY SPACE",
     heading: "FULL HOME RENOVATION",
     icon: faScrewdriverWrench,
-    coverImage: "/sample/sample.jpg",
+    coverImage:
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-4_vvg3zo.jpg",
     thumbnails: [
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347068/service-1_udcqus.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347066/service-2_o9orms.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347072/service-3_ncvnkr.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-5_us2rra.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347057/service-6_tncl6l.jpg",
     ],
     description:
       "Breathe new life into your existing space. From complete gut renovations to modernizing historic homes, we handle everything from demolition to the final coat of paint.",
@@ -168,13 +172,14 @@ export const servicesData: ServiceData[] = [
     title: "FIT OUT MY CONDO",
     heading: "CONDO FIT-OUT SERVICES",
     icon: faBuilding,
-    coverImage: "/sample/sample.jpg",
+    coverImage:
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-5_us2rra.jpg",
     thumbnails: [
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347068/service-1_udcqus.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347066/service-2_o9orms.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347072/service-3_ncvnkr.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-4_vvg3zo.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347057/service-6_tncl6l.jpg",
     ],
     description:
       "Turn your bare condo unit into a stylish, functional home. We handle strict building administration requirements, limited work hours, and logistics to deliver high-quality interiors.",
@@ -185,7 +190,7 @@ export const servicesData: ServiceData[] = [
           cleaning.
         </p>
       ),
-      timeline: <p>4-8 weeks.</p>,
+      timeline: <p>4–8 weeks.</p>,
       pricing: <p>Package rates available for Studio, 1BR, and 2BR units.</p>,
     },
   },
@@ -194,13 +199,14 @@ export const servicesData: ServiceData[] = [
     title: "CREATE MY BUSINESS SPACE",
     heading: "COMMERCIAL CONSTRUCTION",
     icon: faBriefcase,
-    coverImage: "/sample/sample.jpg",
+    coverImage:
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347057/service-6_tncl6l.jpg",
     thumbnails: [
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347068/service-1_udcqus.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347066/service-2_o9orms.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347072/service-3_ncvnkr.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-4_vvg3zo.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-5_us2rra.jpg",
     ],
     description:
       "Offices, retail stores, restaurants, and warehouses. We build spaces that reflect your brand and optimize operational flow.",

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import axios, { type AxiosError } from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "sonner";
@@ -47,6 +48,13 @@ const ALLOWED_EMAIL_DOMAINS = new Set([
   "msn.com",
 ]);
 
+const SOCIAL_MEDIA_LINKS = {
+  facebook: "https://www.facebook.com/pbocuamanconstruction",
+  instagram: "https://www.instagram.com/pbocuamanconstruction/",
+  linkedin:
+    "https://www.linkedin.com/in/pb-ocuaman-construction-services-ba5504388/",
+};
+
 const wordCount = (text: string) =>
   text.trim() === "" ? 0 : text.trim().split(/\s+/).filter(Boolean).length;
 
@@ -59,18 +67,18 @@ const limitWords = (text: string, max: number) => {
 function getAxiosErrorMessage(err: unknown): string {
   if (axios.isAxiosError(err)) {
     const axErr = err as AxiosError<{ message?: string }>;
-    return axErr.response?.data?.message || axErr.message || "Request failed.";
+    return axErr.response?.data?.message || axErr.message || "Request failed. ";
   }
   if (err instanceof Error) return err.message;
   return "An unexpected error occurred.";
 }
 
-// Phone: accept exactly 11 digits starting with 09 (e.g., 09918121869)
+// Phone:  accept exactly 11 digits starting with 09 (e.g., 09918121869)
 function isValidPhoneLocal(raw: string): boolean {
   return /^09\d{9}$/.test(raw);
 }
 
-// sanitize phone input: remove non-digits, keep at most 11 digits, convert +63 to leading 0
+// sanitize phone input:  remove non-digits, keep at most 11 digits, convert +63 to leading 0
 function sanitizePhoneInput(value: string): string {
   if (!value) return "";
   let digits = value.replace(/\D/g, "");
@@ -118,7 +126,7 @@ export const GetInTouch = () => {
   const validateLocally = (): boolean => {
     const errors: Record<string, string> = {};
 
-    if (!inquiryType) errors.inquiryType = "Please select an inquiry type.";
+    if (!inquiryType) errors.inquiryType = "Please select an inquiry type. ";
     if (!fullName.trim()) errors.fullName = "Full name is required.";
     else if (fullName.trim().length > MAX_NAME_CHARS)
       errors.fullName = `Full name must be at most ${MAX_NAME_CHARS} characters.`;
@@ -131,21 +139,21 @@ export const GetInTouch = () => {
       const domain = email.split("@")[1]?.toLowerCase() || "";
       if (!basicEmail) errors.email = "Invalid email format.";
       else if (!ALLOWED_EMAIL_DOMAINS.has(domain))
-        errors.email = "Allowed domains: Gmail, Outlook/Hotmail, Yahoo.";
+        errors.email = "Allowed domains:  Gmail, Outlook/Hotmail, Yahoo. ";
     }
 
     if (!phone.trim()) errors.phone = "Phone is required.";
     else if (!isValidPhoneLocal(phone.trim()))
       errors.phone =
-        "Phone must be Philippine mobile format: 09XXXXXXXXX (11 digits).";
+        "Phone must be Philippine mobile format:  09XXXXXXXXX (11 digits).";
 
     if (!message.trim()) errors.message = "Message is required.";
     else if (messageWords > MAX_MESSAGE_WORDS)
       errors.message = `Message must be at most ${MAX_MESSAGE_WORDS} words.`;
     else if (messageChars > MAX_MESSAGE_CHARS)
-      errors.message = `Message must be at most ${MAX_MESSAGE_CHARS} characters.`;
+      errors.message = `Message must be at most ${MAX_MESSAGE_CHARS} characters. `;
 
-    if (!captchaToken) errors.recaptcha = "Please complete the reCAPTCHA.";
+    if (!captchaToken) errors.recaptcha = "Please complete the reCAPTCHA. ";
 
     setFieldErrors(errors);
 
@@ -215,7 +223,7 @@ export const GetInTouch = () => {
           id: toastId,
         });
       } else {
-        toast.error(data?.message || "Submission failed. Please try again.", {
+        toast.error(data?.message || "Submission failed.  Please try again.", {
           id: toastId,
         });
         safeResetCaptcha();
@@ -234,7 +242,7 @@ export const GetInTouch = () => {
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 bg-white!">
-      <div className="flex flex-col p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-30 lg:pr-30">
+      <div className="flex flex-col p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-30 lg:pr-30 px-10 md:px-0">
         <h2 className="text-2xl md:text-3xl mb-3 mt-10">GET IN TOUCH</h2>
         <div className="border-b border-[#8B8B6F]" />
         <div className="mt-5 flex flex-col gap-0 md:gap-5">
@@ -279,24 +287,48 @@ export const GetInTouch = () => {
         </div>
 
         <div className="border-b border-[#8B8B6F] mt-5" />
-        <p className="mt-0 md:mt-5 text-xl p-3">Follow Us On:</p>
+        <p className="mt-0 md:mt-5 text-xl p-3">Follow Us On: </p>
         <div className="p-3 pt-0 md:pt-3 flex gap-3">
-          <FontAwesomeIcon
-            icon={faFacebook}
-            className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl"
-          />
-          <FontAwesomeIcon
-            icon={faInstagram}
-            className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl"
-          />
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl"
-          />
+          <Link
+            href={SOCIAL_MEDIA_LINKS.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <FontAwesomeIcon
+              icon={faFacebook}
+              className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl cursor-pointer hover:bg-[#7a7a5f] transition"
+            />
+          </Link>
+          <Link
+            href={SOCIAL_MEDIA_LINKS.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl cursor-pointer hover:bg-[#7a7a5f] transition"
+            />
+          </Link>
+          <Link
+            href={SOCIAL_MEDIA_LINKS.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl cursor-pointer hover:bg-[#7a7a5f] transition"
+            />
+          </Link>
         </div>
       </div>
 
-      <div className="bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat min-h-100 flex flex-col gap-3 p-7 lg:p-10 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25">
+      <div
+        className="bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat min-h-100 flex flex-col gap-3 p-7 lg:p-10 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25 px-10 md:px-0"
+        id="contact-form"
+      >
         <Label htmlFor="inquiryType" className="mt-5 text-sm md:text-base">
           TYPE OF INQUIRY
         </Label>
@@ -310,11 +342,11 @@ export const GetInTouch = () => {
           >
             <SelectTrigger
               id="inquiryType"
-              className={`w-full bg-white ${inputErrorClass("inquiryType")}`}
+              className={`w-full rounded-none bg-white ${inputErrorClass("inquiryType")}`}
             >
               <SelectValue placeholder="Select Inquiry Type" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="rounded-none">
               <SelectItem value="general">
                 General Construction Inquiry
               </SelectItem>
@@ -348,7 +380,7 @@ export const GetInTouch = () => {
           id="fullName"
           type="text"
           placeholder="Your Name"
-          className={`bg-white w-full ${inputErrorClass("fullName")}`}
+          className={`bg-white rounded-none w-full ${inputErrorClass("fullName")}`}
           value={fullName}
           onChange={(e) => {
             setFullName(e.target.value.slice(0, MAX_NAME_CHARS));
@@ -366,14 +398,14 @@ export const GetInTouch = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <Label htmlFor="email" className="text-sm md:text-base">
+            <Label htmlFor="email" className="text-sm md:text-base mb-2">
               EMAIL ADDRESS
             </Label>
             <Input
               id="email"
               type="email"
               placeholder="Your Email"
-              className={`bg-white w-full ${inputErrorClass("email")}`}
+              className={`bg-white rounded-none w-full ${inputErrorClass("email")}`}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value.slice(0, MAX_EMAIL_CHARS));
@@ -391,7 +423,7 @@ export const GetInTouch = () => {
           </div>
 
           <div>
-            <Label htmlFor="phone" className="text-sm md:text-base">
+            <Label htmlFor="phone" className="text-sm md:text-base mb-2">
               PHONE NUMBER
             </Label>
             <Input
@@ -399,7 +431,7 @@ export const GetInTouch = () => {
               type="tel"
               inputMode="tel"
               placeholder="09XXXXXXXXX"
-              className={`bg-white w-full ${inputErrorClass("phone")}`}
+              className={`bg-white rounded-none w-full ${inputErrorClass("phone")}`}
               value={phone}
               onChange={(e) => {
                 const v = sanitizePhoneInput(e.target.value);
@@ -425,7 +457,7 @@ export const GetInTouch = () => {
         <Textarea
           id="message"
           placeholder="Your Message"
-          className={`bg-white w-full ${inputErrorClass("message")}`}
+          className={`bg-white rounded-none w-full ${inputErrorClass("message")}`}
           value={message}
           onChange={(e) => {
             const limitedByWords = limitWords(
@@ -443,7 +475,7 @@ export const GetInTouch = () => {
         {fieldErrors.message && (
           <div className="text-red-600 text-sm mt-1">{fieldErrors.message}</div>
         )}
-        <div className="flex justify-between text-xs text-gray-500 mt-1 mb-3">
+        <div className="flex justify-between text-xs text-gray-500 mt-1 ">
           <div>
             {messageWords}/{MAX_MESSAGE_WORDS} words
           </div>
@@ -452,9 +484,9 @@ export const GetInTouch = () => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-end mb-10 items-start gap-4">
+        <div className="flex flex-col justify-end mb-10 items-end gap-4">
           {siteKey ? (
-            <div className="mt-5">
+            <div>
               <ReCAPTCHA
                 ref={recaptchaRef}
                 sitekey={siteKey}
@@ -477,7 +509,7 @@ export const GetInTouch = () => {
           )}
 
           <button
-            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-10 py-3 text-white mt-5 hover:bg-[#7a7a5f] cursor-pointer text-base flex justify-between items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-10 py-3 text-white hover:bg-[#7a7a5f] cursor-pointer text-base flex justify-between items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
             onClick={handleSubmit}
             disabled={!canSubmit}
             aria-disabled={!canSubmit}

@@ -19,13 +19,13 @@ export default function About() {
       <div className="relative w-full h-[80vh] lg:h-[90vh]">
         {/* Background Image */}
         <Image
-          src="/sample/sample.jpg"
+          src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766348394/about-hero_ujbbnt.jpg"
           alt="About Banner"
           fill
           className="object-cover"
           priority
+          unoptimized
         />
-
         {/* Black Overlay */}
         <div className="absolute inset-0 bg-black/60" />
 
@@ -76,12 +76,15 @@ export default function About() {
             </div>
             <div className="w-full h-full order-1 md:order-2 relative z-10">
               <Image
-                src="/sample/sample.jpg"
+                src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347594/mission_wji2e5.jpg"
                 alt="About Banner"
                 width={300}
                 height={300}
                 className="w-full h-full order-1 md:order-2 shrink-0 object-cover"
+                loading="lazy"
+                unoptimized
               />
+
               <div className="flex md:hidden absolute inset-0 bg-black/60 z-0"></div>
               <div className="absolute bottom-5 left-5 text-2xl md:text-3xl text-white md:hidden">
                 Our <span className="text-[#D29E34]">Mission</span>
@@ -91,12 +94,15 @@ export default function About() {
           <div className="bg-[url('/texture/wall-texture.png')] w-full h-full shrink-0 grid grid-cols-1 md:grid-cols-[1fr_5fr]">
             <div className="w-full h-full relative">
               <Image
-                src="/sample/sample.jpg"
+                src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347592/vision_u5btgj.jpg"
                 alt="About Banner"
                 width={300}
                 height={300}
                 className="w-full h-full shrink-0 object-cover"
+                loading="lazy"
+                unoptimized
               />
+
               <div className="flex md:hidden absolute inset-0 bg-black/60 z-0"></div>
               <div className="absolute bottom-5 left-5 text-2xl md:text-3xl text-white md:hidden">
                 Our <span className="text-[#D29E34]">Vision</span>
@@ -208,10 +214,12 @@ export default function About() {
             {/* First row (full width on mobile) */}
             <div className="relative w-full h-[250px] lg:h-full">
               <Image
-                src="/sample/sample.jpg"
+                src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766348233/milestone-2_twint6.jpg"
                 alt="Left"
                 fill
                 className="object-cover"
+                loading="lazy"
+                unoptimized
               />
             </div>
 
@@ -219,18 +227,22 @@ export default function About() {
             <div className="grid grid-cols-2 gap-5 h-auto">
               <div className="relative w-full h-[120px] lg:h-auto">
                 <Image
-                  src="/sample/sample.jpg"
+                  src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766348225/milestone-3_iapq1t.jpg"
                   alt="Top right"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  unoptimized
                 />
               </div>
               <div className="relative w-full h-[120px] lg:h-auto">
                 <Image
-                  src="/sample/sample.jpg"
+                  src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766348220/milestone-4_lunx26.jpg"
                   alt="Bottom right"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  unoptimized
                 />
               </div>
             </div>

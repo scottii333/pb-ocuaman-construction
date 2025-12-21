@@ -9,34 +9,32 @@ export const Footer = () => {
       <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10 order-1 lg:order-2">
         <h2 className="text-2xl font-bold mb-5">Quick Links</h2>
         <div className="grid grid-cols-2 md:grid-cols-1">
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-2">
             <Link href="/">Home</Link>
             <Link href="/about">About </Link>
             <Link href="/services">Services</Link>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-2">
             <Link href="/projects">Projects</Link>
             <Link href="/careers">Careers</Link>
             <Link href="/contact">Contact</Link>
           </div>
         </div>
       </div>
-      <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10 order-2 lg:order-3">
+      <div className="flex flex-col gap-2 p-10 md:p-5 pb-0 relative z-10 order-2 lg:order-3">
         <h2 className="text-2xl font-bold mb-5">Services</h2>
-        <Link href="/services#build-my-dream-home">Build My Dream Home</Link>
-        <Link href="/services#upgrade-to-bigger-home">
+        <Link href="/services?service=dream-home">Build My Dream Home</Link>
+        <Link href="/services?service=upgrade-home">
           Upgrade to a Bigger Home
         </Link>
-        <Link href="/services#build-an-investment-property">
+        <Link href="/services?service=investment">
           Build an Investment Property
         </Link>
-        <Link href="/services#renovate-my-current-home">Renovate My Space</Link>
-        <Link href="/services#renovate-my-current-home">Fit Out My Condo</Link>
-        <Link href="/services#renovate-my-current-home">
-          Create My Business Space
-        </Link>
+        <Link href="/services?service=renovate">Renovate My Space</Link>
+        <Link href="/services?service=fit-out">Fit Out My Condo</Link>
+        <Link href="/services?service=business">Create My Business Space</Link>
       </div>
-      <div className="flex flex-col p-10 md:p-5 pb-0 relative z-10 order-3 lg:order-4">
+      <div className="flex flex-col gap-2 p-10 md:p-5 pb-0 relative z-10 order-3 lg:order-4">
         <h2 className="text-2xl font-bold mb-5">Contact</h2>
         <p>
           <span className="font-semibold">Phone:</span>
@@ -64,7 +62,7 @@ export const Footer = () => {
           <br /> All Rights Reserved.
         </p>
         <div className="border-b border-white"></div>{" "}
-        <p className="text-sm flex justify-between items-center sm:flex-col sm:items-start ">
+        <p className="text-sm flex justify-between items-center sm: flex-col sm:items-start ">
           Designed & Developed by &nbsp;
           <Link
             href="https://leonexia.com/"

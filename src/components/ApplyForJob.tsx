@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import axios, { type AxiosError } from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "sonner";
@@ -21,6 +22,7 @@ import {
   faEnvelope,
   faPhone,
   faLocationDot,
+  faPaperPlane
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -38,13 +40,20 @@ const MAX_MESSAGE_CHARS = 1000;
 const ALLOWED_EMAIL_DOMAINS = new Set([
   "gmail.com",
   "googlemail.com",
-  "yahoo.com",
+  "yahoo. com",
   "ymail.com",
   "outlook.com",
   "hotmail.com",
   "live.com",
   "msn.com",
 ]);
+
+const SOCIAL_MEDIA_LINKS = {
+  facebook: "https://www.facebook.com/pbocuamanconstruction",
+  instagram: "https://www.instagram.com/pbocuamanconstruction/",
+  linkedin:
+    "https://www.linkedin.com/in/pb-ocuaman-construction-services-ba5504388/",
+};
 
 const wordCount = (text: string) =>
   text.trim() === "" ? 0 : text.trim().split(/\s+/).filter(Boolean).length;
@@ -58,7 +67,7 @@ const limitWords = (text: string, max: number) => {
 function getAxiosErrorMessage(err: unknown): string {
   if (axios.isAxiosError(err)) {
     const axErr = err as AxiosError<{ message?: string }>;
-    return axErr.response?.data?.message || axErr.message || "Request failed.";
+    return axErr.response?.data?.message || axErr.message || "Request failed. ";
   }
   if (err instanceof Error) return err.message;
   return "An unexpected error occurred.";
@@ -115,11 +124,11 @@ export const ApplyForJob = () => {
   const validateLocally = () => {
     const errors: Record<string, string> = {};
 
-    if (!jobType) errors.jobType = "Please select a job type.";
+    if (!jobType) errors.jobType = "Please select a job type. ";
 
     if (!fullName.trim()) errors.fullName = "Full name is required.";
     else if (fullName.trim().length > MAX_NAME_CHARS)
-      errors.fullName = `Name max ${MAX_NAME_CHARS} chars.`;
+      errors.fullName = `Name max ${MAX_NAME_CHARS} chars. `;
 
     if (!email.trim()) errors.email = "Email is required.";
     else if (email.length > MAX_EMAIL_CHARS)
@@ -136,9 +145,9 @@ export const ApplyForJob = () => {
 
     if (!message.trim()) errors.message = "Message is required.";
     else if (messageWords > MAX_MESSAGE_WORDS)
-      errors.message = "Message too long.";
+      errors.message = "Message too long. ";
 
-    if (!captchaToken) errors.recaptcha = "Please complete the reCAPTCHA.";
+    if (!captchaToken) errors.recaptcha = "Please complete the reCAPTCHA. ";
 
     setFieldErrors(errors);
     if (errors.email) toast.error(errors.email); // Toast specific email errors
@@ -201,7 +210,7 @@ export const ApplyForJob = () => {
       : "";
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2">
+    <section className="grid grid-cols-1 md:grid-cols-2 bg-white">
       {/* Left Column (Static Info) */}
       <div className="flex flex-col p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-30 lg:pr-30 pt-10">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-medium mb-3 mt-10">
@@ -253,20 +262,41 @@ export const ApplyForJob = () => {
           </div>
         </div>
         <div className="border-b border-[#8B8B6F] mt-5"></div>
-        <p className="mt-5 text-xl p-3">Follow Us On:</p>
-        <div className="p-3">
-          <FontAwesomeIcon
-            icon={faFacebook}
-            className="bg-[#8B8B6F] p-2 rounded-full text-white text-xl"
-          />
-          <FontAwesomeIcon
-            icon={faInstagram}
-            className="ml-5 bg-[#8B8B6F] p-2 rounded-full text-white text-xl"
-          />
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            className="ml-5 bg-[#8B8B6F] p-2 rounded-full text-white text-xl"
-          />
+        <p className="mt-5 text-xl p-3">Follow Us On: </p>
+        <div className="p-3 flex gap-0">
+          <Link
+            href={SOCIAL_MEDIA_LINKS.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <FontAwesomeIcon
+              icon={faFacebook}
+              className="bg-[#8B8B6F] p-2 rounded-full text-white text-xl cursor-pointer hover:bg-[#7a7a5f] transition"
+            />
+          </Link>
+          <Link
+            href={SOCIAL_MEDIA_LINKS.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className="ml-5 bg-[#8B8B6F] p-2 rounded-full text-white text-xl cursor-pointer hover:bg-[#7a7a5f] transition"
+            />
+          </Link>
+          <Link
+            href={SOCIAL_MEDIA_LINKS.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="ml-5 bg-[#8B8B6F] p-2 rounded-full text-white text-xl cursor-pointer hover:bg-[#7a7a5f] transition"
+            />
+          </Link>
         </div>
       </div>
 
@@ -292,12 +322,12 @@ export const ApplyForJob = () => {
           >
             <SelectTrigger
               id="jobType"
-              className={`w-full bg-white ${inputErrorClass("jobType")}`}
+              className={`w-full rounded-none bg-white ${inputErrorClass("jobType")}`}
             >
               <SelectValue placeholder="Select Job Type" />
             </SelectTrigger>
 
-            <SelectContent>
+            <SelectContent className="rounded-none">
               <SelectItem value="welder">Welder</SelectItem>
               <SelectItem value="foreman">Foreman</SelectItem>
               <SelectItem value="electrician">Electrician</SelectItem>
@@ -320,7 +350,7 @@ export const ApplyForJob = () => {
             id="fullName"
             type="text"
             placeholder="Your Name"
-            className={`bg-white w-full ${inputErrorClass("fullName")}`}
+            className={`bg-white rounded-none w-full ${inputErrorClass("fullName")}`}
             value={fullName}
             onChange={(e) => {
               setFullName(e.target.value.slice(0, MAX_NAME_CHARS));
@@ -342,7 +372,7 @@ export const ApplyForJob = () => {
               id="email"
               type="email"
               placeholder="Your Email"
-              className={`bg-white w-full ${inputErrorClass("email")}`}
+              className={`bg-white rounded-none w-full ${inputErrorClass("email")}`}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value.slice(0, MAX_EMAIL_CHARS));
@@ -362,7 +392,7 @@ export const ApplyForJob = () => {
               id="phone"
               type="tel"
               placeholder="09XXXXXXXXX"
-              className={`bg-white w-full ${inputErrorClass("phone")}`}
+              className={`bg-white rounded-none w-full ${inputErrorClass("phone")}`}
               value={phone}
               onChange={(e) => {
                 setPhone(sanitizePhoneInput(e.target.value));
@@ -383,7 +413,7 @@ export const ApplyForJob = () => {
           <Textarea
             id="message"
             placeholder="Your Message"
-            className={`bg-white w-full min-h-40 ${inputErrorClass("message")}`}
+            className={`bg-white rounded-none w-full min-h-25 ${inputErrorClass("message")}`}
             value={message}
             onChange={(e) => {
               const limitedByWords = limitWords(
@@ -438,9 +468,13 @@ export const ApplyForJob = () => {
           <button
             onClick={handleSubmit}
             disabled={submitting}
-            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-10 py-3 rounded-lg text-white hover:bg-[#7a7a5f] cursor-pointer text-md disabled:opacity-60 disabled:cursor-not-allowed w-full md:w-auto"
+            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-10 py-3 text-white hover:bg-[#7a7a5f] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed flex justify-between items-center gap-2"
           >
             {submitting ? "Submitting..." : "Submit Application"}
+            <FontAwesomeIcon
+                          icon={faPaperPlane}
+                          className="text-base rotate-45"
+                        />
           </button>
         </div>
       </div>

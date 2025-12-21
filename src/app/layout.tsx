@@ -56,7 +56,7 @@ export default function RootLayout({
         <Header />
         <main className="grow">
           {children}
-          <div className="fixed bottom-2 left-2 z-100">
+          <div className="fixed bottom-2 left-2 md:bottom-5 md:left-5 z-100">
             <ScheduleButton /> {/* Add the ScheduleButton component here */}
           </div>
         </main>

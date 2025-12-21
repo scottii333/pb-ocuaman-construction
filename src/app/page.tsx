@@ -20,14 +20,15 @@ export default function Home() {
     <main className="flex flex-col mb-20">
       <div className="shadow-lg h-[80vh] lg:h-[90vh] overflow-hidden relative">
         <video
-          src="/sample/sample.mp4"
+          src="https://res.cloudinary.com/djubpvnfa/video/upload/q_auto,f_auto,vc_auto/v1766333949/sample_poa9ew.mp4"
           loop
           autoPlay
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           className="w-full h-full object-cover"
         />
+
         <div className="absolute inset-0 bg-black/60">
           <div className="absolute bottom-20 lg:bottom-10 left-1/2 -translate-x-1/2 md:left-10 md:translate-x-0 flex gap-2 md:gap-5">
             <div className="text-4xl md:text-6xl text-[#D29E34]">BUILDING</div>
@@ -36,25 +37,29 @@ export default function Home() {
               <p className="text-xs md:text-sm w-26 md:w-40">IN EVERY SPACE</p>
             </div>
           </div>
-          <div className="hidden lg:flex absolute bottom-10 right-10 text-[#D29E34] gap-3">
-            <button className="text-white underline">
-              START PLANNING WITH US
-            </button>{" "}
-            <div className="w-8 h-8 bg-white/80 rounded-full flex justify-center items-center">
+          {/* Desktop CTA: Link to services anchor */}
+          <Link
+            href="#services"
+            className="hidden lg:flex absolute bottom-10 right-10 text-[#D29E34] gap-3 items-center"
+          >
+            <span className="text-white underline">START PLANNING WITH US</span>
+            <span className="w-8 h-8 bg-white/80 rounded-full flex justify-center items-center">
               <FontAwesomeIcon
                 icon={faArrowDown}
                 className="text-lg text-[#232b5f] inline-block transform"
                 style={{ rotate: "-120deg" }}
               />
-            </div>
-          </div>
-          <div
-            className="absolute bottom-0 left-0 w-full bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-4 px-8 text-white lg:hidden cursor-pointer hover:bg-[#6e6e52] transition gap-5 flex justify-center items-center text-sm md:text-base"
+            </span>
+          </Link>
+          {/* Mobile CTA: Link to services anchor */}
+          <Link
+            href="#services"
+            className="absolute bottom-0 left-0 w-full bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-4 px-8 text-white lg:hidden hover:bg-[#6e6e52] transition gap-5 flex justify-center items-center text-sm md:text-base z-50"
             style={{ backgroundSize: "200px 200px" }}
           >
             START PLANNING WITH US{" "}
             <FontAwesomeIcon icon={faArrowRightLong} className="text-1xl" />
-          </div>
+          </Link>
         </div>
       </div>
 
@@ -62,11 +67,13 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-2 my-10">
         <div className="order-2 lg:order-1 h-auto w-full flex flex-col p-5 pt-0 gap-5">
           <Image
-            src="/sample/sample.jpg"
+            src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto,w_500/v1766347374/home-1_mbs64h.jpg"
             alt="Teamwork Image"
             width={500}
             height={300}
             className="w-full h-auto"
+            priority
+            unoptimized
           />
           <h2 className="flex items-center gap-2 p-1 text-[24px] ">
             <FontAwesomeIcon icon={faHeartCircleCheck} className="text-xl" />{" "}
@@ -112,17 +119,21 @@ export default function Home() {
 
         <div className="order-3 -black h-[500px] lg:h-auto w-full relative ">
           <Image
-            src="/sample/sample.jpg"
+            src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347377/home-2_zpuc1c.jpg"
             alt="Teamwork Image"
             fill
             className="object-cover px-5 lg:px-0"
+            priority
+            unoptimized
           />
         </div>
       </div>
       {/* Facts Section  */}
       <FactsAboutUs />
-      {/* Services Carousel  */}
-      <ServicesCarousel />
+      {/* Services Carousel (scroll target) */}
+      <div id="services" className="pt-20">
+        <ServicesCarousel />
+      </div>
       {/* 3 Easy Steps Section */}
       <div className="grid grid-cols-1 lg:grid-cols-[35%_65%] gap-5 p-5 md:p-10 bg-white">
         <div className="flex flex-col justify-start items-baseline gap-5 p-0 md:p-10">
@@ -132,7 +143,7 @@ export default function Home() {
           </h2>
           <p>We&apos;ll be here every step of the way.</p>
           <Link
-            href="/about"
+            href="/projects"
             className="hidden md:flex bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-5 text-white w-full md:w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition items-center gap-4 md:gap-5"
             style={{ backgroundSize: "200px 200px" }}
           >
@@ -145,11 +156,12 @@ export default function Home() {
           <div className="grid grid-cols-[1fr_4fr] md:items-center bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat h-30 md:h-auto">
             <div className="relative w-full aspect-square shrink-0">
               <Image
-                src="/sample/sample.jpg"
+                src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347406/step-1_qggis4.png"
                 alt="Teamwork Image"
                 fill
                 className="object-cover"
-                priority
+                loading="lazy"
+                unoptimized
               />
             </div>
             <div className="p-3 sm:p-5 flex flex-col gap-2">
@@ -162,11 +174,12 @@ export default function Home() {
           <div className="grid grid-cols-[1fr_4fr] md:items-center bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat h-30 md:h-auto">
             <div className="relative w-full aspect-square shrink-0">
               <Image
-                src="/sample/sample.jpg"
+                src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347407/step-2_ukx3i4.jpg"
                 alt="Teamwork Image"
                 fill
                 className="object-cover "
-                priority
+                loading="lazy"
+                unoptimized
               />
             </div>
             <div className="p-3 sm:p-5flex flex-col gap-2">
@@ -180,11 +193,12 @@ export default function Home() {
           <div className="grid grid-cols-[1fr_4fr] md:items-center bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat h-30 md:h-auto">
             <div className="relative w-full aspect-square shrink-0">
               <Image
-                src="/sample/sample.jpg"
+                src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347383/step-3_ngvqmc.png"
                 alt="Teamwork Image"
                 fill
-                className="object-cover "
-                priority
+                className="object-cover"
+                loading="lazy"
+                unoptimized
               />
             </div>
             <div className="p-3 sm:p-5 flex flex-col gap-2">

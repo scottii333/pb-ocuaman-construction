@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ServiceBenefits } from "@/components/ServiceBenefits";
 import { FAQ } from "@/components/FAQ";
 import ServicesCarousel from "@/components/ServicesCarousel";
@@ -7,11 +8,18 @@ import { ServiceDetails } from "@/components/ServiceDetails";
 import ScrollToServiceDetails from "@/components/ScrollToServiceDetails";
 import { servicesData } from "@/data/servicesData";
 
-// Get service from URL search params
-async function getServiceFromParams(
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-) {
-  const params = await searchParams;
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+
+function getServiceFromParams(params: {
+  [key: string]: string | string[] | undefined;
+}) {
   const serviceId = params.service as string | undefined;
 
   if (serviceId) {
@@ -29,7 +37,8 @@ interface ServicesPageProps {
 export default async function ServicesPage({
   searchParams,
 }: ServicesPageProps) {
-  const activeService = await getServiceFromParams(searchParams);
+  const params = await searchParams;
+  const activeService = getServiceFromParams(params);
 
   return (
     <section className="flex flex-col mb-10 gap-10">
@@ -41,12 +50,34 @@ export default async function ServicesPage({
         <div className="border h-full w-full col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-1">
           <div className="relative full ">
             <Image
-              src="/sample/sample.jpg"
+              src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347325/services-hero-1_xk7y74.jpg"
               alt="Teamwork Image"
               fill
               className="object-cover"
+              loading="lazy"
+              unoptimized
             />
+
             <div className="absolute inset-0 bg-black/60 z-10"></div>
+
+            {/* Breadcrumbs */}
+            <Breadcrumb className="p-8 absolute top-0 left-0 text-white z-20">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href="/" className="text-white">
+                      Home
+                    </Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator className="text-white" />
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="text-[#D29E34]">
+                    Services
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
           </div>
           <div className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat flex flex-col justify-center md:items-center p-5">
             <h1 className="text-2xl md:text-3xl mb-4 text-center">
@@ -61,59 +92,44 @@ export default async function ServicesPage({
 
         <div className="border h-full w-full relative">
           <Image
-            src="/sample/sample.jpg"
+            src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347323/services-hero-2_jqorbz.png"
             alt="Teamwork Image"
             fill
             className="object-cover"
+            loading="lazy"
+            unoptimized
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <p
-            className="
-    absolute bottom-0
-    text-center
-     md:text-left
-     text-white mb-3 md:mb-0 z-20 text-xs md:text-base w-full md:p-5
-  "
-          >
+          <p className="absolute bottom-0 text-center md:text-left text-white mb-3 md:mb-0 z-20 text-xs md:text-base w-full md:p-5">
             PLANNING AND DESIGNING
           </p>
         </div>
         <div className="border h-full w-full relative">
           <Image
-            src="/sample/sample.jpg"
-            alt="Teamwork Image"
+            src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347315/services-hero-3_lxa5iz.png"
+            alt="Services Hero"
             fill
             className="object-cover"
+            loading="lazy"
+            unoptimized
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <p
-            className="
-    absolute bottom-0
-    text-center
-    md:text-left
-    mb-2 text-white z-20 text-xs md:text-base w-full md:p-3
-  "
-          >
+          <p className="absolute bottom-0 text-center md:text-left mb-2 text-white z-20 text-xs md:text-base w-full md:p-3">
             CONSTRUCTION PROJECT MANAGEMENT
           </p>
         </div>
 
         <div className="border h-full w-full col-span-2 md:col-span-1 relative">
           <Image
-            src="/sample/sample.jpg"
+            src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347313/services-hero-4_pdhpou.png"
             alt="Teamwork Image"
             fill
             className="object-cover"
+            loading="lazy"
+            unoptimized
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <p
-            className="
-    absolute bottom-0
-    text-center
-    md:text-left
-    mb-2 text-white z-20 text-xs md:text-base w-full md:p-3
-  "
-          >
+          <p className="absolute bottom-0 text-center md:text-left mb-2 text-white z-20 text-xs md:text-base w-full md:p-3">
             RENOVATION AND FIT-OUT SERVICES
           </p>
         </div>

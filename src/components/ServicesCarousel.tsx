@@ -50,6 +50,8 @@ export default function ServicesCarousel() {
               alt={service.title}
               fill
               className="object-cover w-full h-full z-0"
+              loading="lazy"
+              unoptimized
             />
             <div className="absolute inset-0 bg-black/60 z-10"></div>
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-2 text-center px-5 md:px-15">
@@ -67,7 +69,7 @@ export default function ServicesCarousel() {
       </div>
 
       <div className="flex gap-2 md:gap-5 justify-end mt-5">
-        <button
+        {/* <button
           type="button"
           aria-label="Previous"
           title="Previous"
@@ -87,13 +89,13 @@ export default function ServicesCarousel() {
           onClick={() => scrollByAmount("right")}
         >
           <FontAwesomeIcon icon={faArrowRightLong} className="text-xl" />
-        </button>
+        </button> */}
 
         <button
           type="button"
           aria-label="Previous"
           title="Previous"
-          className="flex md:hidden bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition items-center justify-center px-5 py-2"
+          className="flex bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition items-center justify-center px-6 md:px-10 py-2"
           style={{ backgroundSize: "200px 200px" }}
           onClick={() => scrollByAmount("left")}
         >
@@ -104,7 +106,7 @@ export default function ServicesCarousel() {
           type="button"
           aria-label="Next"
           title="Next"
-          className="flex md:hidden bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition items-center justify-center px-5 py-2"
+          className="flex bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat text-white cursor-pointer hover:bg-[#6e6e52] transition items-center justify-center px-6 md:px-10 py-2"
           style={{ backgroundSize: "200px 200px" }}
           onClick={() => scrollByAmount("right")}
         >
