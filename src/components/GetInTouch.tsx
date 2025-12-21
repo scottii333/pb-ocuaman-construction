@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import axios, { type AxiosError } from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "sonner";
@@ -47,6 +48,13 @@ const ALLOWED_EMAIL_DOMAINS = new Set([
   "msn.com",
 ]);
 
+const SOCIAL_MEDIA_LINKS = {
+  facebook: "https://www.facebook.com/pbocuamanconstruction",
+  instagram: "https://www.instagram.com/pbocuamanconstruction/",
+  linkedin:
+    "https://www.linkedin.com/in/pb-ocuaman-construction-services-ba5504388/",
+};
+
 const wordCount = (text: string) =>
   text.trim() === "" ? 0 : text.trim().split(/\s+/).filter(Boolean).length;
 
@@ -59,18 +67,18 @@ const limitWords = (text: string, max: number) => {
 function getAxiosErrorMessage(err: unknown): string {
   if (axios.isAxiosError(err)) {
     const axErr = err as AxiosError<{ message?: string }>;
-    return axErr.response?.data?.message || axErr.message || "Request failed.";
+    return axErr.response?.data?.message || axErr.message || "Request failed. ";
   }
   if (err instanceof Error) return err.message;
   return "An unexpected error occurred.";
 }
 
-// Phone: accept exactly 11 digits starting with 09 (e.g., 09918121869)
+// Phone:  accept exactly 11 digits starting with 09 (e.g., 09918121869)
 function isValidPhoneLocal(raw: string): boolean {
   return /^09\d{9}$/.test(raw);
 }
 
-// sanitize phone input: remove non-digits, keep at most 11 digits, convert +63 to leading 0
+// sanitize phone input:  remove non-digits, keep at most 11 digits, convert +63 to leading 0
 function sanitizePhoneInput(value: string): string {
   if (!value) return "";
   let digits = value.replace(/\D/g, "");
@@ -118,7 +126,7 @@ export const GetInTouch = () => {
   const validateLocally = (): boolean => {
     const errors: Record<string, string> = {};
 
-    if (!inquiryType) errors.inquiryType = "Please select an inquiry type.";
+    if (!inquiryType) errors.inquiryType = "Please select an inquiry type. ";
     if (!fullName.trim()) errors.fullName = "Full name is required.";
     else if (fullName.trim().length > MAX_NAME_CHARS)
       errors.fullName = `Full name must be at most ${MAX_NAME_CHARS} characters.`;
@@ -131,21 +139,21 @@ export const GetInTouch = () => {
       const domain = email.split("@")[1]?.toLowerCase() || "";
       if (!basicEmail) errors.email = "Invalid email format.";
       else if (!ALLOWED_EMAIL_DOMAINS.has(domain))
-        errors.email = "Allowed domains: Gmail, Outlook/Hotmail, Yahoo.";
+        errors.email = "Allowed domains:  Gmail, Outlook/Hotmail, Yahoo. ";
     }
 
     if (!phone.trim()) errors.phone = "Phone is required.";
     else if (!isValidPhoneLocal(phone.trim()))
       errors.phone =
-        "Phone must be Philippine mobile format: 09XXXXXXXXX (11 digits).";
+        "Phone must be Philippine mobile format:  09XXXXXXXXX (11 digits).";
 
     if (!message.trim()) errors.message = "Message is required.";
     else if (messageWords > MAX_MESSAGE_WORDS)
       errors.message = `Message must be at most ${MAX_MESSAGE_WORDS} words.`;
     else if (messageChars > MAX_MESSAGE_CHARS)
-      errors.message = `Message must be at most ${MAX_MESSAGE_CHARS} characters.`;
+      errors.message = `Message must be at most ${MAX_MESSAGE_CHARS} characters. `;
 
-    if (!captchaToken) errors.recaptcha = "Please complete the reCAPTCHA.";
+    if (!captchaToken) errors.recaptcha = "Please complete the reCAPTCHA. ";
 
     setFieldErrors(errors);
 
@@ -215,7 +223,7 @@ export const GetInTouch = () => {
           id: toastId,
         });
       } else {
-        toast.error(data?.message || "Submission failed. Please try again.", {
+        toast.error(data?.message || "Submission failed.  Please try again.", {
           id: toastId,
         });
         safeResetCaptcha();
@@ -279,20 +287,41 @@ export const GetInTouch = () => {
         </div>
 
         <div className="border-b border-[#8B8B6F] mt-5" />
-        <p className="mt-0 md:mt-5 text-xl p-3">Follow Us On:</p>
+        <p className="mt-0 md:mt-5 text-xl p-3">Follow Us On: </p>
         <div className="p-3 pt-0 md:pt-3 flex gap-3">
-          <FontAwesomeIcon
-            icon={faFacebook}
-            className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl"
-          />
-          <FontAwesomeIcon
-            icon={faInstagram}
-            className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl"
-          />
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl"
-          />
+          <Link
+            href={SOCIAL_MEDIA_LINKS.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <FontAwesomeIcon
+              icon={faFacebook}
+              className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl cursor-pointer hover:bg-[#7a7a5f] transition"
+            />
+          </Link>
+          <Link
+            href={SOCIAL_MEDIA_LINKS.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl cursor-pointer hover:bg-[#7a7a5f] transition"
+            />
+          </Link>
+          <Link
+            href={SOCIAL_MEDIA_LINKS.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="bg-[#8B8B6F] p-2 rounded-full text-white text-sm md:text-xl cursor-pointer hover:bg-[#7a7a5f] transition"
+            />
+          </Link>
         </div>
       </div>
 
