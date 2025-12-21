@@ -32,7 +32,7 @@ export const OurTeam = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_2.5fr] gap-10 lg:gap-0 w-[85%] lg:w-[55%] mx-auto mb-20 items-end">
+      <div className="grid grid-cols-1 lg:grid-cols-[2.2fr_2.5fr] gap-10 lg:gap-0 w-[85%] lg:w-[55%] mx-auto mb-20 items-end">
         {/* Left content */}
         <div className="text-justify md:text-start">
           <div className="text-2xl md:text-3xl mb-3 flex gap-2 items-center">
