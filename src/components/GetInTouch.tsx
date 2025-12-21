@@ -296,7 +296,10 @@ export const GetInTouch = () => {
         </div>
       </div>
 
-      <div className="bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat min-h-100 flex flex-col gap-3 p-7 lg:p-10 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25">
+      <div
+        className="bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat min-h-100 flex flex-col gap-3 p-7 lg:p-10 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25"
+        id="contact-form"
+      >
         <Label htmlFor="inquiryType" className="mt-5 text-sm md:text-base">
           TYPE OF INQUIRY
         </Label>
