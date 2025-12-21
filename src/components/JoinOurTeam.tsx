@@ -36,20 +36,22 @@ export const JoinOurTeam = () => {
           {/* First image: top-left */}
           <div className="absolute top-0 left-0 w-50 h-50 md:w-70 md:h-70">
             <Image
-              src="/sample/sample.jpg"
+              src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347442/join-1_pwkj4u.png"
               alt="Top Left"
               fill
               className="object-cover"
+              unoptimized
             />
           </div>
 
           {/* Second image: bottom-right */}
           <div className="absolute bottom-0 right-0 w-50 h-50 md:w-70 md:h-70 shadow-sm">
             <Image
-              src="/sample/sample.jpg"
+              src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347443/join-2_arr4hp.jpg"
               alt="Bottom Right"
               fill
               className="object-cover"
+              unoptimized
             />
           </div>
         </div>
