@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRightLong,
   faAngleLeft,
-  faAngleRight
+  faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { projectsData } from "@/data/projectsData";
 
@@ -44,7 +44,7 @@ export const ExploreProject = () => {
   return (
     <section className="p-5 lg:p-10 flex flex-col gap-5 w-full lg:w-[90%] mx-auto my-10">
       <h3 className="text-2xl">
-        WHAT  WE&apos;VE<span className="text-yellow-500"> BUILT</span>
+        WHAT WE&apos;VE<span className="text-yellow-500"> BUILT</span>
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-100">
@@ -63,6 +63,8 @@ export const ExploreProject = () => {
             alt={currentProject.title}
             fill
             className="object-cover"
+            loading="lazy"
+            unoptimized
           />
         </div>
 
@@ -78,25 +80,29 @@ export const ExploreProject = () => {
         >
           <div className="flex flex-col gap-5">
             <h2 className="text-2xl font-medium">
-            {/* {currentProject.title.split(" ").map((word, idx, arr) => (
+              {/* {currentProject.title.split(" ").map((word, idx, arr) => (
               <React.Fragment key={idx}>
                 {word}
                 {idx < arr.length - 1 && <br />}
               </React.Fragment>
             ))} */}
-            {currentProject.title}
-          </h2>
-          <p className="hidden md:block text-sm lg:text-base">{currentProject.description}</p>
+              {currentProject.title}
+            </h2>
+            <p className="hidden md:block text-sm lg:text-base">
+              {currentProject.description}
+            </p>
           </div>
-            <div className="flex flex-col lg:flex-row gap-2 items-start lg:justify-end lg:items-center text-sm"><div className="text-[#6A6F4C]">LOVE THIS DESIGN?</div>
-          <Link
-            href={`/projects?project=${currentProject.id}`}
-            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-7 text-white w-full md:w-fit cursor-pointer hover:bg-[#6e6e52] transition flex items-center justify-between gap-5 text-sm"
-            style={{ backgroundSize: "200px 200px" }}
-          >
-            DISCOVER MORE
-            <FontAwesomeIcon icon={faArrowRightLong} className="w-5 h-5" />
-          </Link></div>
+          <div className="flex flex-col lg:flex-row gap-2 items-start lg:justify-end lg:items-center text-sm">
+            <div className="text-[#6A6F4C]">LOVE THIS DESIGN?</div>
+            <Link
+              href={`/projects?project=${currentProject.id}`}
+              className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-7 text-white w-full md:w-fit cursor-pointer hover:bg-[#6e6e52] transition flex items-center justify-between gap-5 text-sm"
+              style={{ backgroundSize: "200px 200px" }}
+            >
+              DISCOVER MORE
+              <FontAwesomeIcon icon={faArrowRightLong} className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
       </div>
 
