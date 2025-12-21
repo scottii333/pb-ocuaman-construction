@@ -241,8 +241,8 @@ export const GetInTouch = () => {
     fieldErrors[field] ? "border-red-600 focus:ring-red-600" : "";
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 bg-white! ">
-      <div className="flex flex-col p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-30 lg:pr-30">
+    <section className="grid grid-cols-1 md:grid-cols-2 bg-white!">
+      <div className="flex flex-col p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-30 lg:pr-30 px-10 md:px-0">
         <h2 className="text-2xl md:text-3xl mb-3 mt-10">GET IN TOUCH</h2>
         <div className="border-b border-[#8B8B6F]" />
         <div className="mt-5 flex flex-col gap-0 md:gap-5">
@@ -326,7 +326,7 @@ export const GetInTouch = () => {
       </div>
 
       <div
-        className="bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat min-h-100 flex flex-col gap-3 p-7 lg:p-10 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25"
+        className="bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat min-h-100 flex flex-col gap-3 p-7 lg:p-10 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25 px-10 md:px-0"
         id="contact-form"
       >
         <Label htmlFor="inquiryType" className="mt-5 text-sm md:text-base">
@@ -342,11 +342,11 @@ export const GetInTouch = () => {
           >
             <SelectTrigger
               id="inquiryType"
-              className={`w-full bg-white ${inputErrorClass("inquiryType")}`}
+              className={`w-full rounded-none bg-white ${inputErrorClass("inquiryType")}`}
             >
               <SelectValue placeholder="Select Inquiry Type" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="rounded-none">
               <SelectItem value="general">
                 General Construction Inquiry
               </SelectItem>
@@ -380,7 +380,7 @@ export const GetInTouch = () => {
           id="fullName"
           type="text"
           placeholder="Your Name"
-          className={`bg-white w-full ${inputErrorClass("fullName")}`}
+          className={`bg-white rounded-none w-full ${inputErrorClass("fullName")}`}
           value={fullName}
           onChange={(e) => {
             setFullName(e.target.value.slice(0, MAX_NAME_CHARS));
@@ -398,14 +398,14 @@ export const GetInTouch = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <Label htmlFor="email" className="text-sm md:text-base">
+            <Label htmlFor="email" className="text-sm md:text-base mb-2">
               EMAIL ADDRESS
             </Label>
             <Input
               id="email"
               type="email"
               placeholder="Your Email"
-              className={`bg-white w-full ${inputErrorClass("email")}`}
+              className={`bg-white rounded-none w-full ${inputErrorClass("email")}`}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value.slice(0, MAX_EMAIL_CHARS));
@@ -423,7 +423,7 @@ export const GetInTouch = () => {
           </div>
 
           <div>
-            <Label htmlFor="phone" className="text-sm md:text-base">
+            <Label htmlFor="phone" className="text-sm md:text-base mb-2">
               PHONE NUMBER
             </Label>
             <Input
@@ -431,7 +431,7 @@ export const GetInTouch = () => {
               type="tel"
               inputMode="tel"
               placeholder="09XXXXXXXXX"
-              className={`bg-white w-full ${inputErrorClass("phone")}`}
+              className={`bg-white rounded-none w-full ${inputErrorClass("phone")}`}
               value={phone}
               onChange={(e) => {
                 const v = sanitizePhoneInput(e.target.value);
@@ -457,7 +457,7 @@ export const GetInTouch = () => {
         <Textarea
           id="message"
           placeholder="Your Message"
-          className={`bg-white w-full ${inputErrorClass("message")}`}
+          className={`bg-white rounded-none w-full ${inputErrorClass("message")}`}
           value={message}
           onChange={(e) => {
             const limitedByWords = limitWords(
@@ -475,7 +475,7 @@ export const GetInTouch = () => {
         {fieldErrors.message && (
           <div className="text-red-600 text-sm mt-1">{fieldErrors.message}</div>
         )}
-        <div className="flex justify-between text-xs text-gray-500 mt-1 mb-3">
+        <div className="flex justify-between text-xs text-gray-500 mt-1 ">
           <div>
             {messageWords}/{MAX_MESSAGE_WORDS} words
           </div>
@@ -484,9 +484,9 @@ export const GetInTouch = () => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-end mb-10 items-start gap-4">
+        <div className="flex flex-col justify-end mb-10 items-end gap-4">
           {siteKey ? (
-            <div className="mt-5">
+            <div>
               <ReCAPTCHA
                 ref={recaptchaRef}
                 sitekey={siteKey}
@@ -509,7 +509,7 @@ export const GetInTouch = () => {
           )}
 
           <button
-            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-10 py-3 text-white mt-5 hover:bg-[#7a7a5f] cursor-pointer text-base flex justify-between items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-10 py-3 text-white hover:bg-[#7a7a5f] cursor-pointer text-base flex justify-between items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
             onClick={handleSubmit}
             disabled={!canSubmit}
             aria-disabled={!canSubmit}

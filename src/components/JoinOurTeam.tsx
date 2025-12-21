@@ -54,7 +54,7 @@ export const JoinOurTeam = () => {
           </div>
         </div>
 
-        <div className="p-0 md:p-10 w-full min-h-100 gap-5 md:gap-0 flex flex-col">
+        <div className="p-10 w-full min-h-100 gap-5 md:gap-0 flex flex-col">
           <div className="p-5 border-b">
             <h2 className="text-3xl">
               JOIN OUR <span className="text-yellow-500">TEAM</span>

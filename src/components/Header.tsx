@@ -23,7 +23,7 @@ import { faBars,
 export const Header = () => {
   return (
     <div className=" shadow-lg p-3 flex justify-between px-10 md:px-0 md:justify-around items-center gap-10 sticky top-0 bg-white z-50">
-      <Link href="/" className="px-7">
+      <Link href="/" className="px-0 lg:px-7">
         {" "}
         <Image
           src="/pb-ocuaman-main-logo.png" // path to your image
@@ -33,7 +33,7 @@ export const Header = () => {
         />
       </Link>
 
-      <nav className=" items-center gap-5 hidden md:flex">
+      <nav className=" items-center gap-5 hidden lg:flex">
         <Link href="/about" className="flex gap-1 items-center">
         {/* <FontAwesomeIcon icon={faPeopleRoof} className="h-6 w-6" /> */}
           About Us
@@ -57,7 +57,7 @@ export const Header = () => {
 
       <Link
         href="/contact"
-        className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-8 text-white hidden md:block cursor-pointer hover:bg-[#6e6e52] transition"
+        className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-8 text-white hidden lg:block cursor-pointer hover:bg-[#6e6e52] transition"
         style={{ backgroundSize: "200px 200px" }}
       >
         Contact Us
@@ -68,7 +68,7 @@ export const Header = () => {
           <button
             type="button"
             aria-label="Open menu"
-            className="ml-4 block md:hidden cursor-pointer "
+            className="ml-4 block lg:hidden cursor-pointer "
           >
             <FontAwesomeIcon icon={faBars} className="h-6 w-6" />
           </button>
@@ -103,14 +103,14 @@ export const Header = () => {
               <FontAwesomeIcon icon={faPhone} className="h-6 w-6" /> Contact
             </Link>
           </nav>
-          <SheetFooter className="mt-5">
+          {/* <SheetFooter className="mt-5">
             <Link
               href="/contact"
               className="bg-[#8B8B6F] text-center rounded-sm p-2 text-white w-full cursor-pointer transition"
             >
-              <FontAwesomeIcon icon={faVideo} className="h-6 w-6 text-white" /> Schedule <br /> a Meeting
+              <FontAwesomeIcon icon={faVideo} className="h-6 w-6 text-white" /> Schedule <br className="flex md:hidden" /> a Meeting
             </Link>
-          </SheetFooter>
+          </SheetFooter> */}
         </SheetContent>
       </Sheet>
     </div>
