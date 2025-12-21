@@ -50,6 +50,8 @@ export default function ServicesCarousel() {
               alt={service.title}
               fill
               className="object-cover w-full h-full z-0"
+              loading="lazy"
+              unoptimized
             />
             <div className="absolute inset-0 bg-black/60 z-10"></div>
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-2 text-center px-5 md:px-15">
