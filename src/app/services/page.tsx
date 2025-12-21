@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ServiceBenefits } from "@/components/ServiceBenefits";
 import { FAQ } from "@/components/FAQ";
 import ServicesCarousel from "@/components/ServicesCarousel";
@@ -15,13 +16,10 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import Link from "next/link";
 
-// Get service from URL search params
-async function getServiceFromParams(
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-) {
-  const params = await searchParams;
+function getServiceFromParams(params: {
+  [key: string]: string | string[] | undefined;
+}) {
   const serviceId = params.service as string | undefined;
 
   if (serviceId) {
@@ -39,7 +37,8 @@ interface ServicesPageProps {
 export default async function ServicesPage({
   searchParams,
 }: ServicesPageProps) {
-  const activeService = await getServiceFromParams(searchParams);
+  const params = await searchParams;
+  const activeService = getServiceFromParams(params);
 
   return (
     <section className="flex flex-col mb-10 gap-10">
@@ -96,14 +95,7 @@ export default async function ServicesPage({
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <p
-            className="
-    absolute bottom-0
-    text-center
-     md:text-left
-     text-white mb-3 md:mb-0 z-20 text-xs md:text-base w-full md:p-5
-  "
-          >
+          <p className="absolute bottom-0 text-center md:text-left text-white mb-3 md:mb-0 z-20 text-xs md:text-base w-full md:p-5">
             PLANNING AND DESIGNING
           </p>
         </div>
@@ -115,14 +107,7 @@ export default async function ServicesPage({
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <p
-            className="
-    absolute bottom-0
-    text-center
-    md:text-left
-    mb-2 text-white z-20 text-xs md:text-base w-full md:p-3
-  "
-          >
+          <p className="absolute bottom-0 text-center md:text-left mb-2 text-white z-20 text-xs md:text-base w-full md:p-3">
             CONSTRUCTION PROJECT MANAGEMENT
           </p>
         </div>
@@ -135,14 +120,7 @@ export default async function ServicesPage({
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <p
-            className="
-    absolute bottom-0
-    text-center
-    md:text-left
-    mb-2 text-white z-20 text-xs md:text-base w-full md:p-3
-  "
-          >
+          <p className="absolute bottom-0 text-center md:text-left mb-2 text-white z-20 text-xs md:text-base w-full md:p-3">
             RENOVATION AND FIT-OUT SERVICES
           </p>
         </div>
