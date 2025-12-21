@@ -7,6 +7,15 @@ import { FAQ } from "@/components/FAQ";
 import ScrollToProjectDetails from "@/components/ScrollToProjectDetails";
 import { projectsData } from "@/data/projectsData";
 import { RecentProjectCarousel } from "@/components/RecentProjectCarousel";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Link from "next/link";
 
 // Get project from URL search params
 async function getProjectFromParams(
@@ -63,6 +72,26 @@ export default async function ProjectsPage({
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/60 z-10"></div>
+
+        {/* Breadcrumbs */}
+        <Breadcrumb className="p-8 absolute top-0 left-0 text-white z-20">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/" className="text-white">
+                  Home
+                </Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator className="text-white" />
+            <BreadcrumbItem>
+              <BreadcrumbPage className="text-[#D29E34]">
+                Projects
+              </BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+
         <div className="p-8 absolute bottom-0 left-0 text-white z-10">
           <div className="text-2xl md:text-3xl">
             PROJECTS WE&apos;RE <span className="text-[#D29E34]">PROUD</span> OF
