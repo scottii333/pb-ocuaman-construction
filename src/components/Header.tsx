@@ -10,15 +10,16 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars,
+import {
+  faBars,
   faHouse,
   faPeopleRoof,
   faScrewdriverWrench,
   faBuilding,
   faBriefcase,
   faPhone,
-  faVideo
- } from "@fortawesome/free-solid-svg-icons";
+  faVideo,
+} from "@fortawesome/free-solid-svg-icons";
 
 export const Header = () => {
   return (
@@ -30,27 +31,28 @@ export const Header = () => {
           alt="PB Ocuaman Construction Logo"
           width={120}
           height={120}
+          priority
         />
       </Link>
 
       <nav className=" items-center gap-5 hidden lg:flex">
         <Link href="/about" className="flex gap-1 items-center">
-        {/* <FontAwesomeIcon icon={faPeopleRoof} className="h-6 w-6" /> */}
+          {/* <FontAwesomeIcon icon={faPeopleRoof} className="h-6 w-6" /> */}
           About Us
         </Link>
         <div className="border-l border-[#c0c0c6] h-5 "></div>
         <Link href="/services" className="flex gap-1 items-center">
-        {/* <FontAwesomeIcon icon={faScrewdriverWrench} className="h-6 w-6" /> */}
+          {/* <FontAwesomeIcon icon={faScrewdriverWrench} className="h-6 w-6" /> */}
           Services
         </Link>
         <div className="border-l border-[#c0c0c6] h-5 "></div>
         <Link href="/projects" className="flex gap-1 items-center">
-        {/* <FontAwesomeIcon icon={faBuilding} className="h-6 w-6" /> */}
+          {/* <FontAwesomeIcon icon={faBuilding} className="h-6 w-6" /> */}
           Projects
         </Link>
         <div className="border-l border-[#c0c0c6] h-5 "></div>
         <Link href="/careers" className="flex gap-1 items-center">
-        {/* <FontAwesomeIcon icon={faPhone} className="h-6 w-6" /> */}
+          {/* <FontAwesomeIcon icon={faPhone} className="h-6 w-6" /> */}
           Careers
         </Link>
       </nav>
@@ -84,11 +86,13 @@ export const Header = () => {
 
             <div className="border-b border-grey w-full"></div>
             <Link href="/about" className="">
-              <FontAwesomeIcon icon={faPeopleRoof} className="h-6 w-6" /> About Us
+              <FontAwesomeIcon icon={faPeopleRoof} className="h-6 w-6" /> About
+              Us
             </Link>
             <div className="border-b border-grey w-full"></div>
             <Link href="/services" className="">
-              <FontAwesomeIcon icon={faScrewdriverWrench} className="h-6 w-6" /> Services
+              <FontAwesomeIcon icon={faScrewdriverWrench} className="h-6 w-6" />{" "}
+              Services
             </Link>
             <div className="border-b border-grey w-full"></div>
             <Link href="/projects" className="">
