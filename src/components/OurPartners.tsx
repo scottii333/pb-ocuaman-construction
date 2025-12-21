@@ -26,6 +26,8 @@ export const OurPartners = () => {
                 width={300}
                 height={300}
                 className="w-15 h-auto rounded-full aspect-square"
+                loading="lazy"
+                unoptimized
               />
               <div className="text-base">{partner.name}</div>
             </div>

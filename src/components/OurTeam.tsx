@@ -107,6 +107,8 @@ export const OurTeam = () => {
                 width={300}
                 height={300}
                 className="w-50 md:w-80 h-auto"
+                loading="lazy"
+                unoptimized
               />
               <div className="absolute bottom-0 left-0 h-20 w-full bg-black/60 text-lg text-white flex items-center justify-center">
                 {member.name}

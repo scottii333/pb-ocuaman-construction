@@ -66,10 +66,12 @@ export default async function ProjectsPage({
       {/* Banner Image */}
       <div className="relative w-full h-[80vh] lg:h-[90vh]">
         <Image
-          src="/sample/sample.jpg"
+          src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766348384/projects-hero_ehvc9t.jpg"
           alt="Project page banner image"
           fill
           className="object-cover"
+          loading="lazy"
+          unoptimized
         />
         <div className="absolute inset-0 bg-black/60 z-10"></div>
 

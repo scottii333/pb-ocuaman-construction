@@ -16,6 +16,8 @@ export const OurCertifications = () => {
             width={300}
             height={300}
             className="w-full h-auto"
+            loading="lazy"
+            unoptimized
           />
         </div>
         <div className="flex flex-col gap-5 justify-center w-[90%] mx-auto">
@@ -38,7 +40,7 @@ export const OurCertifications = () => {
             fadeEdges={true}
             speedOnHover={10}
             pauseOnTap={true}
-            className="flex gap-10 overflow-x-auto no-scrollbar"
+            className="flex gap-20 overflow-x-auto no-scrollbar "
           >
             {certificationsData.map((cert) => (
               <Image
@@ -48,6 +50,8 @@ export const OurCertifications = () => {
                 width={300}
                 height={300}
                 className="w-15 h-auto rounded-full aspect-square shrink-0"
+                loading="lazy"
+                unoptimized
               />
             ))}
           </Marquee>

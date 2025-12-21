@@ -50,11 +50,14 @@ export default async function ServicesPage({
         <div className="border h-full w-full col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-1">
           <div className="relative full ">
             <Image
-              src="/sample/sample.jpg"
+              src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347325/services-hero-1_xk7y74.jpg"
               alt="Teamwork Image"
               fill
               className="object-cover"
+              loading="lazy"
+              unoptimized
             />
+
             <div className="absolute inset-0 bg-black/60 z-10"></div>
 
             {/* Breadcrumbs */}
@@ -89,10 +92,12 @@ export default async function ServicesPage({
 
         <div className="border h-full w-full relative">
           <Image
-            src="/sample/sample.jpg"
+            src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347323/services-hero-2_jqorbz.png"
             alt="Teamwork Image"
             fill
             className="object-cover"
+            loading="lazy"
+            unoptimized
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
           <p className="absolute bottom-0 text-center md:text-left text-white mb-3 md:mb-0 z-20 text-xs md:text-base w-full md:p-5">
@@ -101,10 +106,12 @@ export default async function ServicesPage({
         </div>
         <div className="border h-full w-full relative">
           <Image
-            src="/sample/sample.jpg"
-            alt="Teamwork Image"
+            src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347315/services-hero-3_lxa5iz.png"
+            alt="Services Hero"
             fill
             className="object-cover"
+            loading="lazy"
+            unoptimized
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
           <p className="absolute bottom-0 text-center md:text-left mb-2 text-white z-20 text-xs md:text-base w-full md:p-3">
@@ -114,10 +121,12 @@ export default async function ServicesPage({
 
         <div className="border h-full w-full col-span-2 md:col-span-1 relative">
           <Image
-            src="/sample/sample.jpg"
+            src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347313/services-hero-4_pdhpou.png"
             alt="Teamwork Image"
             fill
             className="object-cover"
+            loading="lazy"
+            unoptimized
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
           <p className="absolute bottom-0 text-center md:text-left mb-2 text-white z-20 text-xs md:text-base w-full md:p-3">
