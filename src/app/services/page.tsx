@@ -7,6 +7,16 @@ import { ServiceDetails } from "@/components/ServiceDetails";
 import ScrollToServiceDetails from "@/components/ScrollToServiceDetails";
 import { servicesData } from "@/data/servicesData";
 
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Link from "next/link";
+
 // Get service from URL search params
 async function getServiceFromParams(
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
@@ -47,6 +57,25 @@ export default async function ServicesPage({
               className="object-cover"
             />
             <div className="absolute inset-0 bg-black/60 z-10"></div>
+
+            {/* Breadcrumbs */}
+            <Breadcrumb className="p-8 absolute top-0 left-0 text-white z-20">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href="/" className="text-white">
+                      Home
+                    </Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator className="text-white" />
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="text-[#D29E34]">
+                    Services
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
           </div>
           <div className="bg-[#f2f2f2] bg-[url('/texture/rocky-wall.png')] bg-repeat flex flex-col justify-center md:items-center p-5">
             <h1 className="text-2xl md:text-3xl mb-4 text-center">
