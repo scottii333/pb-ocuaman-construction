@@ -53,6 +53,8 @@ export const ProjectDetails = ({ data }: ProjectDetailsProps) => {
             alt={data.title}
             fill
             className="object-cover"
+            loading="lazy"
+            unoptimized
           />
 
           {/* Left Navigation Button */}
@@ -97,6 +99,8 @@ export const ProjectDetails = ({ data }: ProjectDetailsProps) => {
                 alt={`Thumbnail ${index}`}
                 fill
                 className="object-cover"
+                loading="lazy"
+                unoptimized
               />
               <div className="absolute inset-0 bg-black/60 z-10"></div>
             </div>
