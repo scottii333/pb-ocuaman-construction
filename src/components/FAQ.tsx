@@ -36,7 +36,7 @@ export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25 grid grid-cols-1 md:grid-cols-2 gap-5">
+    <section className="p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-25 lg:pr-25 grid grid-cols-1 md:grid-cols-2 gap-5 py-10">
       <div className="">
         <h2 className="text-xl md:text-3xl font-medium mb-3">
           FREQUENTLY <br /> <span className="text-yellow-500">ASKED</span>{" "}

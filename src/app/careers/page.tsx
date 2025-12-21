@@ -13,10 +13,11 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
+import { OurTeam } from "@/components/OurTeam";
 
 export default function careers() {
   return (
-    <section className="flex flex-col gap-10">
+    <section className="flex flex-col">
       {" "}
       {/* Banner Image */}
       <div className=" relative w-full h-[80vh] lg:h-[90vh]">
@@ -51,15 +52,15 @@ export default function careers() {
 
         <div className="p-8 absolute inset-0 flex flex-col items-center justify-end text-white z-10">
           <div className="text-2xl md:text-3xl">
-            JOIN OUR <span className="text-[#D29E34]">TEAM</span>
+            START BUILDING WITH <span className="text-[#D29E34]">US</span>
           </div>
-          <div className="text-sm md:text-base max-w-115 text-center">
-            Be part of a growing construction team where your skills are valued,
-            and your work makes an impact.
+          <div className="text-sm md:text-base text-center">
+            Explore career opportunities in our<br className="md:hidden" />  construction team.
           </div>
         </div>
       </div>
       <JoinOurTeam />
+      <OurTeam />
       <ApplyForJob />
       <FAQ />
     </section>

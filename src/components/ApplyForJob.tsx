@@ -22,6 +22,7 @@ import {
   faEnvelope,
   faPhone,
   faLocationDot,
+  faPaperPlane
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -209,7 +210,7 @@ export const ApplyForJob = () => {
       : "";
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2">
+    <section className="grid grid-cols-1 md:grid-cols-2 bg-white">
       {/* Left Column (Static Info) */}
       <div className="flex flex-col p-5 sm:pl-20 sm:pr-20 md:pl-10 md:pr-10 lg:pl-30 lg:pr-30 pt-10">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-medium mb-3 mt-10">
@@ -321,12 +322,12 @@ export const ApplyForJob = () => {
           >
             <SelectTrigger
               id="jobType"
-              className={`w-full bg-white ${inputErrorClass("jobType")}`}
+              className={`w-full rounded-none bg-white ${inputErrorClass("jobType")}`}
             >
               <SelectValue placeholder="Select Job Type" />
             </SelectTrigger>
 
-            <SelectContent>
+            <SelectContent className="rounded-none">
               <SelectItem value="welder">Welder</SelectItem>
               <SelectItem value="foreman">Foreman</SelectItem>
               <SelectItem value="electrician">Electrician</SelectItem>
@@ -349,7 +350,7 @@ export const ApplyForJob = () => {
             id="fullName"
             type="text"
             placeholder="Your Name"
-            className={`bg-white w-full ${inputErrorClass("fullName")}`}
+            className={`bg-white rounded-none w-full ${inputErrorClass("fullName")}`}
             value={fullName}
             onChange={(e) => {
               setFullName(e.target.value.slice(0, MAX_NAME_CHARS));
@@ -371,7 +372,7 @@ export const ApplyForJob = () => {
               id="email"
               type="email"
               placeholder="Your Email"
-              className={`bg-white w-full ${inputErrorClass("email")}`}
+              className={`bg-white rounded-none w-full ${inputErrorClass("email")}`}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value.slice(0, MAX_EMAIL_CHARS));
@@ -391,7 +392,7 @@ export const ApplyForJob = () => {
               id="phone"
               type="tel"
               placeholder="09XXXXXXXXX"
-              className={`bg-white w-full ${inputErrorClass("phone")}`}
+              className={`bg-white rounded-none w-full ${inputErrorClass("phone")}`}
               value={phone}
               onChange={(e) => {
                 setPhone(sanitizePhoneInput(e.target.value));
@@ -412,7 +413,7 @@ export const ApplyForJob = () => {
           <Textarea
             id="message"
             placeholder="Your Message"
-            className={`bg-white w-full min-h-40 ${inputErrorClass("message")}`}
+            className={`bg-white rounded-none w-full min-h-25 ${inputErrorClass("message")}`}
             value={message}
             onChange={(e) => {
               const limitedByWords = limitWords(
@@ -467,9 +468,13 @@ export const ApplyForJob = () => {
           <button
             onClick={handleSubmit}
             disabled={submitting}
-            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-10 py-3 rounded-lg text-white hover:bg-[#7a7a5f] cursor-pointer text-md disabled:opacity-60 disabled:cursor-not-allowed w-full md:w-auto"
+            className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-10 py-3 text-white hover:bg-[#7a7a5f] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed flex justify-between items-center gap-2"
           >
             {submitting ? "Submitting..." : "Submit Application"}
+            <FontAwesomeIcon
+                          icon={faPaperPlane}
+                          className="text-base rotate-45"
+                        />
           </button>
         </div>
       </div>
