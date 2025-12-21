@@ -56,6 +56,8 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
             alt="Main"
             fill
             className="object-cover"
+            loading="lazy"
+            unoptimized
           />
 
           {/* Main Image Display */}
@@ -65,6 +67,8 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
               alt={data.heading}
               fill
               className="object-cover"
+              loading="lazy"
+              unoptimized
             />
             {/* Left soft shadow overlay button */}
             <button
@@ -117,6 +121,8 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
                 alt={`Thumb${index}`}
                 fill
                 className="object-cover"
+                loading="lazy"
+                unoptimized
               />
               <div className="absolute inset-0 bg-black/60 z-10"></div>
             </div>
