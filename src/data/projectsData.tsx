@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface ProjectData {
   id: string;
   title: string;
@@ -16,13 +18,14 @@ export const projectsData: ProjectData[] = [
     id: "decena-residence",
     title: "DECENA RESIDENCE",
     category: "RESIDENTIAL",
-    mainImage: "/sample/sample.jpg",
+    mainImage:
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347068/service-1_udcqus.jpg",
     galleryImages: [
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347066/service-2_o9orms.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347072/service-3_ncvnkr.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-4_vvg3zo.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-5_us2rra.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347057/service-6_tncl6l.jpg",
     ],
     description:
       "A modern and elegant private home, Decena Residence features clean lines, open layouts, and a sophisticated use of monochromatic tones.  Designed for both functionality and style, it offers smart spatial planning, quality finishes, and personalized interior details, creating a comfortable and contemporary living space with lasting elegance.",
@@ -55,11 +58,12 @@ export const projectsData: ProjectData[] = [
     id: "modern-office",
     title: "MODERN OFFICE COMPLEX",
     category: "COMMERCIAL",
-    mainImage: "/sample/sample.jpg",
+    mainImage:
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347066/service-2_o9orms.jpg",
     galleryImages: [
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347068/service-1_udcqus.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347072/service-3_ncvnkr.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-4_vvg3zo.jpg",
     ],
     description:
       "A state-of-the-art commercial office space designed with modern aesthetics and functional workflows. Features open-plan layouts, collaborative spaces, and eco-friendly systems for a productive work environment.",
@@ -91,12 +95,13 @@ export const projectsData: ProjectData[] = [
     id: "luxury-villa",
     title: "LUXURY VILLA DEVELOPMENT",
     category: "RESIDENTIAL",
-    mainImage: "/sample/sample.jpg",
+    mainImage:
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347072/service-3_ncvnkr.jpg",
     galleryImages: [
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
-      "/sample/sample.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347068/service-1_udcqus.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347066/service-2_o9orms.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-4_vvg3zo.jpg",
+      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347067/service-5_us2rra.jpg",
     ],
     description:
       "An exclusive luxury villa featuring premium materials, high-end finishes, and personalized architecture.  Combines elegance with comfort, offering a sanctuary for sophisticated living with breathtaking views and impeccable craftsmanship.",
