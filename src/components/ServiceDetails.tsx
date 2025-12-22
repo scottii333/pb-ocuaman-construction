@@ -12,6 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { ServiceData } from "@/data/servicesData";
+import { FreeQuoteButton } from "./FreeQuoteButton";
 
 interface ServiceDetailsProps {
   data: ServiceData;
@@ -173,9 +174,7 @@ export const ServiceDetails = ({ data }: ServiceDetailsProps) => {
             </Accordion>
           </ScrollArea>
 
-          <button className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat px-4 py-3 rounded text-white hover:bg-[#6e6e52] transition cursor-pointer w-full">
-            REQUEST A FREE QUOTE
-          </button>
+          <FreeQuoteButton />
         </div>
       </div>
     </section>
