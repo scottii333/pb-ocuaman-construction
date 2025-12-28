@@ -14,6 +14,7 @@ import { JoinOurTeam } from "@/components/JoinOurTeam";
 import { GoogleReviews } from "@/components/GoogleReviews";
 import { FactsAboutUs } from "@/components/FactsAboutUs";
 import { ExploreProject } from "@/components/ExploreProject";
+import { FAQ } from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -222,10 +223,12 @@ export default function Home() {
       <ExploreProject />
 
       {/* Google Reviews Section */}
-      <GoogleReviews />
+      {/* <GoogleReviews /> */}
 
       {/* Join Our Team Section */}
       <JoinOurTeam />
+
+      <FAQ />
 
       {/* Get In Touch Section */}
       <GetInTouch />
