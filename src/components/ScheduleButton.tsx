@@ -6,7 +6,7 @@ import { faVideo } from "@fortawesome/free-solid-svg-icons";
 
 export const ScheduleButton = () => {
   const handleButtonClick = async () => {
-    const cal = await getCalApi({ namespace: "30min" });
+    const cal = await getCalApi({ namespace: "pbOcuamanMeeting" });
     cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
   };
 
@@ -20,8 +20,8 @@ export const ScheduleButton = () => {
 
       <button
         onClick={handleButtonClick}
-        data-cal-namespace="30min"
-        data-cal-link="pb-ocuaman/30min"
+        data-cal-namespace="pbOcuamanMeeting"
+        data-cal-link="pb-ocuaman/construction-meeting"
         data-cal-config='{"layout":"month_view"}'
         className="relative z-10 bg-[#232b5f] text-white cursor-pointer flex items-center justify-center px-6 py-2 md:py-3 gap-2 rounded-md transition-transform duration-200 ease-out hover:scale-105 text-sm md:text-base"
       >
