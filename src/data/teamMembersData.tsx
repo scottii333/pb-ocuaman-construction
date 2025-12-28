@@ -29,12 +29,12 @@ export const teamMembersData: TeamMemberType[] = [
     image:
       "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347365/member-4_s4eril.jpg",
   },
-  {
-    id: 5,
-    name: "Engr. Mendoza",
-    image:
-      "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347361/member-5_t62fqd.jpg",
-  },
+  // {
+  //   id: 5,
+  //   name: "Engr. Mendoza",
+  //   image:
+  //     "https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347361/member-5_t62fqd.jpg",
+  // },
   {
     id: 6,
     name: "Ms. Godoy",
