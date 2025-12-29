@@ -4,14 +4,13 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
-import { ScheduleButton } from "@/components/ScheduleButton"; // Importing the ScheduleButton component
+import { ScheduleButton } from "@/components/ScheduleButton";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"], // select the weights you need
+  weight: ["400", "500", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -34,12 +33,20 @@ export const metadata: Metadata = {
       "Your trusted partner for construction services in the Philippines.",
     url: "https://pbocuamanconstruction.com/",
     siteName: "PB + Ocuaman Construction",
-    images: ["/pb-ocuaman-logo.png"],
+    images: [
+      {
+        url: "https://pbocuamanconstruction.com/pb-ocuaman-logo.svg", // absolute URL
+        width: 512,
+        height: 512,
+        alt: "PB Ocuaman Logo",
+      },
+    ],
     locale: "en_PH",
     type: "website",
   },
   icons: {
-    icon: "/pb-ocuaman-logo.svg",
+    icon: "/pb-ocuaman-logo.svg", // favicon in public folder
+    apple: "/pb-ocuaman-logo.svg",
   },
 };
 
@@ -50,6 +57,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/pb-ocuaman-logo.svg" />
+      </head>
       <body
         className={`${montserrat.variable} antialiased min-h-[200vh] flex flex-col`}
       >
@@ -57,11 +67,10 @@ export default function RootLayout({
         <main className="grow">
           {children}
           <div className="fixed bottom-2 left-2 md:bottom-5 md:left-5 z-100">
-            <ScheduleButton /> {/* Add the ScheduleButton component here */}
+            <ScheduleButton />
           </div>
         </main>
         <Toaster richColors position="top-center" />
-
         <Footer />
       </body>
     </html>
