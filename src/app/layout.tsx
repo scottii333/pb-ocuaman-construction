@@ -35,7 +35,8 @@ export const metadata: Metadata = {
     siteName: "PB + Ocuaman Construction",
     images: [
       {
-        url: "https://pbocuamanconstruction.com/pb-ocuaman-logo.svg", // absolute URL
+        // Open Graph requires an absolute URL so social cards and scrapers can fetch it
+        url: "https://pbocuamanconstruction.com/pb-ocuaman-logo.png",
         width: 512,
         height: 512,
         alt: "PB Ocuaman Logo",
@@ -44,9 +45,9 @@ export const metadata: Metadata = {
     locale: "en_PH",
     type: "website",
   },
+  // Keep this simple: use the PNG in /public as the site icon
   icons: {
-    icon: "/pb-ocuaman-logo.svg", // favicon in public folder
-    apple: "/pb-ocuaman-logo.svg",
+    icon: "/pb-ocuaman-logo.png",
   },
 };
 
@@ -58,7 +59,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/pb-ocuaman-logo.svg" />
+        {/* Simple explicit favicon link — this is enough for most browsers */}
+        <link rel="icon" href="/pb-ocuaman-logo.png" type="image/png" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
       <body
         className={`${montserrat.variable} antialiased min-h-[200vh] flex flex-col`}
