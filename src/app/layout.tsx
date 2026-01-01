@@ -59,9 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Simple explicit favicon link — this is enough for most browsers */}
-        <link rel="icon" href="/pb-ocuaman-logo.png" type="image/png" />
-        <meta name="theme-color" content="#ffffff" />
+        <link rel="icon" href="/pb-ocuaman-logo.png?v=2" type="image/png" />
       </head>
       <body
         className={`${montserrat.variable} antialiased min-h-[200vh] flex flex-col`}
