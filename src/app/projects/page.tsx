@@ -28,7 +28,6 @@ async function getProjectFromParams(
     const found = projectsData.find((p) => p.id === projectId);
     if (found) return found;
   }
-
   return projectsData[0];
 }
 
@@ -36,20 +35,47 @@ interface ProjectsPageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-// Dynamic metadata for each project
+// Correct: Only export generateMetadata (NO static 'metadata')
 export async function generateMetadata(
   props: ProjectsPageProps
 ): Promise<Metadata> {
-  const activeProject = await getProjectFromParams(props.searchParams);
+  const params = await props.searchParams;
+  const projectId = params.project as string | undefined;
 
+  // If viewing a specific project - dynamic SEO
+  if (projectId) {
+    const found = projectsData.find((p) => p.id === projectId);
+    if (found)
+      return {
+        title: `${found.title} | PB + Ocuaman Construction`,
+        description: found.description.substring(0, 160),
+        openGraph: {
+          title: `${found.title} | PB + Ocuaman Construction`,
+          description: found.description,
+          images: [found.mainImage],
+          type: "website",
+        },
+      };
+  }
+
+  // Default/fallback meta for the /projects root page
   return {
-    title: `${activeProject.title} | PB+Ocuaman Construction`,
-    description: activeProject.description.substring(0, 160),
+    title: "Construction Projects in Quezon City | PB + Ocuaman Construction",
+    description:
+      "See completed home, residential, and commercial construction projects in Quezon City completed by PB + Ocuaman Construction.",
     openGraph: {
-      title: `${activeProject.title} | PB+Ocuaman Construction`,
-      description: activeProject.description,
-      images: [activeProject.mainImage],
-      type: "website",
+      title: "Construction Projects in Quezon City",
+      description:
+        "Browse a selection of our residential and commercial building projects completed throughout QC.",
+      url: "https://pbocuamanconstruction.com/projects",
+      images: [
+        {
+          url: "https://pbocuamanconstruction.com/projects-og.png",
+          width: 512,
+          height: 512,
+          alt: "Construction Projects in Quezon City",
+        },
+      ],
     },
   };
 }
@@ -61,6 +87,15 @@ export default async function ProjectsPage({
 
   return (
     <section className="flex flex-col gap-5 mb-10">
+      {/* --- SEO ONLY --- */}
+      <h1 className="sr-only">
+        Construction Projects in Quezon City — PB + Ocuaman Construction
+      </h1>
+      <p className="sr-only">
+        View residential and commercial construction completed in QC by PB +
+        Ocuaman Construction—trusted contractor for homes, condos, offices, and
+        more.
+      </p>
       <ScrollToProjectDetails />
 
       {/* Banner Image */}
@@ -107,10 +142,8 @@ export default async function ProjectsPage({
 
       <RecentProjectCarousel />
 
-      {/* Project Details - remove key prop */}
       <ProjectDetails data={activeProject} />
 
-      {/* Projects Carousel/Explore */}
       <ExploreProject />
 
       <FAQ />
