@@ -13,29 +13,54 @@ const montserrat = Montserrat({
   weight: ["400", "500", "700", "900"],
 });
 
+// Updated metadata for local SEO (Quezon City instead of broader Philippines)
 export const metadata: Metadata = {
   title: {
     default: "PB + Ocuaman Construction",
     template: "%s | PB + Ocuaman Construction",
   },
   description:
-    "PB + Ocuaman Construction offers high-quality construction services in the Philippines including residential, commercial, and structural solutions.",
+    "PB + Ocuaman Construction offers high-quality residential, commercial, and structural construction services in Quezon City, Philippines.",
   keywords: [
-    "construction Philippines",
+    "construction Quezon City",
     "contractor QC",
     "PB Ocuaman Construction",
-    "building services",
+    "building services QC",
+    "residential construction QC",
+    "commercial construction QC",
+    "construction company QC",
+    "general contractor Quezon City",
+    "design and build QC",
+    "house renovation QC",
+    "home builder Quezon City",
+    "fit-out contractor QC",
+    "interior renovation QC",
+    "structural contractor QC",
+    "construction near me",
+    "construction Quezon City Philippines",
+    "commercial renovation QC",
+    "office construction QC",
+    "retail construction QC",
+    "condo fit out Quezon City",
+    "home improvement QC",
+    "QC contractor",
+    "Quezon City builder",
+    "QC construction firm",
+    "QC building contractor",
+    "estimate construction QC",
+    "reliable contractor QC",
+    "top construction QC",
+    "turnkey construction QC",
   ],
   metadataBase: new URL("https://pbocuamanconstruction.com/"),
   openGraph: {
     title: "PB + Ocuaman Construction",
     description:
-      "Your trusted partner for construction services in the Philippines.",
+      "Your trusted partner for construction services in Quezon City.",
     url: "https://pbocuamanconstruction.com/",
     siteName: "PB + Ocuaman Construction",
     images: [
       {
-        // Open Graph requires an absolute URL so social cards and scrapers can fetch it
         url: "https://pbocuamanconstruction.com/pb-ocuaman-logo.png",
         width: 512,
         height: 512,
@@ -45,9 +70,9 @@ export const metadata: Metadata = {
     locale: "en_PH",
     type: "website",
   },
-  // Keep this simple: use the PNG in /public as the site icon
   icons: {
     icon: "/pb-ocuaman-logo.png",
+    apple: "/pb-ocuaman-logo.png",
   },
 };
 
@@ -59,10 +84,52 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/pb-ocuaman-logo.png?v=2" type="image/png" />
+        {/* Favicon for browsers and mobile platforms */}
+        <link
+          rel="icon"
+          href="/pb-ocuaman-logo.png"
+          type="image/png"
+          sizes="32x32"
+        />
+        <link rel="apple-touch-icon" href="/pb-ocuaman-logo.png" />
+        <meta name="theme-color" content="#8B8B6F" />
+
+        {/* Organization schema for Google local/business knowledge panel & SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "PB + Ocuaman Construction",
+              url: "https://pbocuamanconstruction.com",
+              logo: "https://pbocuamanconstruction.com/pb-ocuaman-logo.png",
+              sameAs: [
+                "https://www.facebook.com/pbocuamanconstruction",
+                "https://www.instagram.com/pbocuamanconstruction/",
+              ],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: "+63 927 654 3210",
+                  contactType: "customer service",
+                  areaServed: "Quezon City",
+                },
+              ],
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Unit 3F, 135 Kamias Road, Diliman",
+                addressLocality: "Quezon City",
+                addressRegion: "Metro Manila",
+                postalCode: "1101",
+                addressCountry: "PH",
+              },
+            }),
+          }}
+        />
       </head>
       <body
-        className={`${montserrat.variable} antialiased min-h-[200vh] flex flex-col`}
+        className={`${montserrat.variable} antialiased min-h-screen flex flex-col`}
       >
         <Header />
         <main className="grow">

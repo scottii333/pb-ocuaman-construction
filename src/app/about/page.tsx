@@ -8,14 +8,47 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
 
 import { OurCertifications } from "@/components/OurCertifications";
 import { OurPartners } from "@/components/OurPartners";
 import { OurTeam } from "@/components/OurTeam";
 
+export const metadata: Metadata = {
+  title: "About PB + Ocuaman Construction | Trusted Construction in QC",
+  description:
+    "Learn about PB + Ocuaman Construction, our mission, vision, team, and services in Quezon City.",
+  keywords: ["construction QC", "about PB Ocuaman", "trusted contractor QC"],
+  openGraph: {
+    title: "About PB + Ocuaman Construction",
+    description:
+      "Learn about PB + Ocuaman Construction, our mission, vision, team, and services in QC.",
+    url: "https://pbocuamanconstruction.com/about",
+    siteName: "PB + Ocuaman Construction",
+    images: [
+      {
+        url: "https://pbocuamanconstruction.com/pb-ocuaman-logo.png",
+        width: 512,
+        height: 512,
+        alt: "About PB Ocuaman Construction",
+      },
+    ],
+    type: "website",
+  },
+};
+
 export default function About() {
   return (
     <main>
+      {/* SEO: Hidden H1 and intro for Google/sitelinks */}
+      <h1 className="sr-only">
+        About PB + Ocuaman Construction in Quezon City
+      </h1>
+      <p className="sr-only">
+        Get to know PB + Ocuaman Construction—our team, mission, certifications,
+        and our commitment to high-quality construction in Quezon City.
+      </p>
+
       <div className="relative w-full h-[80vh] lg:h-[90vh]">
         {/* Background Image */}
         <Image
