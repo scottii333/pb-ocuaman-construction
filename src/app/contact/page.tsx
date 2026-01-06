@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: "https://pbocuamanconstruction.com/contact",
     images: [
       {
-        url: "https://pbocuamanconstruction.com/contact-og.png",
+        url: "https://pbocuamanconstruction.com/pb-ocuaman-logo.png",
         width: 512,
         height: 512,
         alt: "Contact PB Ocuaman Construction",

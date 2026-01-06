@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: "https://pbocuamanconstruction.com/careers",
     images: [
       {
-        url: "https://pbocuamanconstruction.com/careers-og.png",
+        url: "https://pbocuamanconstruction.com/pb-ocuaman-logo.png",
         width: 512,
         height: 512,
         alt: "Careers at PB Ocuaman Construction",

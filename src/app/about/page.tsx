@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "PB + Ocuaman Construction",
     images: [
       {
-        url: "https://pbocuamanconstruction.com/about-og.png",
+        url: "https://pbocuamanconstruction.com/pb-ocuaman-logo.png",
         width: 512,
         height: 512,
         alt: "About PB Ocuaman Construction",
