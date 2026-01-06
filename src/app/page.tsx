@@ -15,10 +15,43 @@ import { GoogleReviews } from "@/components/GoogleReviews";
 import { FactsAboutUs } from "@/components/FactsAboutUs";
 import { ExploreProject } from "@/components/ExploreProject";
 import { FAQ } from "@/components/FAQ";
+import { Metadata } from "next";
+
+// SEO metadata for Next.js App Router (with explicit type)
+export const metadata: Metadata = {
+  title: "Construction Company in Quezon City | PB + Ocuaman Construction",
+  description:
+    "PB + Ocuaman Construction delivers high-quality residential and commercial construction services in Quezon City, trusted by homeowners and businesses.",
+  openGraph: {
+    title: "PB + Ocuaman Construction — Home",
+    description:
+      "Top-rated contractor for residential, commercial, and structural projects in QC. Explore our services and portfolio.",
+    url: "https://pbocuamanconstruction.com/",
+    images: [
+      {
+        url: "https://pbocuamanconstruction.com/pb-ocuaman-logo.png",
+        width: 512,
+        height: 512,
+        alt: "PB + Ocuaman Construction Logo",
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return (
     <main className="flex flex-col mb-20">
+      {/* --- SEO ONLY: strongly optimized local H1 and description, optionally hidden for design --- */}
+      <h1 className="sr-only">
+        Construction Company in Quezon City — PB + Ocuaman Construction
+      </h1>
+      <p className="sr-only">
+        We provide high-quality residential, commercial, and structural
+        construction in Quezon City, Metro Manila. Trusted expertise for all
+        your building needs.
+      </p>
+
+      {/* Rest of your unchanged code */}
       <div className="shadow-lg h-[80vh] lg:h-[90vh] overflow-hidden relative">
         <video
           src="https://res.cloudinary.com/djubpvnfa/video/upload/q_auto,f_auto,vc_auto/v1766333949/sample_poa9ew.mp4"
@@ -29,7 +62,6 @@ export default function Home() {
           preload="auto"
           className="w-full h-full object-cover"
         />
-
         <div className="absolute inset-0 bg-black/60">
           <div className="absolute bottom-20 lg:bottom-10 left-1/2 -translate-x-1/2 md:left-10 md:translate-x-0 flex gap-2 md:gap-5">
             <div className="text-4xl md:text-6xl text-[#D29E34]">BUILDING</div>
@@ -63,8 +95,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-
-      {/* Brief About us Section (Server Component, SEO-friendly) */}
+      {/* Brief About us Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-2 my-10">
         <div className="order-2 lg:order-1 h-auto w-full flex flex-col p-5 pt-0 gap-5">
           <Image
@@ -87,7 +118,6 @@ export default function Home() {
             cost-effective solutions.
           </p>
         </div>
-
         <div className="order-1 lg:order-2 h-auto w-full flex flex-col p-5 gap-5">
           <h2 className="flex  items-center gap-2 p-1 text-[24px]">
             <FontAwesomeIcon icon={faUsers} className="text-xl" /> Who{" "}
@@ -100,7 +130,6 @@ export default function Home() {
             monochromatic tones, and sophisticated style, turning our clients’
             visions into lasting works of art with quality and integrity.
           </p>
-
           <Link
             href="/about"
             className="bg-[#8B8B6F] bg-[url('/texture/green-cup.png')] bg-repeat p-2 px-10 text-white w-fit mt-2 cursor-pointer hover:bg-[#6e6e52] transition flex items-center gap-5 text-sm md:text-base"
@@ -109,15 +138,12 @@ export default function Home() {
             More About Us
             <FontAwesomeIcon icon={faArrowRightLong} className="text-xl" />
           </Link>
-
           <div className="border-b-3 border-[#a0a08a] mt-5"></div>
-
           <p className="text-sm md:text-base">
             We deliver reliable, cost-effective, and high-quality services while
             ensuring customer satisfaction and building strong partnerships.
           </p>
         </div>
-
         <div className="order-3 -black h-[500px] lg:h-auto w-full relative ">
           <Image
             src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347377/home-2_zpuc1c.jpg"
@@ -129,13 +155,10 @@ export default function Home() {
           />
         </div>
       </div>
-      {/* Facts Section  */}
       <FactsAboutUs />
-      {/* Services Carousel (scroll target) */}
       <div id="services" className="pt-20">
         <ServicesCarousel />
       </div>
-      {/* 3 Easy Steps Section */}
       <div className="grid grid-cols-1 lg:grid-cols-[35%_65%] gap-5 p-5 md:p-10 bg-white">
         <div className="flex flex-col justify-start items-baseline gap-5 p-0 md:p-10">
           <h2 className="text-xl md:text-3xl">
@@ -152,7 +175,6 @@ export default function Home() {
             <FontAwesomeIcon icon={faArrowRightLong} className="w-5 h-5 ml-3" />
           </Link>
         </div>
-
         <div className="flex flex-col gap-5 md:p-5">
           <div className="grid grid-cols-[1fr_4fr] md:items-center bg-[#f2f2f2] bg-[url('/texture/wall-texture.png')] bg-repeat h-30 md:h-auto">
             <div className="relative w-full aspect-square shrink-0">
@@ -219,20 +241,14 @@ export default function Home() {
           </Link>
         </div>
       </div>
-
       <ExploreProject />
-
       {/* Google Reviews Section */}
       {/* <GoogleReviews /> */}
-
       {/* Join Our Team Section */}
       <JoinOurTeam />
-
       <FAQ />
-
       {/* Get In Touch Section */}
       <GetInTouch />
-
       {/* Business Map Pin Section */}
       <BusinessMapPin />
     </main>
