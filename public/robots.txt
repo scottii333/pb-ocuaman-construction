@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://pbocuamanconstruction.com
+
+# Sitemaps
+Sitemap: https://pbocuamanconstruction.com/sitemap.xml
