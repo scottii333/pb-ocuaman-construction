@@ -13,7 +13,7 @@ const montserrat = Montserrat({
   weight: ["400", "500", "700", "900"],
 });
 
-// Updated metadata for local SEO (Quezon City instead of broader Philippines)
+// --- SITE-WIDE METADATA ---
 export const metadata: Metadata = {
   title: {
     default: "PB + Ocuaman Construction",
@@ -37,22 +37,10 @@ export const metadata: Metadata = {
     "interior renovation QC",
     "structural contractor QC",
     "construction near me",
-    "construction Quezon City Philippines",
-    "commercial renovation QC",
-    "office construction QC",
-    "retail construction QC",
-    "condo fit out Quezon City",
-    "home improvement QC",
-    "QC contractor",
-    "Quezon City builder",
-    "QC construction firm",
-    "QC building contractor",
-    "estimate construction QC",
-    "reliable contractor QC",
-    "top construction QC",
-    "turnkey construction QC",
   ],
   metadataBase: new URL("https://pbocuamanconstruction.com/"),
+
+  // --- OPEN GRAPH (SOCIAL SHARING) ---
   openGraph: {
     title: "PB + Ocuaman Construction",
     description:
@@ -61,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "PB + Ocuaman Construction",
     images: [
       {
-        url: "https://pbocuamanconstruction.com/pb-ocuaman-logo.png",
+        url: "/pb-ocuaman-logo.png", // LOCAL PATH — faster and crawlable
         width: 512,
         height: 512,
         alt: "PB Ocuaman Logo",
@@ -70,10 +58,20 @@ export const metadata: Metadata = {
     locale: "en_PH",
     type: "website",
   },
+
+  // --- FAVICON (SITE ICON, GOOGLE & BROWSER) ---
   icons: {
-    icon: "/pb-ocuaman-logo.png",
-    apple: "/pb-ocuaman-logo.png",
+    icon: [
+      { url: "/favicon.ico" }, // Primary, Google & legacy browsers
+      { url: "/favicon.svg", type: "image/svg+xml" }, // Modern browsers
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" }, // fallback
+    ],
+    apple: "/apple-touch-icon.png", // iOS / Safari
   },
+
+  // --- PWA / theme color ---
+  manifest: "/site.webmanifest",
+  themeColor: "#8B8B6F",
 };
 
 export default function RootLayout({
@@ -83,51 +81,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* Favicon for browsers and mobile platforms */}
-        <link
-          rel="icon"
-          href="/pb-ocuaman-logo.png"
-          type="image/png"
-          sizes="32x32"
-        />
-        <link rel="apple-touch-icon" href="/pb-ocuaman-logo.png" />
-        <meta name="theme-color" content="#8B8B6F" />
-
-        {/* Organization schema for Google local/business knowledge panel & SEO */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "PB + Ocuaman Construction",
-              url: "https://pbocuamanconstruction.com",
-              logo: "https://pbocuamanconstruction.com/pb-ocuaman-logo.png",
-              sameAs: [
-                "https://www.facebook.com/pbocuamanconstruction",
-                "https://www.instagram.com/pbocuamanconstruction/",
-              ],
-              contactPoint: [
-                {
-                  "@type": "ContactPoint",
-                  telephone: "+63 927 654 3210",
-                  contactType: "customer service",
-                  areaServed: "Quezon City",
-                },
-              ],
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Unit 3F, 135 Kamias Road, Diliman",
-                addressLocality: "Quezon City",
-                addressRegion: "Metro Manila",
-                postalCode: "1101",
-                addressCountry: "PH",
-              },
-            }),
-          }}
-        />
-      </head>
       <body
         className={`${montserrat.variable} antialiased min-h-screen flex flex-col`}
       >
