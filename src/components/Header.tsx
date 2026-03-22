@@ -8,7 +8,7 @@ export const Header = () => {
     <div className="shadow-lg p-3 flex justify-between px-10 md:px-0 md:justify-around items-center gap-10 sticky top-0 bg-white z-50">
       <Link href="/" className="px-0 lg:px-7">
         <Image
-          src="/pb-ocuaman-main-logo.png"
+          src="/pb-ocuaman-main-logo-2026.png"
           alt="PB Ocuaman Construction Logo"
           width={120}
           height={120}

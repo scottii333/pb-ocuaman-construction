@@ -21,15 +21,19 @@ export const OurCertifications = () => {
           />
         </div>
         <div className="flex flex-col gap-5 justify-center w-[90%] mx-auto">
-          <div className="text-2xl md:text-3xl">
-            At <span className="text-[#D29E34]">PB+OCUAMAN</span> Construction
-          </div>
-          <div className="text-sm md:text-base">
-            We bring together experience, creativity, and professionalism to
-            deliver exceptional construction projects that meet your needs.
-            Whether you are building your first home, upgrading to a bigger
-            space, renovating, or investing in property, we provide complete
-            solutions from planning and design to construction and handover.
+          <div>
+            <div className="text-2xl md:text-3xl font-semibold mb-4">
+              At <span className="text-[#D29E34]">PB + OCUAMAN</span>{" "}
+              Construction
+            </div>
+            <div className="text-sm md:text-base leading-relaxed">
+              We harmonize technical expertise with creative vision to deliver
+              exceptional projects tailored to your lifestyle. Whether you are
+              crafting a bespoke residence, expanding your footprint, or
+              optimizing an investment, we provide a seamless, end-to-end
+              experience—from the first conceptual sketch to the final
+              masterpiece.
+            </div>
           </div>
           <div className="w-full h-[0.5px] bg-[#c0c0c6]"></div>
           <div className="text-lg md:text-2xl">Certifications & Licenses</div>
