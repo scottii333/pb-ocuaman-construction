@@ -51,7 +51,7 @@ export default function Careers() {
       {/* Banner Image */}
       <div className="relative w-full h-[80vh] lg:h-[90vh]">
         <Image
-          src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766348350/careers-hero_dhpwgc.png"
+          src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1774242813/TECSON_GROUND_BREAKING_esb2av.jpg"
           alt="Project page banner image"
           fill
           className="object-cover"
