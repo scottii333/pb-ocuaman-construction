@@ -36,8 +36,8 @@ export const JoinOurTeam = () => {
           {/* First image: top-left */}
           <div className="absolute top-0 left-0 w-50 h-50 md:w-70 md:h-70">
             <Image
-              src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347442/join-1_pwkj4u.png"
-              alt="Top Left"
+              src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1774242806/RIVERA_GROUND_BREAKING_sjgitu.jpg"
+              alt="Rivera Ground Breaking"
               fill
               className="object-cover"
               unoptimized
@@ -47,15 +47,14 @@ export const JoinOurTeam = () => {
           {/* Second image: bottom-right */}
           <div className="absolute bottom-0 right-0 w-50 h-50 md:w-70 md:h-70 shadow-sm">
             <Image
-              src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1766347443/join-2_arr4hp.jpg"
-              alt="Bottom Right"
+              src="https://res.cloudinary.com/djubpvnfa/image/upload/q_auto,f_auto,dpr_auto/v1774242813/TECSON_GROUND_BREAKING_esb2av.jpg"
+              alt="Tecson Ground Breaking"
               fill
               className="object-cover"
               unoptimized
             />
           </div>
         </div>
-
         <div className="p-10 w-full min-h-100 gap-5 md:gap-0 flex flex-col">
           <div className="p-5 border-b">
             <h2 className="text-3xl">
@@ -66,29 +65,14 @@ export const JoinOurTeam = () => {
               valued, and your work makes an impact.
             </p>
           </div>
-          <div className="p-5">
-            <div className="flex flex-col gap-2">
-              <h3 className="text-lg md:text-xl">
-                <FontAwesomeIcon
-                  icon={faHelmetSafety}
-                  className="text-lg md:text-xl text-yellow-500 mr-2"
-                />{" "}
-                FOREMAN
-              </h3>
-              <p>P1200/Day</p>
-            </div>
+
+          {/* CV & Portfolio Section */}
+          <div className="p-5 flex flex-col gap-2 border-b">
+            <p className="text-sm md:text-base ">
+              Submit your updated CV and portfolio.
+            </p>
           </div>
-          <div className="flex flex-col gap-2 p-5 pt-0 px-5 border-b">
-            <h3 className="text-lg md:text-xl">
-              <FontAwesomeIcon
-                icon={faScrewdriverWrench}
-                className="text-lg md:text-xl text-yellow-500 mr-2"
-              />{" "}
-              WELDER{" "}
-              <span className="text-sm md:text-base">(WITH COMPLETE TEAM)</span>
-            </h3>
-            <p>P900/Day</p>
-          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 p-5 gap-5">
             <div className="flex">
               <FontAwesomeIcon
@@ -105,9 +89,11 @@ export const JoinOurTeam = () => {
               <p>Olongapo City, Zambales</p>
             </div>
           </div>
+
           <p className="text-gray-600 pl-5 pb-0 md:pb-5">
             (WILLING TO BE RELOCATED)
           </p>
+
           <button
             onClick={handleApplyClick}
             className="bg-[#8B8B6F] gap-3 bg-[url('/texture/green-cup.png')] bg-repeat w-50 h-10 text-white hover:bg-[#7a7a5f] cursor-pointer ml-5 flex items-center justify-center"

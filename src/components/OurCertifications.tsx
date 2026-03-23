@@ -20,7 +20,7 @@ export const OurCertifications = () => {
             unoptimized
           />
         </div>
-        <div className="flex flex-col gap-5 justify-center w-[90%] mx-auto">
+        <div className="flex flex-col gap-5 justify-center w-[90%] max-w-[900px] mx-auto">
           <div>
             <div className="text-2xl md:text-3xl font-semibold mb-4">
               At <span className="text-[#D29E34]">PB + OCUAMAN</span>{" "}
@@ -36,7 +36,7 @@ export const OurCertifications = () => {
             </div>
           </div>
           <div className="w-full h-[0.5px] bg-[#c0c0c6]"></div>
-          <div className="text-lg md:text-2xl">Certifications & Licenses</div>
+          <div className="text-lg md:text-2xl">Partners & Suppliers</div>
 
           <Marquee
             speed={25}
